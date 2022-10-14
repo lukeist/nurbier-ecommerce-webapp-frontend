@@ -1,11 +1,18 @@
 import Head from "next/head";
 import Intro from "../components/Intro";
-import Three from "../components/Three";
-import Eighth from "../components/Eighth";
-import Tokens from "../components/Tokens";
 import Footer from "../components/Footer";
+import { useQuery } from "urql";
+import { PRODUCT_QUERY } from "../lib/query";
 
 export default function Home() {
+  // fetch products from strapi
+  const [results] = useQuery({ query: PRODUCT_QUERY });
+  const { data, fetching, error } = results;
+
+  if (fetching) return <p>Loading...</p>;
+  if (error) return <p>{error.message}</p>;
+
+  const lights = data.lights.data;
   return (
     <div>
       <Head>
@@ -15,14 +22,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <Intro />
-        <Three />
-        <Eighth />
-        <Tokens />
-        <Footer />
+        <Intro lights={lights} />
       </main>
 
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

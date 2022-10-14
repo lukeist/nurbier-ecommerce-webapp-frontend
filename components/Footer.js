@@ -26,7 +26,7 @@ export default function Footer({}) {
           relation to a financial product (including a decision about whether to
           acquire or continue to hold).
         </p>
-        <p>Copyright © 2021 Sucuro (Venture) Pty Ltd</p>
+        <p>Copyright © 2022 Nur Bier GmbH</p>
         <p>
           <Link href={"/"}>Privacy Policy</Link>
         </p>
@@ -34,6 +34,7 @@ export default function Footer({}) {
     </SFooter>
   );
 }
+
 //
 const SFooter = styled.div`
   display: flex;

@@ -7,7 +7,6 @@ export default function Tokens({}) {
       <SVideo autoPlay loop muted>
         <source src={"/tokens.mp4"} type="video/mp4" />
       </SVideo>
-
       <div>
         <Image
           alt="Sucuro Asset Token"

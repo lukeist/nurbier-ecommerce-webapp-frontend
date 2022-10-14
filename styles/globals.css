@@ -10,14 +10,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size:62.5%;
 
-  background: black;
+  /* Primary Color: #FFBF00 */
+  --beer: rgb(255, 191, 0, 1); 
+
   --primary: #2d2d2d;
   --secondary: #535353;
   --third: #939393;
-  --originalRed: #6f1d1b;
   /* Monochromatic */
-  --originalRedM: #982825; 
-  --highlight: #cc7662;
   --boxshadow01: 0 0 30px rgba(0, 0, 0, 0.1) ;
   --boxshadow03: 0 0 30px rgba(0, 0, 0, 0.3) ;
   --boxshadow05: 0 0 30px rgba(0, 0, 0, 0.5) ;
@@ -30,23 +29,26 @@ a {
   text-decoration: none;
 }
 
-
+h1 {
+  font-size: 2.2rem;
+}
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--primary);
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: var(--secondary);
 }
 
 p {
+  font-size: 1rem;
   line-height: 150%;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
   }
@@ -54,9 +56,9 @@ p {
     color: black;
     background: white;
   }
-}
+} */
 
-/* 
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -65,4 +67,4 @@ p {
     color: white;
     background: black;
   }
-} */
+}

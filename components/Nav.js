@@ -18,15 +18,13 @@ export default function Nav() {
           href={"/"}
         /> */}
         <Link className="logo" href={"/"}>
-          🍻asd
+          🍻
         </Link>
-        <Link href={"/"}>Berlin</Link>
+        <Link href={"/"}>Nur Bier</Link>
       </SLogo>
       <SNavItems>
-        <li>Order</li>
-        <li>About</li>
         <li>
-          <button>Join</button>
+          <button>About</button>
         </li>
       </SNavItems>
       <AnimatePresence>show</AnimatePresence>
