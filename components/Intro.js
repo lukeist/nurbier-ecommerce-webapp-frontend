@@ -16,10 +16,10 @@ export default function Intro({ lights }) {
         <source src={"/intro.mp4"} type="video/mp4" />
       </SVideo>
 
-      <SIntroSub>
+      {/* <SIntroSub>
         <h2>Real assets. No middlemen. More trust.</h2>
         <SMainBtn>Join the Early Access List</SMainBtn>
-      </SIntroSub>
+      </SIntroSub> */}
     </SIntro>
   );
 }
@@ -38,7 +38,6 @@ const SIntro = styled.div`
     z-index: 2;
     position: absolute;
     color: white;
-    width: 40rem;
     transform: translate(0%, -100%);
     text-shadow: 0px 0px 5px #000000;
   }
@@ -47,8 +46,10 @@ const SIntro = styled.div`
 const SCards = styled.div`
   display: flex;
   // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   // grid-gap: 1rem;
+  // width: 100%;
+  max-width: 80vw;
 `;
 
 const SVideo = styled.video`

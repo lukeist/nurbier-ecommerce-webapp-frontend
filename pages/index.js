@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>sucuro | blockchain-based real estate</title>
-        <meta name="description" content="blockchain-based real estate" />
+        <title>Nur Bier | das beliebteste Bier Deutschlands</title>
+        <meta name="description" content="best German beer!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

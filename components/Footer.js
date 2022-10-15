@@ -6,10 +6,10 @@ export default function Footer({}) {
   return (
     <SFooter>
       <SSocial>
-        <Link href={"https://twitter.com/sucuroco"}>
+        <Link href={"/"}>
           <FaTwitterSquare />
         </Link>
-        <Link href={"https://www.linkedin.com/company/sucuro/"}>
+        <Link href={"/"}>
           <FaLinkedin />
         </Link>
       </SSocial>

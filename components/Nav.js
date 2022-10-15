@@ -33,12 +33,12 @@ export default function Nav() {
 }
 
 export const SNav = styled.div`
-  min-height: 15vh;
+  // min-height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   magin: 0 5rem;
   width: 100%;

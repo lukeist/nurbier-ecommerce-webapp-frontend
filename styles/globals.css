@@ -13,9 +13,9 @@ body {
   /* Primary Color: #FFBF00 */
   --beer: rgb(255, 191, 0, 1); 
 
-  --primary: #2d2d2d;
-  --secondary: #535353;
-  --third: #939393;
+  --textfirst: #e1e1e1;
+  --textsecond: #c1c1c1;
+  --textthird: #a1a1a1;
   /* Monochromatic */
   --boxshadow01: 0 0 30px rgba(0, 0, 0, 0.1) ;
   --boxshadow03: 0 0 30px rgba(0, 0, 0, 0.3) ;
@@ -66,5 +66,23 @@ p {
   body {
     color: white;
     background: black;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slight div {
+      border-radius: 1rem !important;
+  }
+
+  .slight h1 {
+    font-size: 3rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
+  }
+
+  .slight h2 {
+    font-size: 1.5rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
   }
 }
