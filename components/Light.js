@@ -3,22 +3,23 @@ import Image from "next/image";
 import styled from "styled-components";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../lib/context";
+import Link from "next/link";
 
 export default function Light({ light }) {
-  const { title, price, image } = light.attributes;
+  const { title, price, image, handle } = light.attributes;
   const { qty, setQty, increaseQty, decreaseQty, onAdd } = useStateContext();
 
   return (
     <SLight className="slight">
-      <div id="slight-cards">
-        <img src={image.data.attributes.formats.small.url} alt={title} />
-        <div>
-          <h1>{price}€</h1>
-          <h3>{title}</h3>
+      <Link href={`/helles/${handle}`}>
+        <div id="slight-cards">
+          <img src={image.data.attributes.formats.small.url} alt={title} />
+          <div>
+            <h1>{price}€</h1>
+            <h3>{title}</h3>
+          </div>
         </div>
-      </div>
-
-      {/* <SMainBtn>Join the Early Access List</SMainBtn> */}
+      </Link>
 
       <SQuantity id="slight-qty">
         <button>
@@ -138,7 +139,9 @@ const SQuantity = styled.div`
 
     &:hover {
       opacity: 1;
-      box-shadow: var(--boxshadow10);
+      color: white;
+      // box-shadow: var(--boxshadow10);
+      filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
     }
   }
 `;

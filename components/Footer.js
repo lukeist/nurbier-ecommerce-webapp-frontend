@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { FaTwitterSquare, FaLinkedin } from "react-icons/fa";
+import { FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
 
 export default function Footer({}) {
   return (
@@ -10,7 +10,7 @@ export default function Footer({}) {
           <FaTwitterSquare />
         </Link>
         <Link href={"/"}>
-          <FaLinkedin />
+          <FaInstagramSquare />
         </Link>
       </SSocial>
       <div>
@@ -69,6 +69,7 @@ const SSocial = styled.div`
 
   svg {
     transition: all ease 0.3s;
+    cursor: pointer;
   }
   svg:hover {
     color: var(--originalRed);
