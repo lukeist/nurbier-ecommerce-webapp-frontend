@@ -41,7 +41,7 @@ const SLight = styled.div`
 
   #slight-cards {
     position: relative;
-    margin: 0 2%;
+    margin: 0 3%;
     // padding: 1rem;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem 1rem 2rem 2rem;
@@ -91,14 +91,14 @@ const SLight = styled.div`
       filter: brightness(140%);
       box-shadow: var(--boxshadow10);
       background: rgba(255, 255, 255, 1);
-      // transform: rotate(0.005turn) scale(1.05);
-      transform: scale(1.05);
+      transform: rotate(0.005turn) scale(1.03);
+      // transform: scale(1.05);
 
       z-index: 11;
 
       img {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
   }

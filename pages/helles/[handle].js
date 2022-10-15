@@ -32,9 +32,9 @@ export default function ProductDetails() {
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no...{error.message}</p>;
 
-  const { title, description } = data.lights.data[0].attributes;
-  const image =
-    data.lights.data[0].attributes.image.data.attributes.formats.medium.url;
+  const { title, description, image } = data.lights.data[0].attributes;
+  //   const image =
+  //     data.lights.data[0].attributes.image.data.attributes.formats.medium.url;
 
   const imageL =
     data.lights.data[0].attributes.image.data.attributes.formats.large.url;
@@ -43,11 +43,10 @@ export default function ProductDetails() {
     toast.success(`${title} added to your cart.`, { duration: 1500 });
   };
 
-  console.log(imageL);
   return (
     <SDetails>
-      {/* <img src={imageL} alt={title} /> */}
-      <SInfo>
+      <img src={imageL} alt={title} />
+      <SInfo id="sinfo">
         <h3>{title}</h3>
         <p>{description}</p>
         <SQuantity>
@@ -74,22 +73,27 @@ export default function ProductDetails() {
 }
 
 const SDetails = styled.div`
+  position: relative;
   display: flex;
   //   justify-content: space-between;
-  //   img {
-  //     // width: 40%;
-  //   }
 
-  height: 100vh;
+  img {
+    // width: 40%;
+    position: absolute;
+    background: url(imageL) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
   opacity: 1;
 
-  //   background: url("https://res.cloudinary.com/nurbier/image/upload/v1665708188/large_pexels_cottonbro_5537959_81c5d1ac28.jpg")
   background: url(imageL) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  //   background: red;
 `;
 
 const SInfo = styled.div`
@@ -99,6 +103,12 @@ const SInfo = styled.div`
     font-weight: medium;
     padding: 0.5rem 1rem;
     cursor: pointer;
+
+    background: url(testurl) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 `;
 
