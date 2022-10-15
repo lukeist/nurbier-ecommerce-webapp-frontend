@@ -14,15 +14,26 @@ export const SQuantity = styled.div`
   }
 
   p {
-    width: 1rem;
+    width: 2.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
   span {
+    font-size: 2rem;
     color: var(--secondary);
+    text-align: center;
   }
 
   svg {
-    color: #494949;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all ease 0.3s;
+    font-size: 3rem;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 `;

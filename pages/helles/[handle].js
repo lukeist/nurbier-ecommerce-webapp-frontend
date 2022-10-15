@@ -7,6 +7,7 @@ import { useStateContext } from "../../lib/context";
 // import toast from "react-hot-toast";
 import { useEffect } from "react";
 import { SQuantity } from "../../styles/SQuantity";
+import { SMainBtn } from "../../styles/SMainBtn";
 
 export default function ProductDetails() {
   // use state
@@ -45,9 +46,11 @@ export default function ProductDetails() {
 
   return (
     <SDetails>
-      <img src={imageL} alt={title} />
+      <div id="sdetails-img">
+        <img src={imageL} alt={title} />
+      </div>
       <SInfo id="sinfo">
-        <h3>{title}</h3>
+        <h1>{title}</h1>
         <p>{description}</p>
         <SQuantity>
           <span>Quantiy</span>
@@ -59,14 +62,14 @@ export default function ProductDetails() {
             <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </SQuantity>
-        <StyledBuy
+        <SMainBtn
           onClick={() => {
             notify();
             onAdd(data.lights.data[0].attributes, qty);
           }}
         >
           Add to Cart
-        </StyledBuy>
+        </SMainBtn>
       </SInfo>
     </SDetails>
   );
@@ -75,11 +78,21 @@ export default function ProductDetails() {
 const SDetails = styled.div`
   position: relative;
   display: flex;
-  //   justify-content: space-between;
+  justify-content: center;
 
-  img {
-    // width: 40%;
-    position: absolute;
+  #sdetails-img {
+    overflow: hidden;
+
+    img {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      /* Preserve aspet ratio */
+      min-width: 100%;
+      min-height: 100%;
+    }
+
     background: url(imageL) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -88,27 +101,29 @@ const SDetails = styled.div`
   }
 
   opacity: 1;
-
-  background: url(imageL) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 `;
 
 const SInfo = styled.div`
-  //   width: 40%;
-  button {
-    font-size: 1rem;
-    font-weight: medium;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+  width: 40%;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justiify-content: center;
+  align-items: center;
 
-    background: url(testurl) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: transparent;
+  z-index: 2;
+
+  h1 {
+    text-align: left;
+    margin: 2rem 0;
+  }
+
+  p {
+    margin: 2rem 0;
+  }
+  > button {
+    width: 60%;
   }
 `;
 
@@ -130,18 +145,7 @@ const SInfo = styled.div`
 //     text-align: center;
 //   }
 
-//   span {
-//     color: var(--secondary);
-//   }
-
 //   svg {
 //     color: #494949;
 //   }
 // `;
-
-const StyledBuy = styled.button`
-  width: 100%;
-  background: var(--primary);
-  color: white;
-  font-weight: 500;
-`;

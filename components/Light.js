@@ -14,7 +14,7 @@ export default function Light({ light }) {
         <img src={image.data.attributes.formats.small.url} alt={title} />
         <div>
           <h1>{price}€</h1>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </div>
       </div>
 
@@ -68,14 +68,14 @@ const SLight = styled.div`
       width: 100%;
 
       h1 {
-        font-size: 5rem;
+        // font-size: 5rem;
         margin-right: 1rem;
       }
 
-      h2 {
+      h3 {
+        // font-size: 2rem;
         color: var(--textsecond);
         margin-right: 1rem;
-        font-size: 2rem;
       }
     }
 

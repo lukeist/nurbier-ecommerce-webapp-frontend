@@ -30,21 +30,21 @@ a {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 5rem;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 4rem;
   color: var(--primary);
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 3rem;
   color: var(--secondary);
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 150%;
 }
 
@@ -74,6 +74,32 @@ p {
       border-radius: 1rem !important;
   }
 
+  h1 {
+    font-size: 3rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
+  }
+
+   h2 {
+    font-size: 1.5rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
+  }
+
+  #sinfo {
+    width: 800%;
+    
+  }
+  #sinfo button {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .slight div {
+      border-radius: 1rem !important;
+  }
+
   .slight h1 {
     font-size: 3rem !important;
     bottom: 0rem !important;
@@ -84,5 +110,9 @@ p {
     font-size: 1.5rem !important;
     bottom: 0rem !important;
     right: 0rem !important;
+  } */
+
+  #sinfo {
+    width: 60%;
   }
 }
