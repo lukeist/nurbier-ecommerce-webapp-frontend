@@ -122,20 +122,21 @@ const SQuantity = styled.div`
 
   p {
     font-size: 3rem;
-    color: black;
+    color: white;
     opacity: 0.9;
     margin: 0 0.5rem;
     padding-bottom: 0.5rem;
     z-index: 2;
     width: 3rem;
     text-align: center;
+    filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
   }
 
   svg {
-    color: black;
+    color: white;
     transition: all ease 0.3s;
     border-radius: 50%;
-    opacity: 0.9;
+    opacity: 0.7;
 
     &:hover {
       opacity: 1;
