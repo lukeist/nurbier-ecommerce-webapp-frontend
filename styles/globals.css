@@ -107,7 +107,7 @@ p {
     border-radius: 1rem !important;
     width: 80vw !important;
     height: 15vh;
-    /* border: solid 1px red; */
+    border: solid 2px rgba(255, 0, 0, 0.3);
     margin: 1rem 0 !important;
   }
 
@@ -198,7 +198,7 @@ p {
     transition: all ease 0.3s;
     padding: 1rem 1rem 0.5rem 0.5rem;
 
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.3);
   }
 
   #SNavList li {
