@@ -2,27 +2,25 @@ import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { SMainBtn } from "../styles/SMainBtn";
 import Light from "./Light";
+import PopUp16 from "./PopUp16";
+import { useState } from "react";
 
 export default function Intro({ lights }) {
+  const [is16, setIs16] = useState(true);
   return (
     <SIntro id="SIntro">
-      <SCards id="SCards">
+      {/* <SCards id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
-      </SCards>
+      </SCards> */}
 
-      <SVideo id="SVideo" autoPlay loop muted>
+      <h1>BILD</h1>
+      {is16 && <PopUp16 is16={is16} setIs16={setIs16} />}
+
+      {/* <SVideo id="SVideo" autoPlay loop muted>
         <source src={"/intro.mp4"} type="video/mp4" />
-      </SVideo>
-
-      {/* <SCarousel id="SCarousel"> */}
-
-      {/* </SCarousel> */}
-      {/* <SIntroSub>
-        <h2>Real assets. No middlemen. More trust.</h2>
-        <SMainBtn>Join the Early Access List</SMainBtn>
-      </SIntroSub> */}
+      </SVideo> */}
     </SIntro>
   );
 }
@@ -31,6 +29,7 @@ const SIntro = styled.div`
   position: relative;
   overflow: hidden;
   // width: 100%;
+  background: black;
   height: 80vh;
 
   display: flex;

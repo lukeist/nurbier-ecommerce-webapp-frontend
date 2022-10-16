@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
-
+import { TiSocialFacebook } from "react-icons/ti";
+import { AiOutlineInstagram } from "react-icons/ai";
 export default function Footer({}) {
   return (
     <SFooter id="SFooter">
       <SSocial>
-        <FaTwitterSquare />
-        <FaInstagramSquare />
+        <div>
+          <TiSocialFacebook />
+        </div>
+        <div>
+          <AiOutlineInstagram />
+        </div>
       </SSocial>
-      <div>
+      {/* <div>
         <p>
           The information on this website is intended to be general in nature
           and is not personal financial product advice. It does not take into
@@ -26,7 +30,7 @@ export default function Footer({}) {
         <p>
           <Link href={"/"}>Privacy Policy</Link>
         </p>
-      </div>
+      </div> */}
     </SFooter>
   );
 }
@@ -34,18 +38,10 @@ export default function Footer({}) {
 //
 const SFooter = styled.div`
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   margin-top: 4rem;
   z-index: 10;
-
-  div {
-    width: 60%;
-  }
-
-  svg {
-    font-size: 2rem;
-  }
 
   p {
     text-align: center;
@@ -63,9 +59,23 @@ const SSocial = styled.div`
   justify-content: center;
   margin-bottom: 0.5rem;
 
+  margin: 0 2rem;
+
+  > div {
+    background: white;
+    border-radius: 50%;
+    margin: 0.5rem;
+  }
   svg {
+    color: black;
+    font-size: 4rem;
+    border-radius: 50%;
+    // border: 3px solid white;
+    // box-shadow: 0px white;
+    // background: black;
     transition: all ease 0.3s;
     cursor: pointer;
+    z-index: 100;
   }
   svg:hover {
     color: var(--originalRed);

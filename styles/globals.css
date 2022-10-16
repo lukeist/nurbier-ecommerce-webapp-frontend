@@ -257,6 +257,20 @@ p {
     filter: none;
     font-size: 3rem !important;
   }
+
+  #SNav {
+    justify-content: space-between;
+  }
+
+  #SLogo {
+    margin: 0;
+  }
+  #SNavItems {
+    margin: 0;
+  }
+  #SNavItems li {
+    margin: 0 0.5rem;
+  }
   /* 
   #SNavList {
     position: fixed;
