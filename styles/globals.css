@@ -74,12 +74,12 @@ p {
     /* justify-content: flex-start; */
     /* margin: 8rem 0 0 2rem; */
     height: 90vh;
-
-    background: url(../public/2.jpg) no-repeat center center fixed;
+    background: black;
+    /* background: url(../public/2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
   }
 
   #SCards {
@@ -343,6 +343,6 @@ p {
   }
 
   #SFooter {
-    display: none;
+    /* display: none; */
   }
 }
