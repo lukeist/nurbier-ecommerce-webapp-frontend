@@ -230,15 +230,16 @@ p {
     position: fixed;
     justify-content: space-around;
     align-items: flex-end;
-    bottom: 0;
+    bottom: 2rem;
     left: 0;
     color: white;
     background-color: black;
     transition: all ease 0.3s;
     opacity: 1;
     width: 100%;
-    margin-top: 90vh;
+    margin-top: 88vh;
     /* margin-bottom: 2rem; */
+    /* padding-bottom:2rem; */
   }
 
   #SNavList li {
