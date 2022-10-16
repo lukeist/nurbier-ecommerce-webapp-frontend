@@ -48,6 +48,7 @@ const SPopUp16 = styled.div`
     padding: 1rem;
     cursor: pointer;
     transition: all ease 0.3s;
+    text-decoration: none;
     &:hover {
       background: rgba(0, 0, 0, 0.9);
     }
