@@ -212,12 +212,12 @@ p {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 4rem !important;
-    bottom: -2rem !important;
+    bottom: -3rem !important;
     right: 0rem !important;
   }
 
   h3 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     bottom: 0rem !important;
     right: 0rem !important;
   }
