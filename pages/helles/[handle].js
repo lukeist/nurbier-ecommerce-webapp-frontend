@@ -34,11 +34,7 @@ export default function ProductDetails() {
   if (error) return <p>Oh no...{error.message}</p>;
 
   const { title, description, image } = data.lights.data[0].attributes;
-  //   const image =
-  //     data.lights.data[0].attributes.image.data.attributes.formats.medium.url;
 
-  const imageL =
-    data.lights.data[0].attributes.image.data.attributes.formats.large.url;
   // create a toast
   const notify = () => {
     toast(`${qty} ${title} added to your cart.`, {
@@ -55,7 +51,7 @@ export default function ProductDetails() {
   return (
     <SDetails>
       <div id="sdetails-img">
-        <img src={imageL} alt={title} />
+        <img src={image.data.attributes.formats.large.url} alt={title} />
       </div>
       <SInfo id="sinfo">
         <h1>{title}</h1>
@@ -96,17 +92,10 @@ const SDetails = styled.div`
       top: 0;
       left: 0;
 
-      /* Preserve aspet ratio */
+      // /* Preserve aspet ratio */
       min-width: 100%;
       min-height: 100%;
     }
-
-    background: url(imageL) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
 
   opacity: 1;
 `;

@@ -5,14 +5,14 @@ import Light from "./Light";
 
 export default function Intro({ lights }) {
   return (
-    <SIntro>
-      <SCards>
+    <SIntro id="SIntro">
+      <SCards id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
       </SCards>
 
-      <SVideo autoPlay loop muted>
+      <SVideo id="SVideo" autoPlay loop muted>
         <source src={"/intro.mp4"} type="video/mp4" />
       </SVideo>
 
@@ -27,7 +27,7 @@ export default function Intro({ lights }) {
 const SIntro = styled.div`
   position: relative;
   overflow: hidden;
-  width: 100%;
+  // width: 100%;
   height: 80vh;
 
   display: flex;

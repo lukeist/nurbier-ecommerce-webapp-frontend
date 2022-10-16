@@ -2,14 +2,9 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useStateContext } from "../lib/context";
 import Image from "next/image";
-import {
-  RiShoppingBagFill,
-  RiQuestionnaireFill,
-  RiUser5Fill,
-} from "react-icons/ri";
+import { RiShoppingBagFill, RiUser5Fill } from "react-icons/ri";
 import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
-import { IoBeer, IoBeerOutline } from "react-icons/io";
 
 const { AnimatePresence, motion } = require("framer-motion");
 
@@ -36,18 +31,12 @@ export default function Nav() {
           </Link>
         </li> */}
         <li>
-          <Link href={"/"}>
-            <IoIosBeer href={"/"} />
-          </Link>
-          {/* <IoBeerOutline /> */}
-          {/* <IoBeer/> */}
+          <IoIosBeer />
         </li>
         <li>
           <RiShoppingBagFill />
         </li>
         <li>
-          {/* <RiQuestionnaireFill />
-           */}
           <BsFillQuestionDiamondFill />
         </li>
         <li>
@@ -59,7 +48,7 @@ export default function Nav() {
   );
 }
 
-export const SNav = styled.div`
+const SNav = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -87,7 +76,7 @@ export const SNav = styled.div`
   }
 `;
 
-export const SNavList = styled.ul`
+const SNavList = styled.ul`
   position: fixed;
   top: 2rem;
   right: 10%;
@@ -106,7 +95,6 @@ export const SNavList = styled.ul`
   }
 
   li:hover {
-    text-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
     transform: scale(1.2);
   }
 

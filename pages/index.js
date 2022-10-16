@@ -13,6 +13,7 @@ export default function Home() {
   if (error) return <p>{error.message}</p>;
 
   const lights = data.lights.data;
+
   return (
     <div>
       <Head>

@@ -6,12 +6,8 @@ export default function Footer({}) {
   return (
     <SFooter>
       <SSocial>
-        <Link href={"/"}>
-          <FaTwitterSquare />
-        </Link>
-        <Link href={"/"}>
-          <FaInstagramSquare />
-        </Link>
+        <FaTwitterSquare />
+        <FaInstagramSquare />
       </SSocial>
       <div>
         <p>

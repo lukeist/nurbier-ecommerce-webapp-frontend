@@ -10,9 +10,9 @@ export default function Light({ light }) {
   const { qty, setQty, increaseQty, decreaseQty, onAdd } = useStateContext();
 
   return (
-    <SLight className="slight">
+    <SLight className="SLight">
       <Link href={`/helles/${handle}`}>
-        <div id="slight-cards">
+        <div className="SLight-Cards">
           <img src={image.data.attributes.formats.small.url} alt={title} />
           <div>
             <h1>{price}€</h1>
@@ -21,7 +21,7 @@ export default function Light({ light }) {
         </div>
       </Link>
 
-      <SQuantity id="slight-qty">
+      <SQuantity className="SQuantity">
         <button>
           <AiFillMinusCircle onClick={decreaseQty} />
         </button>
@@ -40,23 +40,14 @@ const SLight = styled.div`
   flex-direction: column;
   align-items: center;
 
-  #slight-cards {
+  .SLight-Cards {
     position: relative;
     margin: 0 3%;
-    // padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem 1rem 2rem 2rem;
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
     cursor: pointer;
-
-    background: url(image.data.attributes.formats.small.url) no-repeat center
-      center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 
     > div {
       position: absolute;
@@ -65,7 +56,7 @@ const SLight = styled.div`
       text-align: right;
       display: flex;
       flex-direction: column;
-      align-items: end;
+      align-items: flex-end;
       width: 100%;
 
       h1 {
@@ -83,15 +74,14 @@ const SLight = styled.div`
     img {
       opacity: 0.98;
       width: 100%;
-      max-width: 30rem;
-      height: auto;
+      height: 100%;
+      // max-width: 30rem;
       transition: all ease 0.3s;
     }
 
     &:hover {
       filter: brightness(140%);
       box-shadow: var(--boxshadow10);
-      background: rgba(255, 255, 255, 1);
       transform: rotate(0.005turn) scale(1.03);
       // transform: scale(1.05);
 
