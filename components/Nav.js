@@ -9,7 +9,6 @@ import {
 } from "react-icons/ri";
 import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
-
 import { IoBeer, IoBeerOutline } from "react-icons/io";
 
 const { AnimatePresence, motion } = require("framer-motion");
@@ -76,7 +75,7 @@ export const SNav = styled.div`
     left: 10%;
     font-size: 2rem;
     font-weight: 700;
-    font-family: "Lobster", cursive;
+    font-family: "Lobster";
     color: white;
     opacity: 1;
     transition: all ease 0.3s;

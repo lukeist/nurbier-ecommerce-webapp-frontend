@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Nur Bier | das beliebteste Bier Deutschlands</title>
-        <meta name="description" content="best German beer!" />
+        <title>Nur Bier | das beliebteste Bier Deutschlands!</title>
+        <meta name="description" content="das beliebteste Bier Deutschlands!" />
         <link rel="icon" href="/favicon.ico" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />

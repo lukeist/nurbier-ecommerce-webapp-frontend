@@ -4,7 +4,7 @@ import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../../lib/context";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useEffect } from "react";
 import { SQuantity } from "../../styles/SQuantity";
 import { SMainBtn } from "../../styles/SMainBtn";
@@ -41,7 +41,15 @@ export default function ProductDetails() {
     data.lights.data[0].attributes.image.data.attributes.formats.large.url;
   // create a toast
   const notify = () => {
-    toast.success(`${title} added to your cart.`, { duration: 1500 });
+    toast(`${qty} ${title} added to your cart.`, {
+      icon: "🍺",
+      style: {
+        fontSize: "1.4rem",
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
   };
 
   return (

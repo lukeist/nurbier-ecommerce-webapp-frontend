@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { StateContext } from "../lib/context";
 import Nav from "../components/Nav";
 import { Provider, createClient } from "urql";
+import { Toaster } from "react-hot-toast";
 
 const client = createClient({ url: process.env.NEXT_PUBLIC_BACKEND_API });
 
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     // <UserProvider>
     <StateContext>
       <Provider value={client}>
-        {/* <Toaster /> */}
+        <Toaster />
         <Nav />
         <Component {...pageProps} />
       </Provider>
