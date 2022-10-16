@@ -16,6 +16,9 @@ export default function Intro({ lights }) {
         <source src={"/intro.mp4"} type="video/mp4" />
       </SVideo>
 
+      {/* <SCarousel id="SCarousel"> */}
+
+      {/* </SCarousel> */}
       {/* <SIntroSub>
         <h2>Real assets. No middlemen. More trust.</h2>
         <SMainBtn>Join the Early Access List</SMainBtn>
@@ -49,13 +52,15 @@ const SCards = styled.div`
   // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   // grid-gap: 1rem;
   // width: 100%;
-  max-width: 80vw;
+  // max-width: 80vw;
+  margin-bottom: -20rem;
+  z-index: 22;
 `;
 
 const SVideo = styled.video`
   position: absolute;
   right: 0;
-  top: -20rem;
+  top: -50rem;
   min-width: 100%;
   min-height: 100%;
   z-index: 1;

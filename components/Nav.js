@@ -50,13 +50,7 @@ export default function Nav() {
 
 const SNav = styled.div`
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
   z-index: 100;
-  magin: 0 5rem;
-  width: 100%;
 
   > a {
     position: fixed;
@@ -86,7 +80,7 @@ const SNavList = styled.ul`
   list-style: none;
   font-size: 2rem;
   cursor: pointer;
-  border-radius: 0.5rem 0 0 0.5rem;
+  // border-radius: 0.5rem 0 0 0.5rem;
   transition: all ease 0.3s;
 
   li {

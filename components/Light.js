@@ -47,6 +47,7 @@ const SLight = styled.div`
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
+    max-width: 30rem;
     cursor: pointer;
 
     > div {

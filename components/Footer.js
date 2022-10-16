@@ -4,7 +4,7 @@ import { FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
 
 export default function Footer({}) {
   return (
-    <SFooter>
+    <SFooter id="SFooter">
       <SSocial>
         <FaTwitterSquare />
         <FaInstagramSquare />
@@ -36,7 +36,7 @@ const SFooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
+  margin-top: 4rem;
   z-index: 10;
 
   div {
