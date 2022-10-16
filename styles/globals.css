@@ -70,6 +70,19 @@ p {
 }
 
 @media screen and (max-width: 480px) {
+
+  h1 {
+    font-size: 3rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+    bottom: 0rem !important;
+    right: 0rem !important;
+  }
+
   #SNavList {
     position: fixed;
     top: 50vh;
@@ -80,7 +93,6 @@ p {
     color: white;
     background: black;
     list-style: none;
-    font-size: 2rem;
     cursor: pointer;
     border-radius: 0.5rem 0 0 0.5rem;
     opacity: 0.8;
@@ -90,21 +102,28 @@ p {
   #SNavList li {
     transition: all ease 0.15s;
     margin: 0.5rem 0;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   #SNavList li:hover {
-    text-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
     transform: scale(1.2);
   }
 
   #SNavList svg {
-    font-size: 2rem;
-    /* &:hover { */
-       /* box-shadow: 0 0 10px rgba(255, 255, 255, 1); */
-    /* } */
+    font-size: 5rem;
   }
-/* 
+
+
+   /* #SNavList svg:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 2px rgb(0 0 0 / 1));
+   } */
+
+  .slight div {
+      border-radius: 1rem !important;
+  }
+  
+  /* 
    &::before {
      content: "";
      position: fixed;
@@ -116,38 +135,21 @@ p {
      border-top-left-radius: 25px;
      box-shadow: 0 -25px 0 0 #f66969;
    } */
+}
 
-   /* #SNavList svg:hover {
-    opacity: 1;
-    filter: drop-shadow(0 0 2px rgb(0 0 0 / 1));
-   } */
 
-  .slight div {
-      border-radius: 1rem !important;
-  }
-
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 3rem !important;
     bottom: 0rem !important;
     right: 0rem !important;
   }
 
-   h2 {
+   h3 {
     font-size: 1.5rem !important;
     bottom: 0rem !important;
     right: 0rem !important;
   }
-
-  #sinfo {
-    width: 800%;
-    
-  }
-  #sinfo button {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 768px) {
 
   #SNavList {
     position: fixed;
@@ -216,6 +218,6 @@ p {
   } * */
 
   #sinfo {
-    width: 60%;
+    width: 80%;
   }
 }
