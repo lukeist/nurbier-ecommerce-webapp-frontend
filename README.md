@@ -3,8 +3,6 @@ an responsive online shop of a German brewery startup in Berlin that allows thei
 
 **Link to project:** https://nurbier.vercel.app/
 
-//![alt tag](https://i.ibb.co/1JDQ6Yv/starlite-online-trading-platform-hiluan-1.jpg)
-
 ## How It's Made:
 
 **Tech used:** Next.JS React.JS, Strapi, GraphQL, Cloudinary, Auth0, Redux, HTML, CSS, JavaScript, Styled Component, Framer Motion, Heroku, Vercel, Stripe, Paypal
