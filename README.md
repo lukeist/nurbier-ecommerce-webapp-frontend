@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nur Bier - Only Beer - a Fullstack Ecommerce WebApp
+an responsive online shop of a German brewery startup in Berlin that allows their customers to learn about brewing and purchase their newest beer in the market.
 
-## Getting Started
+**Link to project:** https://nurbier.vercel.app/
 
-First, run the development server:
+## How It's Made:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+**Tech used:** Next.JS React.JS, Strapi, GraphQL, Cloudinary, Auth0, Redux, HTML, CSS, JavaScript, Styled Component, Framer Motion, Heroku, Vercel, Stripe, Paypal
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Navigation Bar:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+2. FrontPage:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+3. Product Page:
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Checkout Page:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+5. Other Pages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Optimizations
+
+
+## Lessons Learned:
+
+
+## Other Examples:
+Take a look at these couple examples that I have in my own portfolio:
+
+**hiluan.dev - Portfolio Page** https://github.com/hiluan/hiluan-frontend
