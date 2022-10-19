@@ -13,37 +13,38 @@ export default function Nav() {
 
   return (
     <SNav>
-      <Link id="nurBier-txtlogo" href={"/"}>
-        Nur Bier
-      </Link>
-
-      <SNavList id="SNavList">
-        {/* <li>
-          <Link className="logo" href={"/"}>
-            🍻
-            <Image
-          alt="sucuro"
-          width="50rem"
-          height="50rem"
-          src="/bierLogo.png"
+      <div>
+        <Image
+          id="logo"
+          alt="Nur Bier"
+          width="105px"
+          height="30px"
+          src="/NurBierLogo.jpg"
           href={"/"}
         />
-          </Link>
-        </li> */}
+      </div>
+      <SNavList id="SNavList">
         <li>
-          <IoIosBeer />
+          <IoIosBeer className="menu-icon" />
+          <p className="menu-txt">Home</p>
         </li>
         <li>
-          <RiShoppingBagFill />
+          <BsFillQuestionDiamondFill className="menu-icon" />
+          <p className="menu-txt">Über Nur Bier</p>
         </li>
         <li>
-          <BsFillQuestionDiamondFill />
+          <RiUser5Fill className="menu-icon" />
+          <p className="menu-txt">Mein Konto</p>
         </li>
         <li>
-          <RiUser5Fill />
+          <RiShoppingBagFill className="menu-icon" />
+          <div>
+            <p className="menu-txt">Einkaufskorb</p>
+            <RiShoppingBagFill id="einkaufskorb" />
+          </div>
         </li>
       </SNavList>
-      <AnimatePresence>show</AnimatePresence>
+      {/* <AnimatePresence>show</AnimatePresence> */}
     </SNav>
   );
 }
@@ -52,21 +53,28 @@ const SNav = styled.div`
   position: relative;
   z-index: 100;
 
-  > a {
-    position: fixed;
-    top: 2rem;
-    left: 10%;
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: "Lobster";
-    color: white;
-    opacity: 1;
-    transition: all ease 0.3s;
-    filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
-
-    &:hover {
-      transform: scale(1.2);
+    > div {
+      position: fixed;
+      top: 2rem;
+      left: 10%;
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: "Lobster";
+      color: white;
+      opacity: 1;
+      transition: all ease 0.3s;
+      filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
+      cursor: pointer;
+      background: black;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      border-radius: 0.5rem;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
     }
+
+ 
   }
 `;
 
@@ -84,15 +92,34 @@ const SNavList = styled.ul`
   transition: all ease 0.3s;
 
   li {
+    text-align: center;
     transition: all ease 0.15s;
     margin: 0 2rem;
+
+    div {
+      display: flex;
+
+      > svg {
+        transition: all ease 0.3s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    p {
+      font-weight: 500;
+      transition: all ease 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+    }
   }
 
-  li:hover {
-    transform: scale(1.2);
-  }
+ 
 
-  svg {
+  .menu-icon {
+    display: none;
     font-size: 2.5rem;
     opacity: 1;
     filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
@@ -101,6 +128,10 @@ const SNavList = styled.ul`
       // box-shadow: 0 0 10px rgba(255, 255, 255, 1);
       opacity: 1;
     }
+  }
+
+  #einkaufskorb {
+    margin-left: 1rem;
   }
 
   // &::before {

@@ -70,26 +70,30 @@ p {
 
 @media screen and (max-width: 480px) {
   #SIntro {
-    /* align-items: flex-start; */
-    /* justify-content: flex-start; */
-    /* margin: 8rem 0 0 2rem; */
-    height: 90vh;
-    background: black;
-    /* background: url(../public/2.jpg) no-repeat center center fixed;
+    /* old with 3 cards */
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: url(../public/2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover;
+    height: 90vh;
+
+    /* new only black*/
+    /* margin: 8rem 0 0 2rem; */
+    /* height: 90vh; */
+    /* background: black; */
   }
 
   #SCards {
-    /* flex-direction: column; */
-    /* max-width: 80vw !important; */
-    /* justify-content: flex-start !important; */
-    /* align-items: flex-start !important; */
-    /* margin: 0; */
-    /* padding: 0; */
-    /* width: 100% !important; */
+    /* flex-direction: column;
+    max-width: 80vw !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin: 0;
+    padding: 0;
+    width: 100% !important; */
   }
 
   #SVideo {
@@ -97,10 +101,8 @@ p {
   }
 
   .SLight {
-    margin-top: 20rem;
-
-    /* width: 100% !important; */
-    /* flex-direction: row !important; */
+    height: 86vh;
+    justify-content: flex-end !important;
   }
 
   .SLight-Cards {
@@ -145,8 +147,7 @@ p {
     transform: none;
   }
 
-  /* 
-  .SLight-Cards {
+  /* .SLight-Cards {
     border-radius: 1rem !important;
     width: 80vw !important;
     height: 15vh;
@@ -187,6 +188,9 @@ p {
   .SLight-Cards img:hover {
     transform: none;
   } */
+
+  /* old with 3 cards */
+  /* ///////////////////////////////////// */
 
   .SQuantity {
     display: none !important;
@@ -254,8 +258,17 @@ p {
   }
 
   #SNavList svg {
+    display: flex;
     filter: none;
     font-size: 3rem !important;
+  }
+
+  .menu-txt {
+    display: none;
+  }
+
+  #einkaufskorb {
+    display: none !important;
   }
 
   #SNav {
@@ -343,6 +356,6 @@ p {
   }
 
   #SFooter {
-    /* display: none; */
+    display: none;
   }
 }

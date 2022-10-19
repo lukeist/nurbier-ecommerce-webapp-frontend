@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { StateContext } from "../lib/context";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav-BU";
 import { Provider, createClient } from "urql";
 import { Toaster } from "react-hot-toast";
 

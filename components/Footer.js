@@ -13,7 +13,7 @@ export default function Footer({}) {
           <AiOutlineInstagram />
         </div>
       </SSocial>
-      {/* <div>
+      <div>
         <p>
           The information on this website is intended to be general in nature
           and is not personal financial product advice. It does not take into
@@ -30,26 +30,29 @@ export default function Footer({}) {
         <p>
           <Link href={"/"}>Privacy Policy</Link>
         </p>
-      </div> */}
+      </div>
     </SFooter>
   );
 }
 
 //
 const SFooter = styled.div`
+  // old:
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+  // new:
+  margin-top: 2rem;
   display: flex;
-  // flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
   z-index: 10;
 
   p {
+    color: rgba(255, 255, 255, 0.3);
+
     text-align: center;
     font-size: 0.8rem;
-  }
-
-  a {
-    color: var(--originalRed);
   }
 `;
 
@@ -62,13 +65,21 @@ const SSocial = styled.div`
   margin: 0 2rem;
 
   > div {
-    background: white;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
     margin: 0.5rem;
+    transition: all ease 0.3s;
+    // old ///////////////////////////
+    border-radius: 0.5rem;
+
+    // new ///////////////////////////
+    // border-radius: 50%;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
   }
   svg {
     color: black;
-    font-size: 4rem;
     border-radius: 50%;
     // border: 3px solid white;
     // box-shadow: 0px white;
@@ -76,8 +87,11 @@ const SSocial = styled.div`
     transition: all ease 0.3s;
     cursor: pointer;
     z-index: 100;
-  }
-  svg:hover {
-    color: var(--originalRed);
+
+    // old ///////////////////////////
+    font-size: 2.5rem;
+
+    // new ///////////////////////////
+    // font-size: 4rem;
   }
 `;

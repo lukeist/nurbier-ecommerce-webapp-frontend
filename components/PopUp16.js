@@ -24,7 +24,7 @@ const SPopUp16 = styled.div`
   background: black;
   //   height: 80vh;
 
-  //   top: 40vh;
+  // top: 40vh;
 
   background: white;
   display: flex;

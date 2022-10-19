@@ -9,18 +9,18 @@ export default function Intro({ lights }) {
   const [is16, setIs16] = useState(true);
   return (
     <SIntro id="SIntro">
-      {/* <SCards id="SCards">
+      <SCards id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
-      </SCards> */}
+      </SCards>
 
-      <h1>BILD</h1>
-      {is16 && <PopUp16 is16={is16} setIs16={setIs16} />}
+      {/* <h1>BILD</h1>
+      {is16 && <PopUp16 is16={is16} setIs16={setIs16} />} */}
 
-      {/* <SVideo id="SVideo" autoPlay loop muted>
+      <SVideo id="SVideo" autoPlay loop muted>
         <source src={"/intro.mp4"} type="video/mp4" />
-      </SVideo> */}
+      </SVideo>
     </SIntro>
   );
 }
