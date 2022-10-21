@@ -20,37 +20,38 @@ const SPopUp16 = styled.div`
 
   position: fixed;
   overflow: hidden;
-  // width: 100%;
   background: black;
-  //   height: 80vh;
 
-  // top: 40vh;
-
-  background: white;
+  background: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 8rem;
   z-index: 1000;
 
   > h3 {
-    color: black;
+    color: white;
     z-index: 1001;
     margin-bottom: 2rem;
+    font-size: 4rem;
   }
 
   button {
-    margin: 0 0.5rem;
+    color: white;
     background: black;
-    border: none;
+    border: 2px solid white;
+    margin: 0 0.5rem;
     outline: none;
     padding: 1rem;
     cursor: pointer;
     transition: all ease 0.3s;
     text-decoration: none;
+    font-size: 2rem;
     &:hover {
-      background: rgba(0, 0, 0, 0.9);
+      color: black;
+      background: white;
+      border: 2px solid black;
     }
   }
 `;

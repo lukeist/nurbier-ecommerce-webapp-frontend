@@ -39,7 +39,7 @@ const SIntroMid = styled.div`
     display: flex;
     justify-content: center;
     overflow: hidden;
-    height: 60vh;
+    height: 80vh;
   }
   // width: 100%;
   // margin-top: -10vh;
@@ -58,7 +58,7 @@ const SImgFloating = styled.div`
   // max-width: 100%;
   // height: auto;
 
-  height: 300px;
+  // height: 300px;
   animation-name: Floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
