@@ -75,11 +75,13 @@ const SLight = styled.div`
   .SLight-Cards {
     position: relative;
     margin: 0 3%;
-    border-radius: 1rem 1rem 2rem 2rem;
+    // border-radius: 1rem 1rem 2rem 2rem;
+    padding: 2rem;
+    background: black;
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
-    max-width: 22rem;
+    max-width: 25rem;
     cursor: pointer;
 
     > div {
@@ -94,13 +96,13 @@ const SLight = styled.div`
 
       h1 {
         // font-size: 5rem;
-        margin-right: 1rem;
+        margin-right: 2rem;
       }
 
       h3 {
         // font-size: 2rem;
         color: var(--textsecond);
-        margin-right: 1rem;
+        margin-right: 2rem;
       }
     }
 
@@ -114,8 +116,9 @@ const SLight = styled.div`
 
     &:hover {
       filter: brightness(140%);
-      box-shadow: var(--boxshadow10);
-      transform: rotate(0.005turn) scale(1.03);
+      // box-shadow: var(--boxshadow10);
+      transform: rotate(0.005turn) scale(1.2);
+      background: transparent;
       // transform: scale(1.05);
 
       z-index: 11;
@@ -172,9 +175,17 @@ const SQuantity = styled.div`
 
 export const SAdd = styled.button`
   margin-top: 1rem;
-
   width: 100%;
-  background: var(--first);
-  color: white;
+  padding: 1rem;
+  width: 60%;
   font-weight: 500;
+  cursor: pointer;
+  background: black;
+  color: white;
+  border: solid 2px white;
+  &:hover {
+    background: white;
+    color: black;
+    border: solid 2px black;
+  }
 `;

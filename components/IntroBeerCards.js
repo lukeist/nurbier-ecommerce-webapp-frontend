@@ -18,7 +18,7 @@ export default function IntroBeerCards({ lights }) {
 }
 
 const SIntroBeerCards = styled.div`
-  margin-top: -10rem;
+  margin-top: -18rem;
   margin-bottom: 10rem;
 
   display: flex;
@@ -38,7 +38,7 @@ const SIntroBeerCards = styled.div`
 
 const SCards = styled.div`
   //   position: absolute;
-
+  margin: 5rem;
   display: flex;
   // margin-bottom: -20rem;
   z-index: 22;

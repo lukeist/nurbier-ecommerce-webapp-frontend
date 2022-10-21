@@ -68,8 +68,8 @@ const SNav = styled.div`
       filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
       cursor: pointer;
       background: black;
-      padding: 0.5rem 0.5rem 0 0.5rem;
-      border-radius: 0.5rem;
+      padding: 1rem 1rem 0.5rem 1rem;
+      // border-radius: 0.5rem;
 
       &:hover {
         transform: scale(1.1);

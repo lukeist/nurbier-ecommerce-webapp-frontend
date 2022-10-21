@@ -43,16 +43,15 @@ const SIntroTop = styled.div`
   justify-content: center;
 
   h1 {
-    font-size: 8rem;
-    max-width: 30rem;
-    line-height: 1;
-    letter-spacing: -3px;
+    font-size: 10rem;
+    font-weight: 700;
+    max-width: 40rem;
+    line-height: 0.8;
+    letter-spacing: -5px;
 
     z-index: 2;
     position: absolute;
     color: white;
-    transform: translate(0%, -100%);
-    text-shadow: 0px 0px 5px #000000;
   }
 `;
 
