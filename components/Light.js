@@ -4,10 +4,31 @@ import styled from "styled-components";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../lib/context";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Light({ light }) {
+  const [currentItem, setCurrentItem] = useState([]);
   const { title, price, image, handle } = light.attributes;
-  const { qty, setQty, increaseQty, decreaseQty, onAdd } = useStateContext();
+  const { cartItems, qty, setQty, increaseQty, decreaseQty, onAdd, onRemove } =
+    useStateContext();
+
+  useEffect(() => {
+    setQty(1);
+  }, []);
+
+  useEffect(() => {
+    const item = cartItems.filter(
+      (item) => item.handle === light.attributes.handle
+    );
+    console.log(item);
+    setCurrentItem(item);
+  }, [cartItems.length]);
+
+  // create a toast
+  const notify = () => {
+    toast.success(`${title} added to your cart.`, { duration: 1500 });
+  };
 
   return (
     <SLight className="SLight">
@@ -20,16 +41,26 @@ export default function Light({ light }) {
           </div>
         </div>
       </Link>
-
-      <SQuantity className="SQuantity">
-        <button>
-          <AiFillMinusCircle onClick={decreaseQty} />
-        </button>
-        <p>{qty}</p>
-        <button>
-          <AiFillPlusCircle onClick={increaseQty} />
-        </button>
-      </SQuantity>
+      {cartItems.length < 1 ? (
+        <SAdd
+          onClick={() => {
+            notify();
+            onAdd(light.attributes, 1);
+          }}
+        >
+          Add to Cart
+        </SAdd>
+      ) : (
+        <SQuantity className="SQuantity">
+          <button>
+            <AiFillMinusCircle onClick={() => onRemove(light.attributes)} />
+          </button>
+          <p>{currentItem.quantity}</p>
+          <button>
+            <AiFillPlusCircle onClick={() => onAdd(light.attributes, 1)} />
+          </button>
+        </SQuantity>
+      )}
     </SLight>
   );
 }
@@ -38,6 +69,7 @@ const SLight = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
 
   .SLight-Cards {
@@ -47,7 +79,7 @@ const SLight = styled.div`
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
-    max-width: 30rem;
+    max-width: 22rem;
     cursor: pointer;
 
     > div {
@@ -136,4 +168,13 @@ const SQuantity = styled.div`
       filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
     }
   }
+`;
+
+export const SAdd = styled.button`
+  margin-top: 1rem;
+
+  width: 100%;
+  background: var(--first);
+  color: white;
+  font-weight: 500;
 `;

@@ -14,14 +14,16 @@ export default function Nav() {
   return (
     <SNav>
       <div>
-        <Image
-          id="logo"
-          alt="Nur Bier"
-          width="105px"
-          height="30px"
-          src="/NurBierLogo.jpg"
-          href={"/"}
-        />
+        <Link href={"/"}>
+          <Image
+            id="logo"
+            alt="Nur Bier"
+            width="105px"
+            height="30px"
+            src="/NurBierLogo.jpg"
+            href={"/"}
+          />
+        </Link>
       </div>
       <SNavList id="SNavList">
         <li>
@@ -68,7 +70,7 @@ const SNav = styled.div`
       background: black;
       padding: 0.5rem 0.5rem 0 0.5rem;
       border-radius: 0.5rem;
-      
+
       &:hover {
         transform: scale(1.1);
       }
@@ -80,7 +82,7 @@ const SNav = styled.div`
 
 const SNavList = styled.ul`
   position: fixed;
-  top: 2rem;
+  top: 3rem;
   right: 10%;
   display: flex;
   align-items: center;
@@ -88,14 +90,13 @@ const SNavList = styled.ul`
   list-style: none;
   font-size: 2rem;
   cursor: pointer;
-  // border-radius: 0.5rem 0 0 0.5rem;
   transition: all ease 0.3s;
 
   li {
     text-align: center;
     transition: all ease 0.15s;
     margin: 0 2rem;
-
+    text-shadow: 0 0 3px #000000;
     div {
       display: flex;
 

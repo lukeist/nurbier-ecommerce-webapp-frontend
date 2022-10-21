@@ -1,8 +1,11 @@
 import Head from "next/head";
-import Intro from "../components/Intro";
+import IntroTop from "../components/IntroTop";
+import IntroMid from "../components/IntroMid";
 import Footer from "../components/Footer";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
+import styled from "styled-components";
+import IntroBeerCards from "../components/IntroBeerCards";
 
 export default function Home() {
   // fetch products from strapi
@@ -23,14 +26,16 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Oswald:wght@300;400&display=swap"
           rel="stylesheet"
         />
       </Head>
 
-      <main>
-        <Intro lights={lights} />
-      </main>
+      <SMain>
+        <IntroTop lights={lights} />
+        <IntroBeerCards lights={lights} />
+        <IntroMid lights={lights} />
+      </SMain>
 
       <footer>
         <Footer />
@@ -38,3 +43,9 @@ export default function Home() {
     </div>
   );
 }
+
+const SMain = styled.main`
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
+`;

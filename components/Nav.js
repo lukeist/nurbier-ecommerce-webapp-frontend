@@ -18,7 +18,7 @@ export default function Nav() {
           src="/NurBierLogo.jpg"
           href={"/"}
         />
-        <Link href={"/"}>Das Sind Wir</Link>
+        {/* <Link href={"/"}>Das Sind Wir</Link> */}
       </SLogo>
       <SNavItems id="SNavItems">
         {/* <div onClick={() => setShowCart(true)}>
