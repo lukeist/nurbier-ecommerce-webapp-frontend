@@ -197,6 +197,10 @@ p {
   .SQuantity {
     display: none !important;
   }
+
+  #SIntroBeerCards {
+    display: none;
+  }
 }
 
 /* box-shadow: var(--boxshadow10);

@@ -6,6 +6,19 @@ import PopUp16 from "./PopUp16";
 import { useState } from "react";
 
 export default function IntroBeerCards({ lights }) {
+  // const [scrollY, setScrollY] = useState(0);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
+  //   handleScroll();
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   return (
     <SIntroBeerCards id="SIntroBeerCards">
       <SCards id="SCards">
@@ -20,7 +33,6 @@ export default function IntroBeerCards({ lights }) {
 const SIntroBeerCards = styled.div`
   margin-top: -18rem;
   margin-bottom: 10rem;
-
   display: flex;
   align-items: center;
   justify-content: center;

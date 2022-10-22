@@ -3,12 +3,20 @@ import { BsSearch } from "react-icons/bs";
 import { SMainBtn } from "../styles/SMainBtn";
 import Light from "./Light";
 import PopUp16 from "./PopUp16";
-import { useState } from "react";
+import { useRef, useState } from "react";
+const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroMid({ lights }) {
-  const [is16, setIs16] = useState(true);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // offset: ["end end", "end start"],
+  });
+  let ref = useRef(null);
+  let width = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  let widthL = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+
   return (
-    <SIntroMid id="SIntroMid">
+    <SIntroMid ref={ref} id="SIntroMid">
       {/* <SImgBG id="sdetails-img">
         <img src="/1.jpg" alt="Party" />
       </SImgBG> */}
@@ -23,9 +31,12 @@ export default function IntroMid({ lights }) {
             nuyfasas. Vertyu erauas aitaesa ertyasneo eniptaiades.
           </p>
         </SIntroMidTxt>
-        <SImgFloating id="SImgFloating">
+        <SImgFloating style={{ width }}>
           <img src="/Floating.png" alt="Party" />
         </SImgFloating>
+        {/* <SImgFloatingL style={{ widthL }}>
+          <img src="/Floating.png" alt="Party" />
+        </SImgFloatingL> */}
       </div>
     </SIntroMid>
   );
@@ -52,13 +63,12 @@ const SIntroMidTxt = styled.div`
   margin-right: 5rem;
   width: 40%;
 `;
-const SImgFloating = styled.div`
-  margin-right: -40rem;
-  // position: absolute;
-  // max-width: 100%;
-  // height: auto;
+const SImgFloating = styled(motion.div)`
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  margin-left: -140rem;
 
-  // height: 300px;
   animation-name: Floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -74,5 +84,32 @@ const SImgFloating = styled.div`
     100% {
       transform: translate(0px, 0px);
     }
+  }
+`;
+
+const SImgFloatingL = styled(motion.div)`
+  position: absolute;
+  // left: 0;
+  overflow: hidden;
+
+  animation-name: Floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  @keyframes Floating {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    65% {
+      transform: translate(0px, 15px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  img {
+    transform: scaleX(-1);
   }
 `;
