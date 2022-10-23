@@ -37,7 +37,7 @@ export default function Light({ light }) {
           <img src={image.data.attributes.formats.small.url} alt={title} />
           <div>
             <h1>{price}€</h1>
-            <h3>{title}</h3>
+            {/* <h3>{title}</h3> */}
           </div>
         </div>
       </Link>
@@ -66,34 +66,28 @@ export default function Light({ light }) {
 }
 
 const SLight = styled.div`
-  padding: 10rem 0;
-
-  position: relative;
+  margin-bottom: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 
   .SLight-Cards {
-    position: relative;
     margin: 0 3%;
     padding: 8rem 4rem;
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
-    // max-width: 25rem;
     cursor: pointer;
-
+    z-index: 1;
     > div {
-      position: absolute;
-      top: 56vh;
       transition: all ease 0.3s;
-      text-align: right;
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      justify-content: flex-end;
+      align-items: center;
 
       h1 {
+        margin: -2rem;
       }
 
       h3 {
@@ -102,7 +96,6 @@ const SLight = styled.div`
     }
 
     img {
-      opacity: 0.98;
       width: 100%;
       height: 100%;
       transition: all ease 0.3s;
@@ -161,15 +154,15 @@ const SQuantity = styled.div`
 `;
 
 export const SAdd = styled.button`
-  margin-top: 1rem;
-  width: 100%;
+  margin-top: -6rem;
   padding: 1rem;
   width: 60%;
-  font-weight: 500;
   cursor: pointer;
   background: black;
   color: white;
   border: solid 2px white;
+  z-index: 2;
+
   &:hover {
     background: white;
     color: black;

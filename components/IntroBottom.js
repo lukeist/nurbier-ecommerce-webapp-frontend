@@ -30,7 +30,8 @@ const SIntroBottom = styled(motion.div)`
   justify-content: center;
   align-items: center;
   z-index: 1;
-  margin-top: -1rem;
+  height: 100vh;
+  //   margin-top: 20vh;
 
   span {
     color: var(--highlight);
@@ -44,15 +45,13 @@ const SIntroBottom = styled(motion.div)`
 `;
 
 const SIntroBText = styled.div`
-  //   background: rgba(0, 0, 0, 0.9);
   width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 6rem;
-
+  height: 100%;
   h1 {
     width: 768px;
     padding: 2rem 0;
@@ -67,25 +66,25 @@ const SIntroBText = styled.div`
   background: linear-gradient(38deg, #0b0000, #000000, #000a0b);
   background-size: 100% 100%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-}
+  //   -webkit-animation: AnimationName 30s ease infinite;
+  //   -moz-animation: AnimationName 30s ease infinite;
+  //   animation: AnimationName 30s ease infinite;
+  // }
 
-@-webkit-keyframes AnimationName {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
-}
-@keyframes AnimationName {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+  // @-webkit-keyframes AnimationName {
+  //   0%{background-position:90% 0%}
+  //   50%{background-position:11% 100%}
+  //   100%{background-position:90% 0%}
+  // }
+  // @-moz-keyframes AnimationName {
+  //   0%{background-position:90% 0%}
+  //   50%{background-position:11% 100%}
+  //   100%{background-position:90% 0%}
+  // }
+  // @keyframes AnimationName {
+  //   0%{background-position:90% 0%}
+  //   50%{background-position:11% 100%}
+  //   100%{background-position:90% 0%}
 `;
 
 const SGradient = styled.div`

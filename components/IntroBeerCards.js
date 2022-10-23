@@ -17,19 +17,18 @@ export default function IntroBeerCards({ lights }) {
           <Light key={light.attributes.handle} light={light} />
         ))}
       </SCards>
-      <SGradient></SGradient>
+      {/* <SGradient></SGradient> */}
     </SIntroBeerCards>
   );
 }
 
 const SIntroBeerCards = styled.div`
-  margin-top: -40rem;
-  margin-bottom: 10rem;
+  margin-top: -45rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 100vh;
+  height: 120vh;
 
   h1 {
     z-index: 2;
@@ -41,12 +40,9 @@ const SIntroBeerCards = styled.div`
 `;
 
 const SCards = styled(motion.div)`
-  //   position: absolute;
   margin: 5rem;
   display: flex;
-  // margin-bottom: -20rem;
   z-index: 22;
-  // height: 100%;
 `;
 const SGradient = styled.div`
   content: " ";
