@@ -13,7 +13,7 @@ export default function Nav() {
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 500) {
       setColorchange(true);
     } else {
       setColorchange(false);
@@ -67,9 +67,6 @@ export default function Nav() {
 const SNav = styled.div`
   position: relative;
   z-index: 100;
-
-  > div {
-  }
 `;
 
 const SLogo = styled.div`
@@ -86,7 +83,6 @@ const SLogo = styled.div`
   cursor: pointer;
   background: black;
   padding: 1rem 1rem 0.5rem 1rem;
-  // border-radius: 0.5rem;
 
   &:hover {
     transform: scale(1.1);
@@ -101,7 +97,7 @@ const SNavBG = styled.div`
   opacity: 0.99;
   height: 10vh;
   filter: blur(20px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 `;
 
 const SNavList = styled.ul`
