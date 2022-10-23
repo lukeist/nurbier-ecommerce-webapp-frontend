@@ -116,7 +116,9 @@ const SGradientAni = styled.div`
   z-index: 2;
   opacity: 0.9999999;
 
-  background: linear-gradient(45deg, #000d09, #000000, #100000);
+  background-image: linear-gradient(45deg, #000d09, #000000, #100000),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   background-size: 100% 100%;
 
   -webkit-animation: AnimationName 30s ease infinite;

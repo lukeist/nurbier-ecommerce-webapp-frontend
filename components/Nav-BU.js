@@ -5,15 +5,28 @@ import Image from "next/image";
 import { RiShoppingBagFill, RiUser5Fill } from "react-icons/ri";
 import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
+import { useState } from "react";
 
-const { AnimatePresence, motion } = require("framer-motion");
+const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function Nav() {
   const { showCart, setShowCart, totalQty } = useStateContext();
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
 
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavbarColor);
+  }
   return (
     <SNav>
-      <div>
+      {colorChange && <SNavBG></SNavBG>}
+      <SLogo>
         <Link href={"/"}>
           <Image
             id="logo"
@@ -24,7 +37,7 @@ export default function Nav() {
             href={"/"}
           />
         </Link>
-      </div>
+      </SLogo>
       <SNavList id="SNavList">
         <li>
           <IoIosBeer className="menu-icon" />
@@ -55,29 +68,40 @@ const SNav = styled.div`
   position: relative;
   z-index: 100;
 
-    > div {
-      position: fixed;
-      top: 2rem;
-      left: 10%;
-      font-size: 2rem;
-      font-weight: 700;
-      font-family: "Lobster";
-      color: white;
-      opacity: 1;
-      transition: all ease 0.3s;
-      filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
-      cursor: pointer;
-      background: black;
-      padding: 1rem 1rem 0.5rem 1rem;
-      // border-radius: 0.5rem;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
- 
+  > div {
   }
+`;
+
+const SLogo = styled.div`
+  position: fixed;
+  top: 2rem;
+  left: 10%;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Lobster";
+  color: white;
+  opacity: 1;
+  transition: all ease 0.3s;
+  filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
+  cursor: pointer;
+  background: black;
+  padding: 1rem 1rem 0.5rem 1rem;
+  // border-radius: 0.5rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const SNavBG = styled.div`
+  width: 100%;
+  content: " ";
+  position: fixed;
+  background: black;
+  opacity: 0.99;
+  height: 10vh;
+  filter: blur(20px);
+  backdrop-filter: blur(10px);
 `;
 
 const SNavList = styled.ul`
