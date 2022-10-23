@@ -48,6 +48,9 @@ p {
   line-height: 150%;
 }
 
+.absolute {
+  position: absolute;
+}
 /* * @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;

@@ -14,6 +14,7 @@ export default function IntroMid({ lights }) {
   let ref = useRef(null);
   let width = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   let widthL = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <SIntroMid ref={ref} id="SIntroMid">
@@ -21,7 +22,7 @@ export default function IntroMid({ lights }) {
         <img src="/1.jpg" alt="Party" />
       </SImgBG> */}
       <div>
-        <SIntroMidTxt>
+        <SIntroMidTxt style={{ y }}>
           <h2>Welcome!</h2>
           <h2>MAKING THE BEST BEER POSSIBLE</h2>
           <p>
@@ -58,7 +59,8 @@ const SIntroMid = styled.div`
 
 const SImgBG = styled.div``;
 
-const SIntroMidTxt = styled.div`
+const SIntroMidTxt = styled(motion.div)`
+  position: absolute;
   margin-top: 15rem;
   margin-right: 5rem;
   width: 40%;

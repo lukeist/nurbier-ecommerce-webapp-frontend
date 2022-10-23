@@ -4,24 +4,17 @@ import { SMainBtn } from "../styles/SMainBtn";
 import Light from "./Light";
 import PopUp16 from "./PopUp16";
 import { useState } from "react";
+const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroBeerCards({ lights }) {
-  // const [scrollY, setScrollY] = useState(0);
+  let { scrollY } = useScroll();
+  let y = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
-  //   };
-  //   handleScroll();
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
   return (
     <SIntroBeerCards id="SIntroBeerCards">
-      <SCards id="SCards">
+      {/* <SGradient></SGradient> */}
+      {/* <SGradient></SGradient> */}
+      <SCards style={{ y }} id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
@@ -31,13 +24,13 @@ export default function IntroBeerCards({ lights }) {
 }
 
 const SIntroBeerCards = styled.div`
-  margin-top: -18rem;
+  margin-top: -40rem;
   margin-bottom: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  //   height: 90vh;
+  height: 100vh;
 
   h1 {
     z-index: 2;
@@ -48,10 +41,26 @@ const SIntroBeerCards = styled.div`
   }
 `;
 
-const SCards = styled.div`
+const SCards = styled(motion.div)`
   //   position: absolute;
   margin: 5rem;
   display: flex;
   // margin-bottom: -20rem;
   z-index: 22;
+`;
+const SGradient = styled.div`
+  // content: " ";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 100%;
+  // min-height: 100%;
+  height: 20vh;
+  z-index: 1000;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  );
 `;
