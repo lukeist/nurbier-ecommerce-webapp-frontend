@@ -6,6 +6,7 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import styled from "styled-components";
 import IntroBeerCards from "../components/IntroBeerCards";
+import IntroBottom from "../components/IntroBottom";
 
 export default function Home() {
   // fetch products from strapi
@@ -34,6 +35,7 @@ export default function Home() {
       <SMain>
         <IntroTop lights={lights} />
         <IntroBeerCards lights={lights} />
+        <IntroBottom />
         <IntroMid lights={lights} />
       </SMain>
 

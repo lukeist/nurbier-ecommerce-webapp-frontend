@@ -66,6 +66,8 @@ export default function Light({ light }) {
 }
 
 const SLight = styled.div`
+  padding: 10rem 0;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -75,34 +77,27 @@ const SLight = styled.div`
   .SLight-Cards {
     position: relative;
     margin: 0 3%;
-    // border-radius: 1rem 1rem 2rem 2rem;
-    padding: 2rem;
-    background: black;
+    padding: 8rem 4rem;
     transition: all ease 0.3s;
     overflow: hidden;
     z-index: 10;
-    max-width: 25rem;
+    // max-width: 25rem;
     cursor: pointer;
 
     > div {
       position: absolute;
-      bottom: 1rem;
+      top: 56vh;
       transition: all ease 0.3s;
       text-align: right;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      width: 100%;
 
       h1 {
-        // font-size: 5rem;
-        margin-right: 2rem;
       }
 
       h3 {
-        // font-size: 2rem;
-        color: var(--textsecond);
-        margin-right: 2rem;
+        color: rgba(255, 255, 255, 0.7);
       }
     }
 
@@ -110,22 +105,14 @@ const SLight = styled.div`
       opacity: 0.98;
       width: 100%;
       height: 100%;
-      // max-width: 30rem;
       transition: all ease 0.3s;
-    }
 
-    &:hover {
-      filter: brightness(140%);
-      // box-shadow: var(--boxshadow10);
-      transform: rotate(0.005turn) scale(1.2);
-      background: transparent;
-      // transform: scale(1.05);
+      &:hover {
+        filter: brightness(140%);
+        transform: rotate(0.01turn) scale(1.3);
+        background: transparent;
 
-      z-index: 11;
-
-      img {
-        opacity: 1;
-        transform: scale(1.05);
+        z-index: 11;
       }
     }
   }

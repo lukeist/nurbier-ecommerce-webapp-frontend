@@ -8,17 +8,16 @@ const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroBeerCards({ lights }) {
   let { scrollY } = useScroll();
-  let y = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
+  let y = useTransform(scrollY, [0, 2000], ["0%", "50%"]);
 
   return (
     <SIntroBeerCards id="SIntroBeerCards">
-      {/* <SGradient></SGradient> */}
-      {/* <SGradient></SGradient> */}
       <SCards style={{ y }} id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
       </SCards>
+      <SGradient></SGradient>
     </SIntroBeerCards>
   );
 }
@@ -47,16 +46,16 @@ const SCards = styled(motion.div)`
   display: flex;
   // margin-bottom: -20rem;
   z-index: 22;
+  // height: 100%;
 `;
 const SGradient = styled.div`
-  // content: " ";
+  content: " ";
   position: absolute;
   bottom: 0;
   right: 0;
   min-width: 100%;
-  // min-height: 100%;
   height: 20vh;
-  z-index: 1000;
+  z-index: 9;
 
   background-image: linear-gradient(
     to bottom,
