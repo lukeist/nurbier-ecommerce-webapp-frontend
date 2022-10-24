@@ -13,21 +13,27 @@ export default function IntroBottom({}) {
     <SIntroBottom>
       <SGradientBottom></SGradientBottom>
 
-      <SIntroBText>
+      <STestimony>
         <motion.div className="absolute" style={{ y }}>
-          <h1>Im dunkeln zur Arbeit und im dunkeln nach Hause.</h1>
+          <h1>Was unsere Kunden über uns sagen:</h1>
 
           {/* <h1>Here's how:</h1> */}
         </motion.div>
-        <h1>Im dunkeln zur Arbeit und im dunkeln nach Hause.</h1>
+        <STUsers>
+          <h1>Was unsere Kunden über uns sagen:</h1>
 
-        <h3>
-          Letzte Woche waren tagsüber 23°C. Die Leute rennen trotzdem mit Jacke
-          rum. Früh, bei 12°C, kam mir einer mit Handschuhen entgegen. Entweder
-          gab es Massenflucht aus der Irrenanstalt oder die Leute denken sich
-          wirklich "oh, Oktober, dann MUSS ich jetzt Jacke tragen!"
-        </h3>
-      </SIntroBText>
+          <h3>
+            "Letzte Woche waren tagsüber 23°C. Die Leute rennen trotzdem mit
+            Jacke rum. Früh, bei 12°C, kam mir einer mit Handschuhen entgegen.
+            Entweder gab es Massenflucht aus der Irrenanstalt oder die Leute
+            denken sich wirklich oh, Oktober, dann MUSS ich jetzt Jacke tragen!"
+          </h3>
+          {/* <img src="/1.jpg" alt="Party" /> */}
+
+          <SImgUser src="/user6.jpg" alt="user1" />
+          <p>Lena Weber</p>
+        </STUsers>
+      </STestimony>
 
       <SSocial className="absolute">
         <div>
@@ -62,7 +68,7 @@ const SIntroBottom = styled.div`
   background-size: cover;
 `;
 
-const SIntroBText = styled.div`
+const STestimony = styled.div`
   width: 100%;
   text-align: center;
   display: flex;
@@ -73,18 +79,8 @@ const SIntroBText = styled.div`
 
   h1 {
     width: 768px;
-    padding: 2rem 0;
-  }
-
-  > h1 {
-    color: rgba(255, 255, 255, 0.1);
-    // background: red;
-  }
-
-  h3 {
-    max-width: 768px;
-    color: var(--third);
-    color: rgba(255, 255, 255, 0.9);
+    margin: 4rem 0;
+    font-family: "Roboto Slab", serif;
   }
 
   opacity: 0.95;
@@ -115,6 +111,32 @@ const SIntroBText = styled.div`
     margin-bottom: 20vh;
   }
 `;
+
+const STUsers = styled.div`
+  margin-top: 20rem;
+  > h1 {
+    color: rgba(255, 255, 255, 0.05);
+    font-family: "Roboto Slab", serif;
+  }
+
+  h3 {
+    max-width: 768px;
+    color: var(--third);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-top: 2rem;
+  }
+`;
+
+const SImgUser = styled.img``;
 
 const SGradientBottom = styled.div`
   position: absolute;
