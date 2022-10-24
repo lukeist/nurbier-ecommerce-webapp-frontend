@@ -74,7 +74,7 @@ const SCards = styled.div`
   z-index: 22;
 `;
 const SIntroText = styled.div`
-  bottom: 30vh;
+  bottom: 38vh;
   z-index: 10;
   margin-left: auto;
   margin-right: auto;
