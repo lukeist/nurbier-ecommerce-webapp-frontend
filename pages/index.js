@@ -35,13 +35,13 @@ export default function Home() {
       <SMain>
         <IntroTop lights={lights} />
         <IntroBeerCards lights={lights} />
-        <IntroBottom />
         <IntroMid lights={lights} />
+        <IntroBottom />
       </SMain>
 
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

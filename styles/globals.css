@@ -61,6 +61,14 @@ p {
   }
 } * */
 
+.bold {
+  font-weight: bold;
+}
+
+.lh24 {
+  line-height: 2.4rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

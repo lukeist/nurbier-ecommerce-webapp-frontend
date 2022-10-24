@@ -71,7 +71,6 @@ const SIntroTop = styled(motion.div)`
 
 const SCards = styled.div`
   display: none;
-  // margin-bottom: -20rem;
   z-index: 22;
 `;
 const SIntroText = styled.div`
