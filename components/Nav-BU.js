@@ -13,7 +13,7 @@ export default function Nav() {
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 450) {
       setColorchange(true);
     } else {
       setColorchange(false);

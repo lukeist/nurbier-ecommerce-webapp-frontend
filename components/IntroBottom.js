@@ -11,7 +11,7 @@ export default function IntroBottom({}) {
   let y = useTransform(scrollYProgress, [0, 1], ["-300%", "-0%"]);
   return (
     <SIntroBottom>
-      <SGradientBottom></SGradientBottom>
+      <SGradient></SGradient>
 
       <STestimony>
         <motion.div className="absolute" style={{ y }}>
@@ -138,7 +138,7 @@ const STUsers = styled.div`
 
 const SImgUser = styled.img``;
 
-const SGradientBottom = styled.div`
+const SGradient = styled.div`
   position: absolute;
   min-width: 100%;
   height: 20vh;

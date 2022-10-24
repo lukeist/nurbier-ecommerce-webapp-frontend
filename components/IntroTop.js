@@ -168,21 +168,3 @@ const SVideo = styled(motion.video)`
 
   //   z-indexKP0-O=-POLIK8JUKHJYHTG87F6D5SDA4S3a3wq : 2;
 `;
-
-const SIntroTopSub = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 85%;
-  height: 30vh;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h2 {
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
-    color: var(--secondary);
-  }
-`;
