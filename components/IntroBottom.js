@@ -115,8 +115,10 @@ const STestimony = styled.div`
 const STUsers = styled.div`
   margin-top: 20rem;
   > h1 {
-    color: rgba(255, 255, 255, 0.05);
+    // color: rgba(255, 255, 255, 0.05);
     font-family: "Roboto Slab", serif;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 100, 100, 0.2);
   }
 
   h3 {

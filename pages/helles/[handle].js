@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { useEffect } from "react";
 import { SQuantity } from "../../styles/SQuantity";
 import { SMainBtn } from "../../styles/SMainBtn";
+import BtnAddToCart from "../../components/_btnAddToCart";
+import BtnQuantity from "../../components/_btnQuantity";
 
 export default function ProductDetails() {
   // use state
@@ -34,46 +36,27 @@ export default function ProductDetails() {
   if (error) return <p>Oh no...{error.message}</p>;
 
   const { title, description, image } = data.lights.data[0].attributes;
-
-  // create a toast
-  const notify = () => {
-    toast(`${qty} ${title} added to your cart.`, {
-      icon: "🍺",
-      style: {
-        fontSize: "1.4rem",
-        borderRadius: "10px",
-        background: "#333",
-        color: "#fff",
-      },
-    });
-  };
-
+  const light = data.lights.data[0];
   return (
     <SDetails>
       <div id="sdetails-img">
-        <img src={image.data.attributes.formats.large.url} alt={title} />
+        <img src={image.data.attributes.formats.medium.url} alt={title} />
       </div>
       <SInfo id="sinfo">
         <h1>{title}</h1>
         <p>{description}</p>
         <SQuantity>
           <span>Quantiy</span>
-          <button>
+          <BtnQuantity light={light} />
+          {/* <button>
             <AiFillMinusCircle onClick={decreaseQty} />
           </button>
           <p>{qty}</p>
           <button>
             <AiFillPlusCircle onClick={increaseQty} />
-          </button>
+          </button> */}
         </SQuantity>
-        <SMainBtn
-          onClick={() => {
-            notify();
-            onAdd(data.lights.data[0].attributes, qty);
-          }}
-        >
-          Add to Cart
-        </SMainBtn>
+        <BtnAddToCart light={light} />
       </SInfo>
     </SDetails>
   );
@@ -86,18 +69,9 @@ const SDetails = styled.div`
 
   #sdetails-img {
     overflow: hidden;
-
-    img {
-      position: fixed;
-      top: 0;
-      left: 0;
-
-      // /* Preserve aspet ratio */
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-  opacity: 1;
+    position: fixed;
+    bottom: 0;
+  }
 `;
 
 const SInfo = styled.div`
@@ -112,37 +86,18 @@ const SInfo = styled.div`
   z-index: 2;
 
   h1 {
-    text-align: left;
+    text-align: center;
     margin: 2rem 0;
+    text-shadow: 0px 0px 10px #000000;
   }
 
   p {
     margin: 2rem 0;
+    text-shadow: 0px 0px 10px #000000;
   }
+
   > button {
-    width: 60%;
+    margin-top: 3rem;
+    width: 40%;
   }
 `;
-
-// const SQuantity = styled.div`
-//   display: flex;
-//   align-items: center;
-//   margin: 1rem 0 rem;
-
-//   button {
-//     background: transparent;
-//     border: none;
-//     display: flex;
-//     font-size: 1.5rem;
-//     padding: 0rem 0.5rem;
-//   }
-
-//   p {
-//     width: 1rem;
-//     text-align: center;
-//   }
-
-//   svg {
-//     color: #494949;
-//   }
-// `;
