@@ -3,12 +3,15 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { useStateContext } from "../lib/context";
 import { useState } from "react";
 
-const BtnQuantity = ({ light }) => {
+const BtnQuantity = ({ light, qty }) => {
   const [currentItem, setCurrentItem] = useState([]);
 
   const { onAdd, onRemove } = useStateContext();
+  console.log(qty);
   return (
-    <SQuantity className="SQuantity">
+    <SQuantity
+    // className="SQuantity"
+    >
       <button>
         <AiOutlineMinusCircle onClick={() => onRemove(light.attributes)} />
       </button>

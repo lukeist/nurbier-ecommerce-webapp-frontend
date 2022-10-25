@@ -5,9 +5,10 @@ import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useStateContext } from "../../lib/context";
 import Link from "next/link";
 import { useEffect } from "react";
-import { SQuantity } from "../../styles/SQuantity";
+// import { SQuantity } from "../../styles/SQuantity";
 import BtnAddToCart from "../../components/_btnAddToCart";
 import BtnQuantity from "../../components/_btnQuantity";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 
 const { motion } = require("framer-motion");
 
@@ -63,11 +64,26 @@ export default function ProductDetails() {
       <SInfo id="sinfo">
         <h1>{title}</h1>
         <p>{description}</p>
-        <SQuantity>
+
+        {/* <SQuantity>
           <span>Quantiy</span>
           <BtnQuantity light={light} />
+        </SQuantity> */}
+
+        <SQuantity
+        // className="SQuantity"
+        >
+          <span>Quantiy</span>
+
+          <button>
+            <AiOutlineMinusCircle onClick={() => decreaseQty()} />
+          </button>
+          <p>{qty}</p>
+          <button>
+            <AiOutlinePlusCircle onClick={() => increaseQty()} />
+          </button>
         </SQuantity>
-        <BtnAddToCart light={light} />
+        <BtnAddToCart qty={qty} light={light} />
       </SInfo>
       {/* </motion.div> */}
     </SDetails>
@@ -126,5 +142,55 @@ const SInfo = styled.div`
   > button {
     margin-top: 3rem;
     width: 40%;
+  }
+`;
+
+const SQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+
+  button {
+    background: transparent;
+    border: none;
+    display: flex;
+
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  span {
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 2rem;
+  }
+
+  p {
+    font-size: 2.5rem;
+    color: white;
+    opacity: 0.9;
+    margin: 0 0.5rem;
+    padding-bottom: 0.5rem;
+    z-index: 2;
+    width: 3rem;
+    text-align: center;
+    filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+  }
+
+  svg {
+    color: white;
+    transition: all ease 0.3s;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 3rem;
+    margin: 0.5rem 0;
+
+    &:hover {
+      background: white;
+      color: black;
+      // box-shadow: var(--boxshadow10);
+      filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+    }
   }
 `;
