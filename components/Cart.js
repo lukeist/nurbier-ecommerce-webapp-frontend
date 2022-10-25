@@ -1,15 +1,5 @@
+import styled from "styled-components";
 import { useStateContext } from "../lib/context";
-import {
-  CartItem,
-  CardInfo,
-  CartWrapper,
-  StyledCart,
-  StyledEmptyCart,
-  Checkout,
-  Cards,
-} from "../styles/StyledCart";
-
-import { StyledQuantity } from "../styles/StyledProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import getStripe from "../lib/getStripe";
@@ -54,7 +44,7 @@ export default function Cart() {
       exit={{ opacity: 0 }}
       onClick={() => setShowCart(false)}
     >
-      <StyledCart
+      <SCart
         animate={{ x: "0%" }}
         initial={{ x: "50%" }}
         transition={{ type: "tween" }}
@@ -62,14 +52,14 @@ export default function Cart() {
         onClick={(e) => e.stopPropagation()}
       >
         {cartItems.length < 1 ? (
-          <StyledEmptyCart
+          <SEmptyCart
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
             <h1>Your cart is empty.</h1>
             <FaShoppingCart />
-          </StyledEmptyCart>
+          </SEmptyCart>
         ) : (
           <Cards layout variants={cards} initial="hidden" animate="show">
             {cartItems.map((item) => (
@@ -103,30 +93,95 @@ export default function Cart() {
             <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}
-      </StyledCart>
+      </SCart>
     </CartWrapper>
   );
 }
 
-// <StyledCart>
-//   {cartItems.length < 1 && (
-//     <div>
-//       <h1>Your cart is empty.</h1>
-//     </div>
-//   )}
+// animation
+const { motion } = require("framer-motion");
 
-//   {cartItems.length >= 1 &&
-//     cartItems.map((item) => {
-//       <div>
-//         <h1>as;dfjasd</h1>
-//         {/* <img
-//                 src={item.image.data.attributes.formats.small.url}
-//                 alt={item.title}
-//               />
-//               <div>
-//                 <h3>Title</h3>
-//                 <h3>Price</h3>
-//               </div> */}
-//       </div>;
-//     })}
-// </StyledCart>;
+const CartWrapper = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  //   display: none;
+`;
+
+const SCart = styled(motion.div)`
+  width: 30%;
+  padding: 2rem 1rem;
+  overflow-y: scroll;
+  position: relative;
+
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    90deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+`;
+
+const CartItem = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: white;
+  padding: 1rem;
+  margin: 2rem 0rem;
+  img {
+    width: 6rem;
+    border-radius: 0.3rem;
+  }
+`;
+
+const CardInfo = styled(motion.div)`
+  width: 50%;
+  div {
+    display: flex;
+    flex-direction: space-between;
+  }
+`;
+
+const SEmptyCart = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  // left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  h1 {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  svg {
+    font-size: 10rem;
+    color: var(--secondary);
+  }
+`;
+
+const Checkout = styled(motion.div)`
+  button {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    width: 100%;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+`;
+
+const Cards = styled(motion.div)``;

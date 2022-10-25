@@ -1,12 +1,5 @@
-import { SMainBtn } from "../styles/SMainBtn";
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  AiFillPlusCircle,
-  AiFillMinusCircle,
-  AiOutlineMinusCircle,
-  AiOutlinePlusCircle,
-} from "react-icons/ai";
 import { useStateContext } from "../lib/context";
 import Link from "next/link";
 import { useEffect, useState } from "react";

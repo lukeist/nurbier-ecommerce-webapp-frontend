@@ -4,6 +4,8 @@ import { SMainBtn } from "../styles/SMainBtn";
 import Light from "./Light";
 import PopUp16 from "./PopUp16";
 import { useState } from "react";
+import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
+
 const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroBeerCards({ lights }) {
@@ -14,7 +16,9 @@ export default function IntroBeerCards({ lights }) {
     <SIntroBeerCards id="SIntroBeerCards">
       <SCards style={{ y }} id="SCards">
         {lights.map((light) => (
+          // <AnimatePresence>
           <Light key={light.attributes.handle} light={light} />
+          // </AnimatePresence>
         ))}
       </SCards>
       <SGradient></SGradient>

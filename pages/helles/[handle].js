@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../../lib/context";
-import toast from "react-hot-toast";
+import Link from "next/link";
 import { useEffect } from "react";
 import { SQuantity } from "../../styles/SQuantity";
-import { SMainBtn } from "../../styles/SMainBtn";
 import BtnAddToCart from "../../components/_btnAddToCart";
 import BtnQuantity from "../../components/_btnQuantity";
+
+const { motion } = require("framer-motion");
 
 export default function ProductDetails() {
   // use state
@@ -38,7 +38,25 @@ export default function ProductDetails() {
   const { title, description, image } = data.lights.data[0].attributes;
   const light = data.lights.data[0];
   return (
-    <SDetails>
+    // <SWrapper>
+    //   <motion.div
+    //     initial={{ opacity: 0 }}
+    //     animate={{ opacity: 1 }}
+    //     exit={{ opacity: 0, transition: { duration: 0.15 } }}
+    //     transition={{ duration: 0.2, delay: 0.15 }}
+    //     style={{ pointerEvents: "auto" }}
+    //     className="overlay"
+    //   >
+    //     <Link href={"/"}>
+    //       <div></div>
+    //     </Link>
+    //   </motion.div>
+    <SDetails
+    // className="card-content-container open"
+    >
+      {/* <motion.div
+        className="card-content"
+        > */}
       <div id="sdetails-img">
         <img src={image.data.attributes.formats.medium.url} alt={title} />
       </div>
@@ -48,17 +66,12 @@ export default function ProductDetails() {
         <SQuantity>
           <span>Quantiy</span>
           <BtnQuantity light={light} />
-          {/* <button>
-            <AiFillMinusCircle onClick={decreaseQty} />
-          </button>
-          <p>{qty}</p>
-          <button>
-            <AiFillPlusCircle onClick={increaseQty} />
-          </button> */}
         </SQuantity>
         <BtnAddToCart light={light} />
       </SInfo>
+      {/* </motion.div> */}
     </SDetails>
+    // </SWrapper>
   );
 }
 
@@ -71,7 +84,21 @@ const SDetails = styled.div`
     overflow: hidden;
     position: fixed;
     bottom: 0;
+    margin-left: 30%;
+    height: 90%;
   }
+`;
+
+const SWrapper = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const SInfo = styled.div`
