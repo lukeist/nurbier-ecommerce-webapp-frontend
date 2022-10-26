@@ -74,7 +74,7 @@ const SCards = styled.div`
   z-index: 22;
 `;
 const SIntroText = styled.div`
-  bottom: 38vh;
+  bottom: 36vh;
   z-index: 10;
   margin-left: auto;
   margin-right: auto;
@@ -97,13 +97,16 @@ const SIntroText = styled.div`
   li {
     margin: 0 2rem;
   }
+
   h1 {
-    font-size: 12rem;
-    font-weight: 700;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 900;
+    font-size: 12.5rem;
     max-width: 40rem;
     line-height: 0.85;
     letter-spacing: -5px;
     color: white;
+    margin-bottom: -2rem;
   }
 `;
 const SGradientAni = styled.div`

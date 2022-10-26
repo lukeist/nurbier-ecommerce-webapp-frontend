@@ -3,6 +3,7 @@ import { useStateContext } from "../lib/context";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import getStripe from "../lib/getStripe";
+import BtnQuantity from "./_btnQuantity";
 
 // animation variants
 const card = {
@@ -57,11 +58,11 @@ export default function Cart() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <h1>Your cart is empty.</h1>
+            <h1>Ihr Warenkorb ist noch leer.</h1>
             <FaShoppingCart />
           </SEmptyCart>
         ) : (
-          <Cards layout variants={cards} initial="hidden" animate="show">
+          <CartItems layout variants={cards} initial="hidden" animate="show">
             {cartItems.map((item) => (
               <CartItem layout variants={card} key={item.slug}>
                 <img
@@ -69,9 +70,17 @@ export default function Cart() {
                   alt={item.title}
                 />
                 <CardInfo>
-                  <h3>{item.title}</h3>
-                  <h3>${item.price}</h3>
-                  <StyledQuantity>
+                  <h4>{item.title}</h4>
+                  <p>1 x {item.price.toFixed(2)}€</p>
+                  <p>
+                    <span className="bold">Subtotal</span> ({item.quantity}{" "}
+                    items):{" "}
+                    <span className="subtotal">
+                      {" "}
+                      {(item.price * item.quantity).toFixed(2)}€
+                    </span>
+                  </p>
+                  <BtnQuantity>
                     <span>Quantity</span>
                     <button onClick={() => onRemove(item)}>
                       <AiFillMinusCircle />
@@ -80,17 +89,26 @@ export default function Cart() {
                     <button onClick={() => onAdd(item, 1)}>
                       <AiFillPlusCircle />
                     </button>
-                  </StyledQuantity>
+                  </BtnQuantity>
                 </CardInfo>
               </CartItem>
             ))}
-          </Cards>
+          </CartItems>
         )}
 
         {cartItems.length >= 1 && (
           <Checkout layout>
-            <h3>Subtotal: ${totalPrice}</h3>
-            <button onClick={handleCheckout}>Purchase</button>
+            <div>
+              <p className="italic">
+                Mwst. {((totalPrice * 19) / 100).toFixed(2)}€
+              </p>
+              <h4>Total: </h4>
+
+              <h3>{(totalPrice + (totalPrice * 19) / 100).toFixed(2)}€</h3>
+            </div>
+            <button className="btn-main" onClick={handleCheckout}>
+              Purchase
+            </button>
           </Checkout>
         )}
       </SCart>
@@ -107,16 +125,16 @@ const CartWrapper = styled(motion.div)`
   right: 0;
   height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 100;
   display: flex;
   justify-content: flex-end;
-  //   display: none;
+  // background: rgba(0, 0, 0, 0.8);
+  // filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 10;
 `;
 
 const SCart = styled(motion.div)`
   width: 30%;
-  padding: 2rem 1rem;
   overflow-y: scroll;
   position: relative;
 
@@ -126,28 +144,59 @@ const SCart = styled(motion.div)`
     rgba(17, 17, 17, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
+  opacity: 0.99;
+  z-index: 11;
 `;
+const CartItems = styled(motion.div)``;
 
 const CartItem = styled(motion.div)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  border-radius: 1rem;
   overflow: hidden;
-  background: white;
+  background: rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  margin: 2rem 0rem;
+  margin: 2rem 2rem;
+  max-height: 14rem;
+  // border: 1px solid white;
+
   img {
-    width: 6rem;
-    border-radius: 0.3rem;
+    max-height: 12rem;
+    margin: 0 10% 0 5%;
   }
 `;
 
 const CardInfo = styled(motion.div)`
-  width: 50%;
-  div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  p {
+    // margin-top: 1rem;
+  }
+
+  .subtotal {
+    padding: 0.3rem 0 0.3rem 1rem;
+    margin: 0.2rem 0 0.2rem 1rem;
+
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+const Checkout = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-end;
+  margin: 5rem 2rem 0 2rem;
+  max-height: 14rem;
+  > div {
     display: flex;
-    flex-direction: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  button {
+    width: 100%;
+    margin-top: 3rem;
   }
 `;
 
@@ -172,16 +221,3 @@ const SEmptyCart = styled(motion.div)`
     color: var(--secondary);
   }
 `;
-
-const Checkout = styled(motion.div)`
-  button {
-    background: var(--primary);
-    padding: 1rem 2rem;
-    width: 100%;
-    color: white;
-    margin-top: 2rem;
-    cursor: pointer;
-  }
-`;
-
-const Cards = styled(motion.div)``;

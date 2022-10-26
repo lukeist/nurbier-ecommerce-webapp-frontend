@@ -27,7 +27,7 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Oswald:wght@300;400&family=Roboto+Slab:wght@300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Oswald:wght@300;400&family=Roboto+Slab:wght@300&family=Roboto:wght@300;500;700;900&display=swap"
           rel="stylesheet"
         />
       </Head>

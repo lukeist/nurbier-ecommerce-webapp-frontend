@@ -5,7 +5,6 @@ import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useStateContext } from "../../lib/context";
 import Link from "next/link";
 import { useEffect } from "react";
-// import { SQuantity } from "../../styles/SQuantity";
 import BtnAddToCart from "../../components/_btnAddToCart";
 import BtnQuantity from "../../components/_btnQuantity";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
@@ -182,7 +181,6 @@ const SQuantity = styled.div`
     color: white;
     transition: all ease 0.3s;
     border-radius: 50%;
-    opacity: 1;
     font-size: 3rem;
     margin: 0.5rem 0;
 

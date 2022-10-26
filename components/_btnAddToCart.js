@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useStateContext } from "../lib/context";
 
 const BtnAddToCart = ({ light }) => {
-  const { onAdd } = useStateContext();
+  const { qty, onAdd } = useStateContext();
   const { title } = light.attributes;
 
   // create a toast
@@ -24,7 +24,7 @@ const BtnAddToCart = ({ light }) => {
     <SAdd
       onClick={() => {
         notify();
-        onAdd(light.attributes, 1);
+        onAdd(light.attributes, qty);
       }}
     >
       Add to Cart

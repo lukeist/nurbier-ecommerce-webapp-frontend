@@ -24,6 +24,8 @@ export default function Nav() {
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", changeNavbarColor);
   }
+
+  console.log(showCart);
   return (
     <SNav>
       {colorChange && <SNavBG></SNavBG>}
@@ -50,18 +52,24 @@ export default function Nav() {
         </li>
         <li>
           <RiUser5Fill className="menu-icon" />
-          <p className="menu-txt">Mein Konto</p>
+          <p className="menu-txt">Kontakt</p>
         </li>
         <li>
-          <RiShoppingBagFill className="menu-icon" />
+          <RiShoppingBagFill
+            onClick={() => setShowCart(true)}
+            className="menu-icon"
+          />
           <div>
-            <p className="menu-txt">Einkaufskorb</p>
-            <RiShoppingBagFill id="einkaufskorb" />
+            <p className="menu-txt">Mein Konto</p>
+            <RiShoppingBagFill
+              onClick={() => setShowCart(true)}
+              id="einkaufskorb"
+            />
           </div>
         </li>
       </SNavList>
       {/* <AnimatePresence>show</AnimatePresence> */}
-      {/* <Cart /> */}
+      {showCart && <Cart />}
     </SNav>
   );
 }

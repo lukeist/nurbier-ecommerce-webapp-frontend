@@ -29,7 +29,7 @@ export default function Light({ light }) {
         <div className="SLight-Cards">
           <img src={image.data.attributes.formats.small.url} alt={title} />
           <div>
-            <h1>{price}€</h1>
+            <h1>{price.toFixed(2)}€</h1>
             {/* <h3>{title}</h3> */}
           </div>
         </div>

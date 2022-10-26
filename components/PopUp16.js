@@ -8,8 +8,10 @@ export default function PopUp16({ setIs16 }) {
     <SPopUp16 id="SPopUp16">
       <h3>Bist du denn überhaupt schon 16 Jahre Alt?</h3>
       <div>
-        <button>Noch Nicht.</button>
-        <button onClick={() => setIs16(false)}>Jo, Locker!</button>
+        <button className="btn-main">Noch Nicht.</button>
+        <button className="btn-main" onClick={() => setIs16(false)}>
+          Jo, Locker!
+        </button>
       </div>
     </SPopUp16>
   );
@@ -35,23 +37,5 @@ const SPopUp16 = styled.div`
     z-index: 1001;
     margin-bottom: 2rem;
     font-size: 4rem;
-  }
-
-  button {
-    color: white;
-    background: black;
-    border: 2px solid white;
-    margin: 0 0.5rem;
-    outline: none;
-    padding: 1rem;
-    cursor: pointer;
-    transition: all ease 0.3s;
-    text-decoration: none;
-    font-size: 2rem;
-    &:hover {
-      color: black;
-      background: white;
-      border: 2px solid black;
-    }
   }
 `;

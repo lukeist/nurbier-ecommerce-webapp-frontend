@@ -22,12 +22,12 @@ export default function IntroBottom({}) {
         <STUsers>
           <h1>Was unsere Kunden über uns sagen:</h1>
 
-          <h3>
+          <p className="italic">
             "Letzte Woche waren tagsüber 23°C. Die Leute rennen trotzdem mit
             Jacke rum. Früh, bei 12°C, kam mir einer mit Handschuhen entgegen.
             Entweder gab es Massenflucht aus der Irrenanstalt oder die Leute
             denken sich wirklich oh, Oktober, dann MUSS ich jetzt Jacke tragen!"
-          </h3>
+          </p>
           {/* <img src="/1.jpg" alt="Party" /> */}
 
           <SImgUser src="/user6.jpg" alt="user1" />
@@ -121,12 +121,11 @@ const STUsers = styled.div`
     text-shadow: 0 0 5px rgba(0, 100, 100, 0.2);
   }
 
-  h3 {
+  p {
     max-width: 768px;
     color: var(--third);
     color: rgba(255, 255, 255, 0.9);
     font-weight: 100;
-    font-style: italic;
   }
 
   img {
