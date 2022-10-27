@@ -38,6 +38,7 @@ export default function Cart() {
     await stripe.redirectToCheckout({ sessionId: data.id });
   };
 
+  // console.log(cartItems);
   return (
     <CartWrapper
       animate={{ opacity: 1 }}
@@ -80,7 +81,7 @@ export default function Cart() {
                       {(item.price * item.quantity).toFixed(2)}€
                     </span>
                   </p>
-                  <BtnQuantity>
+                  {/* <SQuantity>
                     <span>Quantity</span>
                     <button onClick={() => onRemove(item)}>
                       <AiFillMinusCircle />
@@ -89,7 +90,8 @@ export default function Cart() {
                     <button onClick={() => onAdd(item, 1)}>
                       <AiFillPlusCircle />
                     </button>
-                  </BtnQuantity>
+                  </SQuantity> */}
+                  <BtnQuantity item={item} />
                 </CardInfo>
               </CartItem>
             ))}
@@ -134,9 +136,15 @@ const CartWrapper = styled(motion.div)`
 `;
 
 const SCart = styled(motion.div)`
+  top: 2vh;
+  right: 2vh;
+  height: 96vh;
+
   width: 30%;
-  overflow-y: scroll;
+
+  overflow-y: auto;
   position: relative;
+  // border: 2px solid white;
 
   background: rgb(17, 17, 17);
   background: linear-gradient(
@@ -221,3 +229,52 @@ const SEmptyCart = styled(motion.div)`
     color: var(--secondary);
   }
 `;
+
+// const SQuantity = styled.div`
+//   display: flex;
+//   align-items: center;
+//   color: white;
+
+//   button {
+//     background: transparent;
+//     border: none;
+//     display: flex;
+
+//     font-size: 3rem;
+//     cursor: pointer;
+//     z-index: 2;
+//   }
+
+//   span {
+//     font-size: 2rem;
+//     text-align: left;
+//     margin-right: 2rem;
+//   }
+
+//   p {
+//     font-size: 2.5rem;
+//     color: white;
+//     opacity: 0.9;
+//     margin: 0 0.5rem;
+//     padding-bottom: 0.5rem;
+//     z-index: 2;
+//     width: 3rem;
+//     text-align: center;
+//     filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+//   }
+
+//   svg {
+//     color: white;
+//     transition: all ease 0.3s;
+//     border-radius: 50%;
+//     font-size: 3rem;
+//     margin: 0.5rem 0;
+
+//     &:hover {
+//       background: white;
+//       color: black;
+//       // box-shadow: var(--boxshadow10);
+//       filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+//     }
+//   }
+// `;

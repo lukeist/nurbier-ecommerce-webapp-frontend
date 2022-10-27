@@ -78,7 +78,7 @@ const STestimony = styled.div`
   height: 100%;
 
   h1 {
-    width: 768px;
+    max-width: 768px;
     margin: 4rem 0;
     font-family: "Roboto Slab", serif;
   }
@@ -115,15 +115,15 @@ const STestimony = styled.div`
 const STUsers = styled.div`
   margin-top: 20rem;
   > h1 {
-    // color: rgba(255, 255, 255, 0.05);
+    max-width: 768px;
     font-family: "Roboto Slab", serif;
     color: transparent;
     text-shadow: 0 0 5px rgba(0, 100, 100, 0.2);
   }
 
   p {
+    padding: 0 2rem;
     max-width: 768px;
-    color: var(--third);
     color: rgba(255, 255, 255, 0.9);
     font-weight: 100;
   }

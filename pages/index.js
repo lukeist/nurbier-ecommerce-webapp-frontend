@@ -7,6 +7,7 @@ import { PRODUCT_QUERY } from "../lib/query";
 import styled from "styled-components";
 import IntroBeerCards from "../components/IntroBeerCards";
 import IntroBottom from "../components/IntroBottom";
+import { useStateContext } from "../lib/context";
 
 export default function Home() {
   // fetch products from strapi
@@ -18,6 +19,7 @@ export default function Home() {
 
   const lights = data.lights.data;
 
+  const { showCart } = useStateContext();
   return (
     <div>
       <Head>
@@ -32,7 +34,9 @@ export default function Home() {
         />
       </Head>
 
-      <SMain>
+      <SMain
+      // style={showCart ? "overflow-y: hidden" : "overflow-y: auto"}
+      >
         <IntroTop lights={lights} />
         <IntroBeerCards lights={lights} />
         <IntroMid lights={lights} />

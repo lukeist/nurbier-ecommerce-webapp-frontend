@@ -25,7 +25,6 @@ export default function Nav() {
     window.addEventListener("scroll", changeNavbarColor);
   }
 
-  console.log(showCart);
   return (
     <SNav>
       {colorChange && <SNavBG></SNavBG>}
@@ -55,16 +54,20 @@ export default function Nav() {
           <p className="menu-txt">Kontakt</p>
         </li>
         <li>
-          <RiShoppingBagFill
-            onClick={() => setShowCart(true)}
-            className="menu-icon"
-          />
-          <div>
-            <p className="menu-txt">Mein Konto</p>
-            <RiShoppingBagFill
-              onClick={() => setShowCart(true)}
-              id="einkaufskorb"
-            />
+          <SCartTotal className="menu-icon">
+            {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
+            <RiShoppingBagFill onClick={() => setShowCart(true)} />
+          </SCartTotal>
+
+          <div className="menu-txt">
+            <p>Mein Konto</p>
+            <SCartTotal>
+              {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
+              <RiShoppingBagFill
+                onClick={() => setShowCart(true)}
+                id="einkaufskorb"
+              />
+            </SCartTotal>
           </div>
         </li>
       </SNavList>
@@ -130,10 +133,13 @@ const SNavList = styled.ul`
     div {
       display: flex;
 
-      > svg {
+      svg {
         transition: all ease 0.3s;
+        transform:  translateY(-10%);
+        z-index:2;
         &:hover {
-          transform: scale(1.2);
+          transform: scale(1.4) translateY(-10%);
+
         }
       }
     }
@@ -204,3 +210,20 @@ const SNavList = styled.ul`
 //     font-size: 3rem;
 //   }
 // `;
+
+const SCartTotal = styled(motion.span)`
+  position: relative;
+  span {
+    position: absolute;
+    top: -30%;
+    right: -40%;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    pointer-events: none;
+    z-index: 3;
+  }
+`;

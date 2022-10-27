@@ -23,6 +23,10 @@ export default function Light({ light }) {
   //   setCurrentItem(item);
   // }, [cartItems.length]);
 
+  const item = cartItems.filter(
+    (item) => item.handle === light.attributes.handle
+  )[0];
+
   return (
     <SLight className="SLight">
       <Link href={`/helles/${handle}`}>
@@ -35,10 +39,10 @@ export default function Light({ light }) {
         </div>
       </Link>
       <SBtnGroup>
-        {cartItems.length < 1 ? (
+        {item === undefined ? (
           <BtnAddToCart className="" light={light} />
         ) : (
-          <BtnQuantity className="" light={light} />
+          <BtnQuantity className="" item={item} />
         )}
       </SBtnGroup>
     </SLight>

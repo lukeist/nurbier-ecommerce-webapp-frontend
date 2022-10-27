@@ -46,8 +46,7 @@ export default function IntroTop({ lights }) {
         ))}
       </SCards>
 
-      {/* <h1>BILD</h1> */}
-      {is16 && <PopUp16 is16={is16} setIs16={setIs16} />}
+      {/* {is16 && <PopUp16 is16={is16} setIs16={setIs16} />} */}
 
       <SGradientAni></SGradientAni>
 

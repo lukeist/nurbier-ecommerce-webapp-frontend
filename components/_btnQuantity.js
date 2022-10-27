@@ -1,23 +1,19 @@
 import styled from "styled-components";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { useStateContext } from "../lib/context";
-import { useState } from "react";
 
-const BtnQuantity = ({ light, qty }) => {
-  const [currentItem, setCurrentItem] = useState([]);
-
+const BtnQuantity = ({ item }) => {
   const { onAdd, onRemove } = useStateContext();
-  console.log(qty);
+
   return (
-    <SQuantity
-    // className="SQuantity"
-    >
-      <button>
-        <AiOutlineMinusCircle onClick={() => onRemove(light.attributes)} />
+    <SQuantity>
+      {/* <span>Quantity</span> */}
+      <button onClick={() => onRemove(item)}>
+        <AiOutlineMinusCircle />
       </button>
-      <p>{currentItem.quantity}</p>
-      <button>
-        <AiOutlinePlusCircle onClick={() => onAdd(light.attributes, 1)} />
+      <p>{item.quantity}</p>
+      <button onClick={() => onAdd(item, 1)}>
+        <AiOutlinePlusCircle />
       </button>
     </SQuantity>
   );
@@ -39,31 +35,34 @@ const SQuantity = styled.div`
     z-index: 2;
   }
 
+  span {
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 2rem;
+  }
+
   p {
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
     opacity: 0.9;
     margin: 0 0.5rem;
-    padding-bottom: 0.5rem;
     z-index: 2;
     width: 3rem;
     text-align: center;
-    filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+    // filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+    text-shadow: 1px 0 10px #ffffff;
   }
 
   svg {
-    color: white;
     transition: all ease 0.3s;
     border-radius: 50%;
-    opacity: 1;
     font-size: 3rem;
     margin: 0.5rem 0;
 
     &:hover {
       background: white;
       color: black;
-      // box-shadow: var(--boxshadow10);
-      filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+      filter: drop-shadow(0 0 3px rgb(255 255 255 / 1));
     }
   }
 `;
