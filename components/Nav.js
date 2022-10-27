@@ -130,12 +130,13 @@ const SNavList = styled.ul`
     transition: all ease 0.15s;
     margin: 0 2rem;
     text-shadow: 0 0 3px #000000;
+    
     div {
       display: flex;
+      align-items: center;
 
       svg {
         transition: all ease 0.3s;
-        transform:  translateY(-10%);
         z-index:2;
         &:hover {
           transform: scale(1.4) translateY(-10%);
