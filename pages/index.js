@@ -1,13 +1,10 @@
 import Head from "next/head";
 import IntroTop from "../components/IntroTop";
 import IntroMid from "../components/IntroMid";
-import Footer from "../components/Footer";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
-import styled from "styled-components";
 import IntroBeerCards from "../components/IntroBeerCards";
 import IntroBottom from "../components/IntroBottom";
-import { useStateContext } from "../lib/context";
 
 export default function Home() {
   // fetch products from strapi
@@ -19,7 +16,6 @@ export default function Home() {
 
   const lights = data.lights.data;
 
-  const { showCart } = useStateContext();
   return (
     <div>
       <Head>
@@ -34,24 +30,12 @@ export default function Home() {
         />
       </Head>
 
-      <SMain
-      // style={showCart ? "overflow-y: hidden" : "overflow-y: auto"}
-      >
+      <main>
         <IntroTop lights={lights} />
         <IntroBeerCards lights={lights} />
         <IntroMid lights={lights} />
         <IntroBottom />
-      </SMain>
-
-      {/* <footer>
-        <Footer />
-      </footer> */}
+      </main>
     </div>
   );
 }
-
-const SMain = styled.main`
-  // position: relative;
-  // display: flex;
-  // justify-content: center;
-`;

@@ -9,7 +9,7 @@ const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroMid({ lights }) {
   const { scrollYProgress, scrollY } = useScroll({
-    target: ref,
+    // target: ref,
     // offset: ["end end", "end start"],
   });
   let ref = useRef(null);
