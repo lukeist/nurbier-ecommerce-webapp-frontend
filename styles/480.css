@@ -1,10 +1,10 @@
 @media screen and (max-width: 480px) {
   #SIntroTop {
-    height: 100vh;
+    align-items: flex-start;
   }
 
   #STopText {
-    margin-bottom: 40rem;
+    margin-top: 20rem;
   }
 
   #STopText h1 {
@@ -42,6 +42,8 @@
   }
   .SLight-Cards > div h1 {
     top: -14vh;
+    font-weight: 500;
+    font-size: 1.6rem !important;
     right: 0;
   }
   /* .SLight {
