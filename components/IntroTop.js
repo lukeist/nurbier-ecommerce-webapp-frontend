@@ -20,23 +20,25 @@ export default function IntroTop({ lights }) {
 
   return (
     <SIntroTop ref={ref} id="SIntroTop">
-      <SIntroText className="absolute">
-        <ul>
-          <li>Die feine Hefeweisse</li>
-          <li>Magie und schwarze Seele</li>
-          <li>Der traditionelle Urtyp</li>
-          <li>Der Durstlöscher</li>
-          <li>Die kristallklare Weisse</li>
-          <li>Helle Weisse</li>
-        </ul>
-        <ul>
-          <li>3.90€</li>
-          <li>4.90€</li>
-          <li>3.90€</li>
-          <li>2.90€</li>
-          <li>3.10€</li>
-          <li>5.10€</li>
-        </ul>
+      <SIntroText id="SIntroText" className="absolute">
+        <div>
+          <ul id="SIntroText-name">
+            <li>Die feine Hefeweisse</li>
+            <li>Magie und schwarze Seele</li>
+            <li>Der traditionelle Urtyp</li>
+            <li>Der Durstlöscher</li>
+            <li>Die kristallklare Weisse</li>
+            <li>Helle Weisse</li>
+          </ul>
+          <ul id="SIntroText-price">
+            <li>3.90€</li>
+            <li>4.90€</li>
+            <li>3.90€</li>
+            <li>2.90€</li>
+            <li>3.10€</li>
+            <li>5.10€</li>
+          </ul>
+        </div>
         <h1>cold, smooth & tasty.</h1>
       </SIntroText>
 
@@ -85,12 +87,22 @@ const SIntroText = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
 
+  div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
   ul {
     font-size: 2rem;
     font-family: "Roboto Slab", serif;
     opacity: 0.9;
     list-style-type: none;
     line-height: 1.6;
+  }
+
+  #SIntroText-price {
+    text-align: right;
   }
 
   li {

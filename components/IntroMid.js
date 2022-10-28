@@ -21,14 +21,16 @@ export default function IntroMid({ lights }) {
 
   return (
     <SIntroMid ref={ref} id="SIntroMid">
-      <h1>NEUHEITEN</h1>
-      <GiLaurelCrown />
-      <p>
-        Biersorten und Verbreitung in DeutschlandBearbeiten · Pils: Das Bier,
-        auch Pilsener oder Pilsner, ist ein nach Pilsner Brauart untergärig
-        gebrautes Bier.
-      </p>
-      <p>Also ich fande gut dass du flüssich und frei vorgetragen hast.</p>
+      <STitle>
+        <h1>NEUHEITEN</h1>
+        <GiLaurelCrown />
+        <p>
+          Biersorten und Verbreitung in DeutschlandBearbeiten · In Deutschland
+          gibt es eine große Anzahl von Biersorten, die zum Teil nur regional,
+          zum Teil aber auch deutschlandweit verbreitet sind.
+        </p>
+        <p>Also ich fande gut dass du flüssich und frei vorgetragen hast.</p>
+      </STitle>
       {/* <SImgBG id="sdetails-img">
         <img src="/1.jpg" alt="Party" />
       </SImgBG> */}
@@ -105,6 +107,7 @@ const SIntroMid = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  // width: 80%;
 
   .SCraftBeer {
     width: 80%;
@@ -114,7 +117,6 @@ const SIntroMid = styled.div`
     height: 100vh;
 
     section {
-      // height: 100vh;
       width: 40%;
       display: flex;
       flex-direction: column;
@@ -125,19 +127,29 @@ const SIntroMid = styled.div`
     max-height: 80vh;
   }
 
-  > h1 {
-    margin-top: 20rem;
-    font-family: "Roboto Slab", serif;
-  }
-  > svg {
-    font-size: 5rem;
-    margin: 1rem 0;
-  }
   h3 {
     margin: 2rem 0 1rem 0;
   }
 `;
 
+const STitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 768px;
+  margin: 0 10%;
+
+  > h1 {
+    margin-top: 20rem;
+    font-family: "Roboto Slab", serif;
+  }
+
+  > svg {
+    font-size: 5rem;
+    margin: 1rem 0;
+  }
+`;
 const SCraftBeer0 = styled.div`
   z-index: 2;
   background: url(/parallax-bg-0.png) no-repeat top left;
@@ -163,7 +175,7 @@ const SCraftBeer1 = styled.div`
 const SImgParallax = styled(motion.img)``;
 
 const STxTParallax0 = styled(motion.section)`
-  margin-bottom: -20rem;
+  margin-bottom: -10rem;
 `;
 const STxTParallax1 = styled(motion.section)`
   margin-bottom: -40rem;
