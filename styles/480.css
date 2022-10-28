@@ -1,32 +1,48 @@
 @media screen and (max-width: 480px) {
   #SIntroTop {
-    /* old with 3 cards */
-    /* align-items: flex-start; */
-    /* justify-content: flex-start; */
-
-    /* background: url(../public/2.jpg) no-repeat center center fixed; */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-
     height: 100vh;
-
-    /* new only black*/
-    /* margin: 8rem 0 0 2rem; */
-    /* height: 90vh; */
-    /* background: black; */
   }
 
-  #SCards {
-    display: flex;
+  #STopText {
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 30rem;
+  }
+
+  #STopText h1 {
+    font-size: 6.8rem !important;
+  }
+
+  #STopText ul {
+    font-size: 1.2rem !important;
   }
 
   #SVideo {
     display: none;
   }
 
+  #SIntroBeerCards {
+    height: 60vh;
+  }
+
+  #SIntroBeerCards h1 {
+    font-size: 2rem;
+    top: 18vh;
+  }
+
+  #SCards {
+    margin: 0;
+    padding-bottom: 5rem;
+  }
+
+  #light-btngroup {
+    margin: -6rem;
+  }
+
   .SLight {
+  }
+  /* .SLight {
     height: 84vh !important;
     justify-content: flex-end !important;
   }
@@ -68,7 +84,7 @@
 
   .SLight-Cards img:hover {
     transform: none;
-  }
+  } */
 
   .SQuantity {
     display: flex;
@@ -161,10 +177,6 @@
 
   .SQuantity {
     display: none !important;
-  }
-
-  #SIntroBeerCards {
-    display: none;
   }
 }
 

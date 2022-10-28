@@ -1,5 +1,5 @@
 @media screen and (max-width: 768px) {
-  #SIntroText {
+  #STopText {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -7,16 +7,21 @@
     margin-right: 5%;
   }
 
-  #SIntroText h1 {
-    font-size: 8rem !important;
+  #STopText h1 {
+    font-size: 8rem;
     text-align: right;
   }
 
-  #SIntroText ul {
-    font-size: 1.4rem !important;
-    bottom: 0rem !important;
-    right: 0rem !important;
-    /* margin-bottom: 1rem; */
+  #STopText div {
+    margin-bottom: 1rem;
+  }
+
+  #STopText ul {
+    font-size: 1.4rem;
+  }
+
+  #STopText li {
+    margin: 0;
   }
 
   #SNav {

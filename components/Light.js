@@ -38,7 +38,7 @@ export default function Light({ light }) {
           </div>
         </div>
       </Link>
-      <SBtnGroup>
+      <SBtnGroup id="light-btngroup">
         {item === undefined ? (
           <BtnAddToCart className="" light={light} />
         ) : (

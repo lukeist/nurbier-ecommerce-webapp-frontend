@@ -20,9 +20,9 @@ export default function IntroTop({ lights }) {
 
   return (
     <SIntroTop ref={ref} id="SIntroTop">
-      <SIntroText id="SIntroText" className="absolute">
+      <STopText id="STopText" className="absolute">
         <div>
-          <ul id="SIntroText-name">
+          <ul id="STopText-name">
             <li>Die feine Hefeweisse</li>
             <li>Magie und schwarze Seele</li>
             <li>Der traditionelle Urtyp</li>
@@ -30,7 +30,7 @@ export default function IntroTop({ lights }) {
             <li>Die kristallklare Weisse</li>
             <li>Helle Weisse</li>
           </ul>
-          <ul id="SIntroText-price">
+          <ul id="STopText-price">
             <li>3.90€</li>
             <li>4.90€</li>
             <li>3.90€</li>
@@ -40,13 +40,13 @@ export default function IntroTop({ lights }) {
           </ul>
         </div>
         <h1>cold, smooth & tasty.</h1>
-      </SIntroText>
-
+      </STopText>
+      {/* 
       <SCards id="SCards">
         {lights.map((light) => (
           <Light key={light.attributes.handle} light={light} />
         ))}
-      </SCards>
+      </SCards> */}
 
       {/* {is16 && <PopUp16 is16={is16} setIs16={setIs16} />} */}
 
@@ -70,22 +70,16 @@ const SIntroTop = styled(motion.div)`
   justify-content: center;
 `;
 
-const SCards = styled.div`
-  display: none;
-  z-index: 22;
-`;
-const SIntroText = styled.div`
-  bottom: 36vh;
+// const SCards = styled.div`
+//   display: none;
+//   z-index: 22;
+// `;
+const STopText = styled.div`
   z-index: 10;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
 
   width: 70%;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
 
   div {
     display: flex;
@@ -101,7 +95,7 @@ const SIntroText = styled.div`
     line-height: 1.6;
   }
 
-  #SIntroText-price {
+  #STopText-price {
     text-align: right;
   }
 
