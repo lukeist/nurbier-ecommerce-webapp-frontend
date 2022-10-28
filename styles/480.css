@@ -4,7 +4,7 @@
   }
 
   #STopText {
-    margin-top: 20rem;
+    /* margin-top: 20rem; */
   }
 
   #STopText h1 {
@@ -42,7 +42,7 @@
   }
   .SLight-Cards > div h1 {
     top: -14vh;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1.6rem !important;
     right: 0;
   }
