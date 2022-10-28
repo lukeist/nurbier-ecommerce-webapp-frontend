@@ -52,11 +52,12 @@ export default function Nav() {
           <p className="menu-txt">Kontakt</p>
         </li>
         <li>
-          <SCartTotal className="menu-icon">
-            {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
-            <RiShoppingBagFill onClick={() => setShowCart(true)} />
-          </SCartTotal>
-
+          <div className="menu-icon">
+            <SCartTotal>
+              {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
+              <RiShoppingBagFill onClick={() => setShowCart(true)} />
+            </SCartTotal>
+          </div>
           <div className="menu-txt">
             <p>Mein Konto</p>
             <SCartTotal>
@@ -156,14 +157,7 @@ const SNavList = styled.ul`
 
   .menu-icon {
     display: none;
-    font-size: 2.5rem;
-    opacity: 1;
-    filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
-
-    &:hover {
-      // box-shadow: 0 0 10px rgba(255, 255, 255, 1);
-      opacity: 1;
-    }
+  
   }
 
   #einkaufskorb {

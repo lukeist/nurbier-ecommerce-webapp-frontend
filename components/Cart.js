@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useStateContext } from "../lib/context";
 import { FaShoppingCart } from "react-icons/fa";
+import { CgClose } from "react-icons/cg";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import getStripe from "../lib/getStripe";
 import BtnQuantity from "./_btnQuantity";
@@ -23,8 +24,29 @@ const cards = {
 };
 
 export default function Cart() {
-  const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
+  const { cartItems, showCart, setShowCart, onAdd, onRemove, totalPrice } =
     useStateContext();
+
+  const isMobile = window.innerWidth < 768; //Add the width you want to check for here (now 768px)
+  let mobileVariant = {};
+
+  if (!isMobile) {
+    {
+      mobileVariant = {
+        ani: { x: "0%" },
+        ini: { x: "50%" },
+        exi: { x: "50%" },
+      };
+    }
+  } else {
+    {
+      mobileVariant = {
+        ani: { y: "0%" },
+        ini: { y: "50%" },
+        exi: { y: "50%" },
+      };
+    }
+  }
 
   // payment w stripe
   const handleCheckout = async () => {
@@ -47,12 +69,21 @@ export default function Cart() {
       onClick={() => setShowCart(false)}
     >
       <SCart
-        animate={{ x: "0%" }}
-        initial={{ x: "50%" }}
+        id="SCart"
+        variants={mobileVariant}
+        // animate={{ x: "0%" }}
+        // initial={{ x: "50%" }}
+        // exit={{ x: "50%" }}
+        animate="ani"
+        initial="ini"
+        exit="exi"
         transition={{ type: "tween" }}
-        exit={{ x: "50%" }}
         onClick={(e) => e.stopPropagation()}
       >
+        {showCart && (
+          <CgClose id="close-cart-mobile" onClick={() => setShowCart(false)} />
+        )}
+
         {cartItems.length < 1 ? (
           <SEmptyCart
             initial={{ opacity: 0, scale: 0.8 }}
@@ -65,20 +96,20 @@ export default function Cart() {
         ) : (
           <CartItems layout variants={cards} initial="hidden" animate="show">
             {cartItems.map((item) => (
-              <CartItem layout variants={card} key={item.slug}>
+              <CartItem id="CartItem" layout variants={card} key={item.handle}>
                 <img
                   src={item.image.data.attributes.formats.thumbnail.url}
                   alt={item.title}
                 />
                 <CardInfo>
                   <h4>{item.title}</h4>
-                  <p>1 x {item.price.toFixed(2)}€</p>
+                  <p className="italic">Preis {item.price.toFixed(2)} €</p>
                   <p>
-                    <span className="bold">Subtotal</span> ({item.quantity}{" "}
-                    items):{" "}
+                    <span className="bold">Anzahl: </span>
+                    {item.quantity}
                     <span className="subtotal">
                       {" "}
-                      {(item.price * item.quantity).toFixed(2)}€
+                      {(item.price * item.quantity).toFixed(2)} €
                     </span>
                   </p>
                   {/* <SQuantity>
@@ -101,15 +132,19 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <div>
-              <p className="italic">
-                Mwst. {((totalPrice * 19) / 100).toFixed(2)}€
+              <p className="bold">
+                {/* Mwst. {((totalPrice * 19) / 100).toFixed(2)}€ */}
+                Warenwert {totalPrice.toFixed(2)} €
               </p>
-              <h4>Total: </h4>
-
-              <h3>{(totalPrice + (totalPrice * 19) / 100).toFixed(2)}€</h3>
+              <p className="italic">DHL Standard Versand 3.90 €</p>
+              <h4>
+                Gesamt <span className="italic">inkl. MwSt.</span>{" "}
+                {(totalPrice + 3.9).toFixed(2)} €
+              </h4>
+              {/* <h3>{(totalPrice + (totalPrice * 19) / 100).toFixed(2)}€</h3> */}
             </div>
             <button className="btn-main" onClick={handleCheckout}>
-              Purchase
+              Kasse
             </button>
           </Checkout>
         )}
@@ -136,24 +171,25 @@ const CartWrapper = styled(motion.div)`
 `;
 
 const SCart = styled(motion.div)`
+  position: relative;
   top: 2vh;
-  right: 2vh;
   height: 96vh;
 
   width: 30%;
 
   overflow-y: auto;
   position: relative;
-  // border: 2px solid white;
 
-  background: rgb(17, 17, 17);
   background: linear-gradient(
     90deg,
     rgba(17, 17, 17, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  opacity: 0.99;
+  opacity: 0.98;
   z-index: 11;
+  > svg {
+    display: none;
+  }
 `;
 const CartItems = styled(motion.div)``;
 
@@ -187,7 +223,9 @@ const CardInfo = styled(motion.div)`
     padding: 0.3rem 0 0.3rem 1rem;
     margin: 0.2rem 0 0.2rem 1rem;
 
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
   }
 `;
 
@@ -197,14 +235,19 @@ const Checkout = styled(motion.div)`
   // align-items: flex-end;
   margin: 5rem 2rem 0 2rem;
   max-height: 14rem;
+
   > div {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
   button {
-    width: 100%;
+    // width: 100%;
     margin-top: 3rem;
+  }
+
+  h4 > span {
+    font-size: 1rem;
   }
 `;
 
