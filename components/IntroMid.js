@@ -31,34 +31,14 @@ export default function IntroMid({ lights }) {
         </p>
         <p>Also ich fande gut dass du flüssich und frei vorgetragen hast.</p>
       </STitle>
-      {/* <SImgBG id="sdetails-img">
-        <img src="/1.jpg" alt="Party" />
-      </SImgBG> */}
-      {/* <div>
-        <SIntroMidTxt style={{ a }}>
-          <h2>Welcome!</h2>
-          <h2>MAKING THE BEST BEER POSSIBLE</h2>
-          <p className="lh24">
-            Beciegast nveriti vitaesaert asety kertya aset aplicaboserde nerorem
-            asipsumod itaut. Monsequntur magni dolores eonqui ratione voluptate
-            msequise kertyias nesciunt, neque porro quisquam seridolore
-            nuyfasas. Vertyu erauas aitaesa ertyasneo eniptaiades.
-          </p>
-        </SIntroMidTxt>
-        <SImgFloating style={{ width }}>
-          <img src="/Floating.png" alt="Party" />
-        </SImgFloating>
-        <SImgFloatingL style={{ widthL }}>
-          <img src="/Floating.png" alt="Party" />
-        </SImgFloatingL>
-      </div> */}
+
       <SCraftBeer0 className="SCraftBeer">
         <div>
           <SImgParallax
             className="craft-img"
             id="craft_00"
             src={Craft[0].image}
-            alt={Craft[1].title}
+            alt={Craft[0].title}
             style={{ y }}
           />
         </div>

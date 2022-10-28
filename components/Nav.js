@@ -27,13 +27,12 @@ export default function Nav() {
 
   return (
     <SNav>
-      {colorChange && <SNavBG></SNavBG>}
-      <SLogo>
+      {colorChange && <SNavBG id="SNavBG"></SNavBG>}
+      <SLogo id="SLogo">
         <Link href={"/"}>
           <img
             src="/NurBierLogo.jpg"
             alt="Nur Bier"
-            id="logo"
             width="105px"
             height="30px"
           />

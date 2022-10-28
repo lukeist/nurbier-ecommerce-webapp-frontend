@@ -28,6 +28,15 @@
     /* height: 100vh !important; */
   }
 
+  #SLogo {
+    left: 1rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+  }
+
+  #SNavBG {
+    display: none;
+  }
+
   #SNavList {
     position: fixed;
     justify-content: space-around;
@@ -94,60 +103,39 @@
   #SFooter {
     display: none;
   }
-}
 
-/* /// testing framer motion /// */
-.content-container {
-  padding: 460px 35px 35px 35px;
-  max-width: 700px;
-  width: 90vw;
-}
+  .SCraftBeer {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+  }
+  .SCraftBeer section {
+    margin-top: 20vh;
+    margin-left: 5rem;
+    padding: 1rem;
 
-.open .card-image-container,
-.open .title-container {
-  z-index: 1;
-}
+    background: black;
+    position: absolute;
+    width: 90% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 11;
+    opacity: 0.7;
+  }
 
-.card-open-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+  .SCraftBeer h1 {
+    font-size: 3rem;
+  }
+  .SCraftBeer h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
 
-.card-content {
-  pointer-events: auto;
-  position: relative;
-  border-radius: 20px;
-  background: #1c1c1e;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.open .card-content {
-  height: auto;
-  max-width: 700px;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.card-content-container.open {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: 1;
-  overflow: hidden;
-  padding: 40px 0;
-}
-
-.card-content-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-  pointer-events: none;
+  .SCraftBeer p {
+    text-shadow: #000 0px 0 3px;
+    font-size: 1.4rem;
+  }
 }
