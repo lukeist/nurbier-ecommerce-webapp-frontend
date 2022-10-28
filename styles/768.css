@@ -38,25 +38,17 @@
   }
 
   #SNavList {
-    position: fixed;
     justify-content: space-around;
-    align-items: flex-end;
-    bottom: 2rem;
-    left: 0;
-    color: white;
-    background-color: black;
-    transition: all ease 0.3s;
-    opacity: 1;
+    align-items: center;
+    background: black;
     width: 100%;
-    margin-top: 88vh;
-    /* margin-bottom: 2rem; */
-    /* padding-bottom:2rem; */
+    right: 0;
+    height: 10vh;
+    top: 90vh;
   }
 
   #SNavList li {
     transition: all ease 0.15s;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
   }
 
   #SNavList li:hover {
@@ -116,14 +108,13 @@
     margin-left: 5rem;
     padding: 1rem;
 
-    background: black;
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     width: 90% !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     z-index: 11;
-    opacity: 0.7;
   }
 
   .SCraftBeer h1 {
