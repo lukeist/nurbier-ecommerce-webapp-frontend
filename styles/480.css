@@ -4,10 +4,7 @@
   }
 
   #STopText {
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 30rem;
+    margin-bottom: 40rem;
   }
 
   #STopText h1 {
@@ -28,12 +25,10 @@
 
   #SIntroBeerCards h1 {
     font-size: 2rem;
-    top: 18vh;
   }
 
   #SCards {
     margin: 0;
-    padding-bottom: 5rem;
   }
 
   #light-btngroup {
@@ -41,6 +36,13 @@
   }
 
   .SLight {
+  }
+  .SLight-Cards > div {
+    position: relative;
+  }
+  .SLight-Cards > div h1 {
+    top: -14vh;
+    right: 0;
   }
   /* .SLight {
     height: 84vh !important;
