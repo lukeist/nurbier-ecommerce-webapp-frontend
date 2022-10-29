@@ -1,5 +1,5 @@
 # Nur Bier - Only Beer - a Fullstack Ecommerce WebApp
-an responsive online shop of a German brewery startup in Berlin that allows their customers to learn about brewing and purchase their newest beer in the market.
+This is a German brewery startup’s online shop in Berlin that allows its customers to learn about brewing and purchase their newest beer in the market.
 
 **Link to project:** https://nurbier.vercel.app/
 
@@ -33,3 +33,5 @@ an responsive online shop of a German brewery startup in Berlin that allows thei
 Take a look at these couple examples that I have in my own portfolio:
 
 **hiluan.dev - Portfolio Page** https://github.com/hiluan/hiluan-frontend
+
+**starlite.netlify.app - Online Trading Platform** https://github.com/hiluan/starlite-frontend
