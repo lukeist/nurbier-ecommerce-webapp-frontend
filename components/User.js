@@ -2,18 +2,14 @@ import { FaUserCircle } from "react-icons/fa";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { useUser } from "@auth0/nextjs-auth0";
+import { RiUser5Fill } from "react-icons/ri";
 
-export default function User() {
+export const UserTxT = () => {
   const route = useRouter();
   const { user } = useUser();
 
   if (!user)
-    return (
-      <div onClick={() => route.push("/api/auth/login")}>
-        <FaUserCircle />
-        <h3>Profile</h3>
-      </div>
-    );
+    return <p onClick={() => route.push("/api/auth/login")}>Anmelden</p>;
 
   return (
     <Profile onClick={() => route.push("/profile")}>
@@ -21,7 +17,23 @@ export default function User() {
       <h3>{user.name}</h3>
     </Profile>
   );
-}
+};
+
+export const UserIcon = () => {
+  const route = useRouter();
+  const { user } = useUser();
+
+  return (
+    <RiUser5Fill
+      onClick={
+        !user
+          ? () => route.push("/api/auth/login")
+          : () => route.push("/profile")
+      }
+      className="menu-icon"
+    />
+  );
+};
 
 const Profile = styled.div`
   img {

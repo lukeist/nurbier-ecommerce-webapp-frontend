@@ -7,10 +7,13 @@ import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
 import { useState } from "react";
 import Cart from "./Cart";
-
+import Profile from "../pages/profile";
+import { UserIcon, UserTxT } from "./User";
+import { useUser } from "@auth0/nextjs-auth0";
 const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
+  const { user, error, isLoading } = useUser();
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
@@ -48,7 +51,8 @@ export default function Nav() {
           <p className="menu-txt">Über Nur Bier</p>
         </li>
         <li>
-          <RiUser5Fill className="menu-icon" />
+          {/* <RiUser5Fill className="menu-icon" /> */}
+          <UserIcon />
           <p className="menu-txt">Kontakt</p>
         </li>
         <li>
@@ -68,7 +72,8 @@ export default function Nav() {
             </SCartTotal>
           </div>
           <div className="menu-txt">
-            <p>Mein Konto</p>
+            {/* <p>Mein Konto</p> */}
+            <UserTxT />
             <SCartTotal>
               {totalQty > 0 && (
                 <motion.span
