@@ -13,8 +13,9 @@ export const UserTxT = () => {
 
   return (
     <Profile onClick={() => route.push("/profile")}>
-      <img src={user.picture} alt={user.name} />
-      <h3>{user.name}</h3>
+      Mein Konto
+      {/* <img src={user.picture} alt={user.name} />
+      <h3>{user.name}</h3> */}
     </Profile>
   );
 };
@@ -35,7 +36,7 @@ export const UserIcon = () => {
   );
 };
 
-const Profile = styled.div`
+const Profile = styled.p`
   img {
     border-radius: 50%;
     width: 1.5rem;
