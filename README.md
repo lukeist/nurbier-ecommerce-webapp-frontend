@@ -33,4 +33,5 @@ This is a German brewery startup’s online shop in Berlin that allows its custo
 Take a look at these couple examples that I have in my own portfolio:
 
 **hiluan.dev - Portfolio Page** https://github.com/hiluan/hiluan-frontend
+
 **starlite.netlify.app - Online Trading Platform** https://github.com/hiluan/starlite-frontend
