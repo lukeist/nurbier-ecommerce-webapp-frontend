@@ -10,9 +10,11 @@ import Cart from "./Cart";
 import Profile from "../pages/profile";
 import { UserIcon, UserTxT } from "./User";
 import { useUser } from "@auth0/nextjs-auth0";
+import { useRouter } from "next/router";
 const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
+  const route = useRouter();
   const { user, error, isLoading } = useUser();
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
@@ -42,7 +44,7 @@ export default function Nav() {
         </Link>
       </SLogo>
       <SNavList id="SNavList">
-        <li>
+        <li onClick={() => route.push("/")}>
           <IoIosBeer className="menu-icon" />
           <p className="menu-txt">Home</p>
         </li>
