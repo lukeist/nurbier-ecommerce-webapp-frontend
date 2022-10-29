@@ -8,7 +8,7 @@ import { BsFillQuestionDiamondFill } from "react-icons/bs";
 import { useState } from "react";
 import Cart from "./Cart";
 
-const { motion, useScroll, useTransform } = require("framer-motion");
+const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
   const { showCart, setShowCart, totalQty } = useStateContext();
@@ -54,14 +54,32 @@ export default function Nav() {
         <li>
           <div className="menu-icon">
             <SCartTotal>
-              {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
+              {totalQty > 0 && (
+                <motion.span
+                  animate={{ scale: 1 }}
+                  initial={{ scale: 0 }}
+                  // exit={{ scale: 0 }}
+                  id="cart-totalQty"
+                >
+                  {totalQty}
+                </motion.span>
+              )}
               <RiShoppingBagFill onClick={() => setShowCart(true)} />
             </SCartTotal>
           </div>
           <div className="menu-txt">
             <p>Mein Konto</p>
             <SCartTotal>
-              {totalQty > 0 && <span id="cart-totalQty">{totalQty}</span>}
+              {totalQty > 0 && (
+                <motion.span
+                  animate={{ scale: 1 }}
+                  initial={{ scale: 0 }}
+                  // exit={{ scale: 0 }}
+                  id="cart-totalQty"
+                >
+                  {totalQty}
+                </motion.span>
+              )}
               <RiShoppingBagFill
                 onClick={() => setShowCart(true)}
                 id="einkaufskorb"
@@ -70,8 +88,8 @@ export default function Nav() {
           </div>
         </li>
       </SNavList>
-      {/* <AnimatePresence>show</AnimatePresence> */}
-      {showCart && <Cart />}
+
+      <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </SNav>
   );
 }
@@ -204,8 +222,9 @@ const SNavList = styled.ul`
 //   }
 // `;
 
-const SCartTotal = styled(motion.span)`
+const SCartTotal = styled.div`
   position: relative;
+
   span {
     position: absolute;
     top: -30%;

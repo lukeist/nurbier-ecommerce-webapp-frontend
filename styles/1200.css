@@ -12,4 +12,8 @@
     bottom: 0rem !important;
     right: 0rem !important;
   }
+
+  #SCart {
+    width: 60%;
+  }
 }

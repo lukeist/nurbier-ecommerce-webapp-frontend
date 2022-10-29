@@ -69,16 +69,17 @@ export default function Cart() {
       onClick={() => setShowCart(false)}
     >
       <SCart
-        id="SCart"
-        variants={mobileVariant}
-        // animate={{ x: "0%" }}
-        // initial={{ x: "50%" }}
-        // exit={{ x: "50%" }}
+        layout
         animate="ani"
         initial="ini"
         exit="exi"
         transition={{ type: "tween" }}
+        variants={mobileVariant}
+        // animate={{ x: "0%" }}
+        // initial={{ x: "50%" }}
+        // exit={{ x: "50%" }}
         onClick={(e) => e.stopPropagation()}
+        id="SCart"
       >
         {showCart && (
           <CgClose id="close-cart-mobile" onClick={() => setShowCart(false)} />
@@ -176,8 +177,8 @@ const SCart = styled(motion.div)`
   height: 96vh;
 
   width: 30%;
-
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
 
   background: linear-gradient(
@@ -187,6 +188,7 @@ const SCart = styled(motion.div)`
   );
   opacity: 0.98;
   z-index: 11;
+
   > svg {
     display: none;
   }
@@ -200,12 +202,12 @@ const CartItem = styled(motion.div)`
   overflow: hidden;
   background: rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  margin: 2rem 2rem;
-  max-height: 14rem;
+  margin: 1rem 2rem;
+  max-height: 12rem;
   // border: 1px solid white;
 
   img {
-    max-height: 12rem;
+    max-height: 16rem;
     margin: 0 10% 0 5%;
   }
 `;
