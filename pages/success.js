@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
+import { SMainBtn } from "../styles/SMainBtn";
 const { motion } = require("framer-motion");
 
 const stripe = require("stripe")(
@@ -51,8 +52,7 @@ export default function Success({ order }) {
             ))}
           </OrderInfo>
         </InfoWrapper>
-        <button onClick={() => route.push("/")}>Continue Shopping</button>
-        {/* <Image/> */}
+        <SMainBtn onClick={() => route.push("/")}>Continue Shopping</SMainBtn>
       </Card>
     </Wrapper>
   );
@@ -65,22 +65,22 @@ const Wrapper = styled.div`
 const Card = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  background: white;
-  border-radius: 2rem;
+  background: black;
+  // border-radius: 2rem;
   padding: 3rem;
 
   h2 {
     margin: 1rem 0;
   }
 
-  button {
-    color: white;
-    background: var(--primary);
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 1rem 2rem;
-    cursor: pointer;
-  }
+  // button {
+  //   color: white;
+  //   background: var(--primary);
+  //   font-size: 1.2rem;
+  //   font-weight: 500;
+  //   padding: 1rem 2rem;
+  //   cursor: pointer;
+  // }
 `;
 
 const Address = styled.div`

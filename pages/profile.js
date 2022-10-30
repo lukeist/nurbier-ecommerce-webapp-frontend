@@ -22,36 +22,36 @@ export default function Profile({ user, orders }) {
   const route = useRouter();
   return (
     user && (
-      <div>
-        <h2>{user.name}</h2>
+      <SProfile>
+        <h3>{user.name}</h3>
         <p>{user.email}</p>
         <div>
           {orders.map((order) => {
             return (
               order.receipt_email === user.email && (
                 <Order>
-                  <h1>Order Number: {order.id}</h1>
-                  <h2>Amount: {formatMoney(order.amount)}</h2>
-                  <h2>Receipt Email: {user.email}</h2>
+                  <h4>Order Number: {order.id}</h4>
+                  <p>Amount: {formatMoney(order.amount)}</p>
+                  <p>Receipt Email: {user.email}</p>
                 </Order>
               )
             );
           })}
         </div>
         <button onClick={() => route.push("/api/auth/logout")}>Logout</button>
-      </div>
+      </SProfile>
     )
   );
 }
 
 const Order = styled.div`
-  background: white;
+  background: black;
   margin: 2rem 0rem;
   padding: 3rem;
   display: flex;
   justify-content: space-between;
 
-  h1 {
+  h4 {
     font-size: 1rem;
   }
 `;
