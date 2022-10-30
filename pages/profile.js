@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import formatMoney from "../lib/formatMoney";
-import { SMainBtn } from "../styles/SMainBtn";
+import BtnAddToCart from "../components/_btnAddToCart";
 
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
