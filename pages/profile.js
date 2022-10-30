@@ -7,6 +7,7 @@ const stripe = require("stripe")(
 );
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
+import BtnAddToCart from "../components/_btnAddToCart";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -39,9 +40,9 @@ export default function Profile({ user, orders }) {
             );
           })}
         </div>
-        <SMainBtn onClick={() => route.push("/api/auth/logout")}>
+        <BtnAddToCart onClick={() => route.push("/api/auth/logout")}>
           Logout
-        </SMainBtn>
+        </BtnAddToCart>
       </SProfile>
     )
   );
