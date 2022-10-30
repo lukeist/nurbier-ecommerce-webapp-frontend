@@ -7,7 +7,6 @@ import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
 import { useState } from "react";
 import Cart from "./Cart";
-import Profile from "../pages/profile";
 import { UserIcon, UserTxT } from "./User";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useRouter } from "next/router";
