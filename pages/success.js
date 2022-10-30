@@ -128,3 +128,20 @@ const SBtnWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const SOrderTotal = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 2rem 0 2rem;
+  max-height: 14rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  h4 > span {
+    font-size: 1rem;
+  }
+`;
