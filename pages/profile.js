@@ -1,11 +1,9 @@
 import { useRouter } from "next/router";
 import formatMoney from "../lib/formatMoney";
-import BtnAddToCart from "../components/_btnAddToCart";
 
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
 );
-
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 
@@ -40,9 +38,7 @@ export default function Profile({ user, orders }) {
             );
           })}
         </div>
-        <BtnAddToCart onClick={() => route.push("/api/auth/logout")}>
-          Logout
-        </BtnAddToCart>
+        <button onClick={() => route.push("/api/auth/logout")}>Logout</button>
       </SProfile>
     )
   );
