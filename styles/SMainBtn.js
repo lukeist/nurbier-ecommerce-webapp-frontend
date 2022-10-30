@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
 export const SMainBtn = styled.button`
-  background: var(--beer);
-  color: black;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
   cursor: pointer;
-  transition: all ease 0.3s;
+  background: black;
+  color: white;
+  border: solid 2px white;
+  padding: 0 2rem;
+  z-index: 2;
+  height: 4rem;
 
   &:hover {
-    background: gold;
-    // background: black;
-    // color: white;
+    background: white;
+    color: black;
+    border: solid 2px black;
   }
 `;

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import formatMoney from "../lib/formatMoney";
-
+import { SMainBtn } from "../styles/SMainBtn";
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
 );
@@ -38,7 +38,9 @@ export default function Profile({ user, orders }) {
             );
           })}
         </div>
-        <button onClick={() => route.push("/api/auth/logout")}>Logout</button>
+        <SMainBtn onClick={() => route.push("/api/auth/logout")}>
+          Logout
+        </SMainBtn>
       </SProfile>
     )
   );

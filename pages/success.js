@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
-import BtnAddToCart from "../components/_btnAddToCart";
+import { SMainBtn } from "../styles/SMainBtn";
+
 const { motion } = require("framer-motion");
 
 const stripe = require("stripe")(
@@ -20,19 +21,22 @@ export async function getServerSideProps(params) {
 
 export default function Success({ order }) {
   const route = useRouter();
+
+  console.log(order);
   return (
-    <Wrapper>
-      <Card
+    <SSuccessWrapper>
+      <SOrderInfo
+        id="SOrderInfo"
         animate={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.5 }}
       >
-        <h1>Vielen dank für Ihre Bestellung!</h1>
-        <h2>A confirmation email has been sent to </h2>
-        <h2>{order.customer_details.email}</h2>
-        <InfoWrapper>
+        <h2>Vielen Dank für Ihre Bestellung!</h2>
+        <h3>A confirmation email has been sent to </h3>
+        <h3>{order.customer_details.email}</h3>
+        <SOrderDetails>
           <Address>
-            <h3>Address</h3>
+            <h4>Adresse</h4>
             {Object.entries(order.customer_details.address).map(
               ([key, val]) => (
                 <p key={key}>
@@ -42,47 +46,41 @@ export default function Success({ order }) {
             )}
           </Address>
           <OrderInfo>
-            <h3>Products</h3>
+            <h4>Products</h4>
             {order.line_items.data.map((item) => (
               <div key={item.id}>
                 <p>Product: {item.description}</p>
-                <p>Quantity: {item.quantity}</p>
+                <p>Anzahl: {item.quantity}</p>
                 <p>Price: {item.price.unit_amount}</p>
               </div>
             ))}
           </OrderInfo>
-        </InfoWrapper>
-        <BtnAddToCart onClick={() => route.push("/")}>
-          Continue Shopping
-        </BtnAddToCart>
-      </Card>
-    </Wrapper>
+        </SOrderDetails>
+        <div></div>
+        <SMainBtn onClick={() => route.push("/")}>Continue Shopping</SMainBtn>
+      </SOrderInfo>
+    </SSuccessWrapper>
   );
 }
 
-const Wrapper = styled.div`
+const SSuccessWrapper = styled.div`
   margin: 5rem 15rem;
 `;
 
-const Card = styled(motion.div)`
+const SOrderInfo = styled(motion.div)`
+  width: 80%;
   display: flex;
   flex-direction: column;
   background: black;
-  // border-radius: 2rem;
   padding: 3rem;
 
-  h2 {
+  h4 {
     margin: 1rem 0;
   }
 
-  // button {
-  //   color: white;
-  //   background: var(--primary);
-  //   font-size: 1.2rem;
-  //   font-weight: 500;
-  //   padding: 1rem 2rem;
-  //   cursor: pointer;
-  // }
+  button {
+    width: 50%;
+  }
 `;
 
 const Address = styled.div`
@@ -98,6 +96,6 @@ const OrderInfo = styled.div`
   }
 `;
 
-const InfoWrapper = styled.div`
+const SOrderDetails = styled.div`
   display: flex;
 `;
