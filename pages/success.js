@@ -34,8 +34,11 @@ export default function Success({ order }) {
         <h2>Vielen Dank.</h2>
         <h2>Wir haben deine Bestellung erhalten.</h2>
 
-        <h4>Wir senden eine Bestätigung und Versand-Updates an:</h4>
-        <h4>{order.customer_details.email}</h4>
+        <p>
+          Wir senden eine Bestätigung und Versand-Updates an:{" "}
+          <span className="bold">{order.customer_details.email}</span>
+        </p>
+        <p>Bestellung: #{order.payment_intent}</p>
         <SOrderDetails>
           <Address>
             <h4>Adresse</h4>
@@ -48,7 +51,7 @@ export default function Success({ order }) {
             )}
           </Address>
           <OrderInfo>
-            <h4>Products</h4>
+            <h4>Artikeln</h4>
             {order.line_items.data.map((item) => (
               <div key={item.id}>
                 <p className="bold">{item.description}</p>
@@ -92,17 +95,26 @@ const SSuccessWrapper = styled.div`
 `;
 
 const SOrderInfo = styled(motion.div)`
-  width: 60%;
+  width: 90%;
+  max-width: 768px;
   display: flex;
   flex-direction: column;
   background: black;
 
+  h2 {
+    font-weight: 500;
+  }
   h4 {
+    font-weight: 300;
     margin: 1rem 0;
   }
 
   button {
     width: 50%;
+  }
+
+  p {
+    font-weight: 300;
   }
 `;
 

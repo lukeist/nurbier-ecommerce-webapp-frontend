@@ -20,11 +20,14 @@ export const getServerSideProps = withPageAuthRequired({
 
 export default function Profile({ user, orders }) {
   const route = useRouter();
+  console.log(orders);
   return (
     user && (
       <SProfile>
-        <h3>{user.name}</h3>
-        <p>{user.email}</p>
+        <div>
+          <h3>{user.name}</h3>
+          <p>{user.email}</p>
+        </div>
         <div>
           {orders.map((order) => {
             return (
@@ -47,8 +50,12 @@ export default function Profile({ user, orders }) {
 }
 
 const SProfile = styled.div`
-  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
+
 const Order = styled.div`
   background: black;
   margin: 2rem 0rem;
