@@ -31,24 +31,25 @@ export default function Success({ order }) {
         initial={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Vielen Dank.</h2>
-        <h2>Wir haben deine Bestellung erhalten.</h2>
-
+        <div>
+          <h2>Vielen Dank.</h2>
+          <h3>Wir haben deine Bestellung erhalten.</h3>
+        </div>
         <p>
           Wir senden eine Bestätigung und Versand-Updates an:{" "}
           <span className="bold">{order.customer_details.email}</span>
         </p>
-        <p>Bestellung: #{order.payment_intent}</p>
+        <p>Bestellung: #{order.payment_intent.slice(3)}</p>
         <SOrderDetails>
           <Address>
             <h4>Adresse</h4>
-            {Object.entries(order.customer_details.address).map(
+            {/* {Object.entries(order.customer_details.address).map(
               ([key, val]) => (
                 <p key={key}>
                   {key}: {val}
                 </p>
               )
-            )}
+            )} */}
           </Address>
           <OrderInfo>
             <h4>Artikeln</h4>
@@ -59,7 +60,8 @@ export default function Success({ order }) {
                   <span className="bold">Anzahl</span>: {item.quantity}
                 </p>
                 <p>
-                  <span className="bold">Price</span>: {item.price.unit_amount}
+                  <span className="bold">Artikelpreise</span>:{" "}
+                  {(item.price.unit_amount / 100).toFixed(2)} €
                 </p>
               </div>
             ))}
@@ -104,6 +106,12 @@ const SOrderInfo = styled(motion.div)`
   h2 {
     font-weight: 500;
   }
+
+  h3 {
+    font-weight: 500;
+    padding-bottom: 2rem;
+  }
+
   h4 {
     font-weight: 300;
     margin: 1rem 0;
@@ -132,6 +140,7 @@ const OrderInfo = styled.div`
 `;
 
 const SOrderDetails = styled.div`
+  margin-top: 2rem;
   display: flex;
 `;
 
@@ -144,8 +153,7 @@ const SBtnWrapper = styled.div`
 const SOrderTotal = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  margin: 5rem 2rem 0 2rem;
-  max-height: 14rem;
+  margin-top: 2rem;
 
   > div {
     display: flex;
