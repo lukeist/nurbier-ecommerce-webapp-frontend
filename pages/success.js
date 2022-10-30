@@ -65,7 +65,7 @@ export default function Success({ order }) {
         <SOrderTotal>
           <div>
             <p className="bold">
-              Warenwert {(amount_total / 100).toFixed(2)} €
+              Warenwert {(order.amount_total / 100).toFixed(2)} €
             </p>
             <p className="italic">DHL Standard Versand 3,90 €</p>
             <h4>
