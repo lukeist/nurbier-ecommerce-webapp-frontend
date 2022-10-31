@@ -6,6 +6,7 @@ const stripe = require("stripe")(
 );
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
+import getDate from "../components/_getDate";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -24,26 +25,28 @@ export default function Profile({ user, orders }) {
   return (
     user && (
       <SProfile>
-        <div>
-          <h3>{user.name}</h3>
-          <p>{user.email}</p>
-        </div>
-        <div>
+        <SUserInfo>
+          <div>
+            <h3>{user.name}</h3>
+            <p>{user.email}</p>
+          </div>
+          <SMainBtn onClick={() => route.push("/api/auth/logout")}>
+            Logout
+          </SMainBtn>
+        </SUserInfo>
+        <SOrderHistory>
           {orders.map((order) => {
             return (
               order.receipt_email === user.email && (
                 <Order>
-                  <h4>Order Number: {order.id}</h4>
+                  <p>Order Number: {order.id.slice(4)}</p>
                   <p>Amount: {formatMoney(order.amount)}</p>
-                  <p>Receipt Email: {user.email}</p>
+                  <p>Datum: {getDate(order.created)}</p>
                 </Order>
               )
             );
           })}
-        </div>
-        <SMainBtn onClick={() => route.push("/api/auth/logout")}>
-          Logout
-        </SMainBtn>
+        </SOrderHistory>
       </SProfile>
     )
   );
@@ -52,18 +55,28 @@ export default function Profile({ user, orders }) {
 const SProfile = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 768px;
+  width: 60%;
+  margin: 10vh auto;
 `;
 
+const SUserInfo = styled.div``;
+
 const Order = styled.div`
-  background: black;
-  margin: 2rem 0rem;
+  background: #111111;
+  margin-top: 2rem;
   padding: 3rem;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  flex-direction: column;
 
   h4 {
     font-size: 1rem;
   }
+`;
+
+const SOrderHistory = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

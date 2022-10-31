@@ -42,26 +42,25 @@ export default function Success({ order }) {
         <p>Bestellung: #{order.payment_intent.slice(3)}</p>
         <SOrderDetails>
           <Address>
-            <h4>Adresse</h4>
-            {/* {Object.entries(order.customer_details.address).map(
-              ([key, val]) => (
-                <p key={key}>
-                  {key}: {val}
-                </p>
-              )
-            )} */}
+            <h4>Lieferungsadresse</h4>
+            <p>{order.customer_details.name}</p>
+            <p>{order.customer_details.address.line1}</p>
+            <p>
+              {order.customer_details.address.postal_code}{" "}
+              {order.customer_details.address.city}
+            </p>
+            <p>{order.customer_details.address.country}</p>
           </Address>
           <OrderInfo>
             <h4>Artikeln</h4>
             {order.line_items.data.map((item) => (
               <div key={item.id}>
-                <p className="bold">{item.description}</p>
                 <p>
-                  <span className="bold">Anzahl</span>: {item.quantity}
+                  <span className="bold">{item.description}</span>
                 </p>
+                <p>Anzahl: {item.quantity}</p>
                 <p>
-                  <span className="bold">Artikelpreise</span>:{" "}
-                  {(item.price.unit_amount / 100).toFixed(2)} €
+                  Artikelpreise: {(item.price.unit_amount / 100).toFixed(2)} €
                 </p>
               </div>
             ))}
@@ -69,12 +68,14 @@ export default function Success({ order }) {
         </SOrderDetails>
         <SOrderTotal>
           <div>
-            <p className="bold">
-              Warenwert {(order.amount_total / 100).toFixed(2)} €
+            <p>
+              <span className="bold">Warenwert </span>
+              {(order.amount_total / 100).toFixed(2)} €
             </p>
             <p className="italic">DHL Standard Versand 3,90 €</p>
             <h4>
-              Gesamt <span className="italic">inkl. MwSt.</span>{" "}
+              <span className="bold">Gesamt </span>
+              <span className="italic">inkl. MwSt.</span>{" "}
               {(order.amount_total / 100 + 3.9).toFixed(2)} €
             </h4>
           </div>
