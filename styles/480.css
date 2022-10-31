@@ -190,6 +190,14 @@
   .SQuantity {
     display: none !important;
   }
+
+  #SOrderDetails {
+    flex-direction: column !important;
+  }
+
+  #SProfile {
+    width: 90% !important;
+  }
 }
 
 /* box-shadow: var(--boxshadow10);

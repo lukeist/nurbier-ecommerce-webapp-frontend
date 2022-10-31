@@ -24,7 +24,7 @@ export default function Profile({ user, orders }) {
   console.log(user, orders);
   return (
     user && (
-      <SProfile>
+      <SProfile id="SProfile">
         <SUserInfo>
           <div>
             <h3>{user.name}</h3>
@@ -39,9 +39,9 @@ export default function Profile({ user, orders }) {
             return (
               order.receipt_email === user.email && (
                 <Order>
-                  <p>Order Number: {order.id.slice(4)}</p>
-                  <p>Amount: {formatMoney(order.amount)}</p>
+                  <p>Rechnung Nr. {order.id.slice(4)}</p>
                   <p>Datum: {getDate(order.created)}</p>
+                  <p>Gesamt: {formatMoney(order.amount)}</p>
                 </Order>
               )
             );

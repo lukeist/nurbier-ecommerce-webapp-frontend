@@ -40,7 +40,7 @@ export default function Success({ order }) {
           <span className="bold">{order.customer_details.email}</span>
         </p>
         <p>Bestellung: #{order.payment_intent.slice(3)}</p>
-        <SOrderDetails>
+        <SOrderDetails id="SOrderDetails">
           <Address>
             <h4>Lieferungsadresse</h4>
             <p>{order.customer_details.name}</p>
@@ -73,11 +73,11 @@ export default function Success({ order }) {
               {(order.amount_total / 100).toFixed(2)} €
             </p>
             <p className="italic">DHL Standard Versand 3,90 €</p>
-            <h4>
-              <span className="bold">Gesamt </span>
+            <h3>
+              Gesamt
               <span className="italic">inkl. MwSt.</span>{" "}
               {(order.amount_total / 100 + 3.9).toFixed(2)} €
-            </h4>
+            </h3>
           </div>
         </SOrderTotal>
         <SBtnWrapper>
@@ -162,7 +162,7 @@ const SOrderTotal = styled(motion.div)`
     align-items: flex-end;
   }
 
-  h4 > span {
+  h3 > span {
     font-size: 1rem;
   }
 `;
