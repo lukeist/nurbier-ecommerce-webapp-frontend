@@ -42,14 +42,26 @@ export default function Success({ order }) {
         <p>Bestellung: #{order.payment_intent.slice(3)}</p>
         <SOrderDetails id="SOrderDetails">
           <Address>
-            <h4>Lieferungsadresse</h4>
-            <p>{order.customer_details.name}</p>
-            <p>{order.customer_details.address.line1}</p>
-            <p>
-              {order.customer_details.address.postal_code}{" "}
-              {order.customer_details.address.city}
-            </p>
-            <p>{order.customer_details.address.country}</p>
+            <div>
+              <h4>Rechnungsadresse</h4>
+              <p>{order.customer_details.name}</p>
+              <p>{order.customer_details.address.line1}</p>
+              <p>
+                {order.customer_details.address.postal_code}{" "}
+                {order.customer_details.address.city}
+              </p>
+              <p>{order.customer_details.address.country}</p>
+            </div>
+            <div>
+              <h4>Lieferungsadresse</h4>
+              <p>{order.shipping_details.name}</p>
+              <p>{order.shipping_details.address.line1}</p>
+              <p>
+                {order.shipping_details.address.postal_code}{" "}
+                {order.shipping_details.address.city}
+              </p>
+              <p>{order.shipping_details.address.country}</p>
+            </div>
           </Address>
           <OrderInfo>
             <h4>Artikeln</h4>

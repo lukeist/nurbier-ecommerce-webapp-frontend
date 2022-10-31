@@ -198,6 +198,13 @@
   #SProfile {
     width: 90% !important;
   }
+
+  #SIntroBottom {
+  }
+
+  #STestimony > div {
+    margin-bottom: 0;
+  }
 }
 
 /* box-shadow: var(--boxshadow10);

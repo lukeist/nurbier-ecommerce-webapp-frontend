@@ -27,6 +27,7 @@ export default function Profile({ user, orders }) {
       <SProfile id="SProfile">
         <SUserInfo>
           <div>
+            <img src={user.picture} alt="profile photo" />
             <h3>{user.name}</h3>
             <p>{user.email}</p>
           </div>
@@ -40,8 +41,13 @@ export default function Profile({ user, orders }) {
               order.receipt_email === user.email && (
                 <Order>
                   <p>Rechnung Nr. {order.id.slice(4)}</p>
-                  <p>Datum: {getDate(order.created)}</p>
-                  <p>Gesamt: {formatMoney(order.amount)}</p>
+                  <div>
+                    <div>
+                      <p>Datum: {getDate(order.created)}</p>
+                      <p>Gesamt: {formatMoney(order.amount)}</p>
+                    </div>
+                    <a href={order.charges.data[0].receipt_url}>Rechnung</a>
+                  </div>
                 </Order>
               )
             );
@@ -60,7 +66,13 @@ const SProfile = styled.div`
   margin: 10vh auto;
 `;
 
-const SUserInfo = styled.div``;
+const SUserInfo = styled.div`
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+  }
+`;
 
 const Order = styled.div`
   background: #111111;
@@ -73,6 +85,21 @@ const Order = styled.div`
 
   h4 {
     font-size: 1rem;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+  }
+
+  a {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background: black;
+    &:hover: {
+      background: #999999;
+    }
   }
 `;
 

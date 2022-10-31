@@ -1,8 +1,5 @@
-import { useState } from "react";
-import { BsPiggyBank, BsBuilding } from "react-icons/bs";
 import { TiSocialFacebook } from "react-icons/ti";
 import { AiOutlineInstagram } from "react-icons/ai";
-import { FaRegHandshake } from "react-icons/fa";
 import styled from "styled-components";
 const { motion, useScroll, useTransform } = require("framer-motion");
 
@@ -10,10 +7,10 @@ export default function IntroBottom({}) {
   const { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["-300%", "-0%"]);
   return (
-    <SIntroBottom>
+    <SIntroBottom id="SIntroBottom">
       <SGradient></SGradient>
 
-      <STestimony>
+      <STestimony id="STestimony">
         <motion.div className="absolute" style={{ y }}>
           <h1>Was unsere Kunden über uns sagen:</h1>
 
@@ -56,7 +53,7 @@ const SIntroBottom = styled.div`
   align-items: center;
   z-index: 1;
   height: 100vh;
-  //   margin-top: 20vh;
+  // margin-top: 20vh;
 
   span {
     color: var(--highlight);
