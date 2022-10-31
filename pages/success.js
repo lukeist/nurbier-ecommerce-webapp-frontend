@@ -126,7 +126,7 @@ const SOrderInfo = styled(motion.div)`
   }
 
   h4 {
-    font-weight: 300;
+    // font-weight: 300;
     margin: 1rem 0;
   }
 
@@ -135,7 +135,7 @@ const SOrderInfo = styled(motion.div)`
   }
 
   p {
-    font-weight: 300;
+    // font-weight: 300;
   }
 `;
 
@@ -174,7 +174,7 @@ const SOrderTotal = styled(motion.div)`
     align-items: flex-end;
   }
 
-  h3 > span {
+  h4 > span {
     font-size: 1rem;
   }
 `;
