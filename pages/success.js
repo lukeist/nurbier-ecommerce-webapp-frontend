@@ -33,7 +33,7 @@ export default function Success({ order }) {
       >
         <div>
           <h2>Vielen Dank.</h2>
-          <h3>Wir haben deine Bestellung erhalten.</h3>
+          <h4 className="bold">Wir haben deine Bestellung erhalten.</h4>
         </div>
         <p>
           Wir senden eine Bestätigung und Versand-Updates an:{" "}
@@ -44,7 +44,7 @@ export default function Success({ order }) {
           <Address>
             <div>
               <h4>Rechnungsadresse</h4>
-              <p>{order.customer_details.name}</p>
+              <p className="bold">{order.customer_details.name}</p>
               <p>{order.customer_details.address.line1}</p>
               <p>
                 {order.customer_details.address.postal_code}{" "}
@@ -54,7 +54,7 @@ export default function Success({ order }) {
             </div>
             <div>
               <h4>Lieferungsadresse</h4>
-              <p>{order.shipping_details.name}</p>
+              <p className="bold">{order.shipping_details.name}</p>
               <p>{order.shipping_details.address.line1}</p>
               <p>
                 {order.shipping_details.address.postal_code}{" "}
@@ -85,11 +85,11 @@ export default function Success({ order }) {
               {(order.amount_total / 100).toFixed(2)} €
             </p>
             <p className="italic">DHL Standard Versand 3,90 €</p>
-            <h3>
+            <h4 className="bold">
               Gesamt
-              <span className="italic">inkl. MwSt.</span>{" "}
+              <span className="italic"> inkl. MwSt.</span>{" "}
               {(order.amount_total / 100 + 3.9).toFixed(2)} €
-            </h3>
+            </h4>
           </div>
         </SOrderTotal>
         <SBtnWrapper>

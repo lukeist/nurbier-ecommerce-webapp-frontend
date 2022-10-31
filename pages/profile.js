@@ -7,6 +7,7 @@ const stripe = require("stripe")(
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import getDate from "../components/_getDate";
+import Link from "next/link";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -27,9 +28,11 @@ export default function Profile({ user, orders }) {
       <SProfile id="SProfile">
         <SUserInfo>
           <div>
+            <div>
+              <h3>{user.name}</h3>
+              <p>{user.email}</p>
+            </div>
             <img src={user.picture} alt="profile photo" />
-            <h3>{user.name}</h3>
-            <p>{user.email}</p>
           </div>
           <SMainBtn onClick={() => route.push("/api/auth/logout")}>
             Logout
@@ -46,7 +49,9 @@ export default function Profile({ user, orders }) {
                       <p>Datum: {getDate(order.created)}</p>
                       <p>Gesamt: {formatMoney(order.amount)}</p>
                     </div>
-                    <a href={order.charges.data[0].receipt_url}>Rechnung</a>
+                    <Link href={order.charges.data[0].receipt_url}>
+                      Rechnung
+                    </Link>
                   </div>
                 </Order>
               )
@@ -67,10 +72,15 @@ const SProfile = styled.div`
 `;
 
 const SUserInfo = styled.div`
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
   img {
-    width: 140px;
-    height: 140px;
-    border-radius: 70px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
   }
 `;
 
@@ -89,15 +99,16 @@ const Order = styled.div`
 
   > div {
     display: flex;
-    justify-content: center;
-    align-items: space-between;
+    justify-content: space-between;
   }
 
   a {
     cursor: pointer;
     padding: 0.5rem 1rem;
     background: black;
-    &:hover: {
+    font-size: 1.2rem;
+
+    &:hover {
       background: #999999;
     }
   }
