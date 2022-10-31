@@ -49,18 +49,18 @@ export default function Nav() {
           <p className="menu-txt">Home</p>
         </li>
         <li>
-          <a href="/#UeberNurBier">
+          <Link href="/#UeberNurBier">
             <BsFillQuestionDiamondFill className="menu-icon" />
-          </a>
+          </Link>
 
           <p href="" className="menu-txt">
-            <a href="/#UeberNurBier">Über Nur Bier</a>
+            <Link href="/#UeberNurBier">Über Nur Bier</Link>
           </p>
         </li>
         <li>
           <UserIcon />
           <p className="menu-txt">
-            <a href="/#Kontakt">Kontakt</a>
+            <Link href="/#Kontakt">Kontakt</Link>
           </p>
         </li>
         <li>
