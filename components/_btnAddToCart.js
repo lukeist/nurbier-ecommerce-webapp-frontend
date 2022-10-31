@@ -8,7 +8,7 @@ const BtnAddToCart = ({ light }) => {
 
   // create a toast
   const notify = () => {
-    toast(`"${title}" added to your cart.`, {
+    toast(`"${qty} x ${title}" zum Warenkorb hinzugefügt.`, {
       icon: "🍺",
       duration: 2000,
       style: {
@@ -27,7 +27,7 @@ const BtnAddToCart = ({ light }) => {
         onAdd(light.attributes, qty);
       }}
     >
-      Add to Cart
+      In den Warenkorb
     </SAdd>
   );
 };
