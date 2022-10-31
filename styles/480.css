@@ -194,9 +194,10 @@
   #SOrderDetails {
     flex-direction: column !important;
   }
-  #SOrderInfo {
-    margin-bottom: 15vh;
+  #SBtnWrapper {
+    margin: 2vh 0 15vh 0;
   }
+
   #SProfile {
     width: 90% !important;
   }

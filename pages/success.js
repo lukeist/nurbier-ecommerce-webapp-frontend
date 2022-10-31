@@ -44,7 +44,7 @@ export default function Success({ order }) {
           <Address>
             <div>
               <h4>Rechnungsadresse</h4>
-              <p className="bold">{order.customer_details.name}</p>
+              <p>{order.customer_details.name}</p>
               <p>{order.customer_details.address.line1}</p>
               <p>
                 {order.customer_details.address.postal_code}{" "}
@@ -54,7 +54,7 @@ export default function Success({ order }) {
             </div>
             <div>
               <h4>Lieferungsadresse</h4>
-              <p className="bold">{order.shipping_details.name}</p>
+              <p>{order.shipping_details.name}</p>
               <p>{order.shipping_details.address.line1}</p>
               <p>
                 {order.shipping_details.address.postal_code}{" "}
@@ -92,7 +92,7 @@ export default function Success({ order }) {
             </h4>
           </div>
         </SOrderTotal>
-        <SBtnWrapper>
+        <SBtnWrapper id="SBtnWrapper">
           <SMainBtn onClick={() => route.push("/")}>
             Einkauf Fortsetzen
           </SMainBtn>
