@@ -5,6 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import getStripe from "../lib/getStripe";
 import BtnQuantity from "./_btnQuantity";
+import { useEffect } from "react";
 
 // animation variants
 const card = {
@@ -24,12 +25,17 @@ const cards = {
 };
 
 export default function Cart() {
-  const { cartItems, showCart, setShowCart, onAdd, onRemove, totalPrice } =
+  const { cartItems, showCart, setShowCart, setQty, totalPrice } =
     useStateContext();
 
+  // reset Qty anytime going to a product page
+  useEffect(() => {
+    setQty(1);
+  }, []);
+
+  // mobile has different animation style
   const isMobile = window.innerWidth < 768; //Add the width you want to check for here (now 768px)
   let mobileVariant = {};
-
   if (!isMobile) {
     {
       mobileVariant = {
@@ -106,7 +112,7 @@ export default function Cart() {
                   <h4>{item.title}</h4>
                   <p className="italic">Preis {item.price.toFixed(2)} €</p>
                   <p>
-                    <span className="bold">Anzahl: </span>
+                    <span className="bold">Menge: </span>
                     {item.quantity}
                     <span className="subtotal">
                       {" "}

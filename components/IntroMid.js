@@ -25,14 +25,13 @@ export default function IntroMid({ lights }) {
         <h1>NEUHEITEN</h1>
         <GiLaurelCrown />
         <p>
-          Biersorten und Verbreitung in DeutschlandBearbeiten · In Deutschland
-          gibt es eine große Anzahl von Biersorten, die zum Teil nur regional,
-          zum Teil aber auch deutschlandweit verbreitet sind.
+          Was haben eine verbrannte Pizza, gefrorenes Bier und eine schwangere
+          Frau gemeinsam?
         </p>
-        <p>Also ich fande gut dass du flüssich und frei vorgetragen hast.</p>
+        <p>Irgendein Dummer hat das Teil zu spät rausgenommen.</p>
       </STitle>
 
-      <SCraftBeer0 className="SCraftBeer">
+      <SCraftBeer0 id="UeberNurBier" className="SCraftBeer">
         <div>
           <SImgParallax
             className="craft-img"
@@ -47,10 +46,10 @@ export default function IntroMid({ lights }) {
           <h1>{Craft[0].title}</h1>
           <h3>{Craft[0].abv}</h3>
           <p className="lh24">
-            <span className="bold">Ingredients</span>: {Craft[0].ingredients}
+            <span className="bold">Zutaten</span>: {Craft[0].ingredients}
           </p>
           <p className="lh24">
-            <span className="bold">Description</span>: {Craft[0].description}
+            <span className="bold">Bezeichnung</span>: {Craft[0].description}
           </p>
         </STxTParallax0>
       </SCraftBeer0>
@@ -60,10 +59,10 @@ export default function IntroMid({ lights }) {
           <h1>{Craft[1].title}</h1>
           <h3>{Craft[1].abv}</h3>
           <p className="lh24">
-            <span className="bold">Ingredients</span>: {Craft[1].ingredients}
+            <span className="bold">Zutaten</span>: {Craft[1].ingredients}
           </p>
           <p className="lh24">
-            <span className="bold">Description</span>: {Craft[1].description}
+            <span className="bold">Bezeichnung</span>: {Craft[1].description}
           </p>
         </STxTParallax1>
         <div>

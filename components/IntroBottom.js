@@ -23,10 +23,11 @@ export default function IntroBottom({}) {
           <h1>Was unsere Kunden über uns sagen:</h1>
 
           <p className="italic">
-            "Letzte Woche waren tagsüber 23°C. Die Leute rennen trotzdem mit
-            Jacke rum. Früh, bei 12°C, kam mir einer mit Handschuhen entgegen.
-            Entweder gab es Massenflucht aus der Irrenanstalt oder die Leute
-            denken sich wirklich oh, Oktober, dann MUSS ich jetzt Jacke tragen!"
+            "Die Ägypter haben das Bier erfunden. Die haben ja auch diese
+            riesigen Bierkeller gebaut, die Bieramiden.Der Mann, der im Dorf das
+            meiste Bier trinkt, ist der Biergermeister. Wer sein Bier bar
+            bezahlt, ist ein Barbier. Und wer sein Bier auf Raten zahlt, ist ein
+            Bierrat."
           </p>
           {/* <img src="/1.jpg" alt="Party" /> */}
 
@@ -35,7 +36,7 @@ export default function IntroBottom({}) {
         </STUsers>
       </STestimony>
 
-      <SSocial className="absolute">
+      <SSocial id="Kontakt" className="absolute">
         <div>
           <TiSocialFacebook />
         </div>

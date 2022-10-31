@@ -58,7 +58,7 @@ export default function Success({ order }) {
                 <p>
                   <span className="bold">{item.description}</span>
                 </p>
-                <p>Anzahl: {item.quantity}</p>
+                <p>Menge: {item.quantity}</p>
                 <p>
                   Artikelpreise: {(item.price.unit_amount / 100).toFixed(2)} €
                 </p>

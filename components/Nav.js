@@ -1,22 +1,23 @@
+// import Image from "next/image";
+// import { useUser } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import Link from "next/link";
+import Cart from "./Cart";
 import { useStateContext } from "../lib/context";
-import Image from "next/image";
-import { RiShoppingBagFill, RiUser5Fill } from "react-icons/ri";
+import { RiShoppingBagFill } from "react-icons/ri";
 import { IoIosBeer } from "react-icons/io";
 import { BsFillQuestionDiamondFill } from "react-icons/bs";
 import { useState } from "react";
-import Cart from "./Cart";
 import { UserIcon, UserTxT } from "./User";
-import { useUser } from "@auth0/nextjs-auth0";
 import { useRouter } from "next/router";
 const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
+  // const { user, error, isLoading } = useUser();
   const route = useRouter();
-  const { user, error, isLoading } = useUser();
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
+
   const changeNavbarColor = () => {
     if (window.scrollY >= 450) {
       setColorchange(true);
@@ -48,13 +49,19 @@ export default function Nav() {
           <p className="menu-txt">Home</p>
         </li>
         <li>
-          <BsFillQuestionDiamondFill className="menu-icon" />
-          <p className="menu-txt">Über Nur Bier</p>
+          <a href="#UeberNurBier">
+            <BsFillQuestionDiamondFill className="menu-icon" />
+          </a>
+
+          <p href="" className="menu-txt">
+            <a href="#UeberNurBier">Über Nur Bier</a>
+          </p>
         </li>
         <li>
-          {/* <RiUser5Fill className="menu-icon" /> */}
           <UserIcon />
-          <p className="menu-txt">Kontakt</p>
+          <p className="menu-txt">
+            <a href="#Kontakt">Kontakt</a>
+          </p>
         </li>
         <li>
           <div className="menu-icon">
@@ -168,13 +175,14 @@ const SNavList = styled.ul`
       }
     }
 
-    p {
+    p  {
       font-weight: 500;
       transition: all ease 0.3s;
 
       &:hover {
         transform: scale(1.2);
     }
+
   }
 
  

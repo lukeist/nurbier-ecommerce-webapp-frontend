@@ -72,7 +72,7 @@ export default function ProductDetails() {
         <SQuantity
         // className="SQuantity"
         >
-          <span>Menge</span>
+          <span>Menge:</span>
 
           <button>
             <AiOutlineMinusCircle onClick={() => decreaseQty()} />

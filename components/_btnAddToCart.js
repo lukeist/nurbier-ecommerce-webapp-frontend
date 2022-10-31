@@ -8,14 +8,15 @@ const BtnAddToCart = ({ light }) => {
 
   // create a toast
   const notify = () => {
-    toast(`"${qty} x ${title}" zum Warenkorb hinzugefügt.`, {
+    toast(`${qty} x "${title}" zum Warenkorb hinzugefügt.`, {
       icon: "🍺",
       duration: 2000,
       style: {
         fontSize: "1.4rem",
-        borderRadius: "10px",
-        background: "#333",
+        borderRadius: "3px",
+        background: "#111111",
         color: "#fff",
+        maxWidth: "480px",
       },
     });
   };
@@ -39,7 +40,7 @@ const SAdd = styled.button`
   background: black;
   color: white;
   border: solid 2px white;
-  padding: 0 2rem;
+  padding: 0 0.5rem;
   z-index: 2;
   height: 4rem;
 

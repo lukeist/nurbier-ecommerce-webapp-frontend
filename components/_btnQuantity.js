@@ -1,9 +1,25 @@
 import styled from "styled-components";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { useStateContext } from "../lib/context";
+import toast from "react-hot-toast";
 
 const BtnQuantity = ({ item }) => {
-  const { onAdd, onRemove } = useStateContext();
+  const { qty, onAdd, onRemove } = useStateContext();
+
+  // create a toast
+  const notify = () => {
+    toast(`${qty} x "${item.title}" zum Warenkorb hinzugefügt.`, {
+      icon: "🍺",
+      duration: 2000,
+      style: {
+        fontSize: "1.4rem",
+        borderRadius: "3px",
+        background: "#111111",
+        color: "#fff",
+        maxWidth: "480px",
+      },
+    });
+  };
 
   return (
     <SQuantity>
@@ -12,7 +28,12 @@ const BtnQuantity = ({ item }) => {
         <AiOutlineMinusCircle />
       </button>
       <p>{item.quantity}</p>
-      <button onClick={() => onAdd(item, 1)}>
+      <button
+        onClick={() => {
+          notify();
+          onAdd(item, 1);
+        }}
+      >
         <AiOutlinePlusCircle />
       </button>
     </SQuantity>
