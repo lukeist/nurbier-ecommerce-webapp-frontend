@@ -24,7 +24,7 @@ export default function Success({ order }) {
 
   console.log(order);
   return (
-    <SSuccessWrapper>
+    <SSuccessWrapper id="SSuccessWrapper">
       <SOrderInfo
         id="SOrderInfo"
         animate={{ opacity: 1, scale: 1 }}
