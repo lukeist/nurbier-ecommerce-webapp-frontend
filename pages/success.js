@@ -68,7 +68,7 @@ export default function Success({ order }) {
             {order.line_items.data.map((item) => (
               <div key={item.id}>
                 <p>
-                  <span className="bold">{item.description}</span>
+                  <span className="italic">{item.description}</span>
                 </p>
                 <p>Menge: {item.quantity}</p>
                 <p>
