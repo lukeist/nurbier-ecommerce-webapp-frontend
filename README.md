@@ -80,5 +80,7 @@ Other than navigating from/to different pages on the site, there are 2 special b
 ## Other Examples:
 
 Take a look at these couple of examples that I have in my own portfolio:
+
 **hiluan.dev - Portfolio Page** https://github.com/hiluan/hiluan-frontend
+
 **starlite.netlify.app - Online Trading Platform** https://github.com/hiluan/starlite-frontend
