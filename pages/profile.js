@@ -34,9 +34,11 @@ export default function Profile({ user, orders }) {
             </div>
             <img src={user.picture} alt="profile photo" />
           </div>
-          <SMainBtn onClick={() => route.push("/api/auth/logout")}>
-            Logout
-          </SMainBtn>
+          <div>
+            <SMainBtn onClick={() => route.push("/api/auth/logout")}>
+              Logout
+            </SMainBtn>
+          </div>
         </SUserInfo>
         <SOrderHistory>
           {orders.map((order) => {

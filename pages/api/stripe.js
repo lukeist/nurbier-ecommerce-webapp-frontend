@@ -24,7 +24,6 @@ export default async function handler(req, res) {
           allow_promotion_codes: true,
           // go back to home page if cancel payment
           cancel_url: `${req.headers.origin}/`,
-
           line_items: req.body.map((item) => {
             return {
               price_data: {
@@ -44,7 +43,7 @@ export default async function handler(req, res) {
           }),
           // bring customer to page success / fail payment
           success_url: `${req.headers.origin}/success?&session_id={CHECKOUT_SESSION_ID}`,
-          cancel_url: `${req.headers.origin}/canceled`,
+          cancel_url: `${req.headers.origin}/`,
         });
         res.status(200).json(session);
       } catch (error) {
@@ -87,7 +86,8 @@ export default async function handler(req, res) {
           }),
           // bring customer to page success / fail payment
           success_url: `${req.headers.origin}/success?&session_id={CHECKOUT_SESSION_ID}`,
-          cancel_url: `${req.headers.origin}/canceled`,
+          // cancel_url: `${req.headers.origin}/canceled`,
+          cancel_url: `${req.headers.origin}/`,
         });
         res.status(200).json(session);
       } catch (error) {

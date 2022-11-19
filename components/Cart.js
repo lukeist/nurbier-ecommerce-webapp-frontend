@@ -143,10 +143,10 @@ export default function Cart() {
                 {/* Mwst. {((totalPrice * 19) / 100).toFixed(2)}€ */}
                 Warenwert {totalPrice.toFixed(2)} €
               </p>
-              <p className="italic">DHL Standard Versand 3.90 €</p>
+              <p className="italic">DHL Standard Versand 0,00 €</p>
               <h4>
                 Gesamt <span className="italic">inkl. MwSt.</span>{" "}
-                {(totalPrice + 3.9).toFixed(2)} €
+                {totalPrice.toFixed(2)} €
               </h4>
               {/* <h3>{(totalPrice + (totalPrice * 19) / 100).toFixed(2)}€</h3> */}
             </div>
