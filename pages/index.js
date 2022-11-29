@@ -11,8 +11,25 @@ export default function Home() {
   const [results] = useQuery({ query: PRODUCT_QUERY });
   const { data, fetching, error } = results;
 
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>{error.message}</p>;
+  if (fetching)
+    return (
+      <div id="loading-beer">
+        <video id="loading-video" autoPlay loop muted>
+          <source src={"/loading.mp4"} type="video/mp4" />
+        </video>
+        <p id="loading-text">LOADING...</p>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div id="loading-beer">
+        <video id="loading-video" autoPlay loop muted>
+          <source src={"/loading.mp4"} type="video/mp4" />
+        </video>
+        <p>{error.message}</p>;
+      </div>
+    );
 
   const lights = data.lights.data;
 

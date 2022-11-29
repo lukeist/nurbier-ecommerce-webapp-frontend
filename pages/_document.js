@@ -10,6 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Oswald:wght@300;400&family=Roboto+Slab:wght@300&family=Roboto:wght@300;500;700;900&display=swap"
           rel="stylesheet"
         />
+        <script src={process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}></script>
       </Head>
       <body>
         <Main />

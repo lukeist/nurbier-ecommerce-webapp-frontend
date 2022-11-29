@@ -17,7 +17,7 @@ body {
   font-size: 62.5%;
 
   /* * Primary Color: #FFBF00 * */
-  --beer: rgb(255, 191, 0, 1);
+  --beer: rgba(255, 191, 0, 1);
 
   --textfirst: #e1e1e1;
   --textsecond: #c1c1c1;
@@ -174,4 +174,22 @@ body::-webkit-scrollbar-thumb:hover {
     color: white;
     background: black;
   }
+}
+
+/* Loading Screen Animation */
+#loading-beer {
+  position: fixed;
+  top: calc(50vh - 40px);
+  right: calc(50vw - 40px);
+}
+
+#loading-beer p {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+#loading-video {
+  width: 80px;
+  border-radius: 100%;
 }
