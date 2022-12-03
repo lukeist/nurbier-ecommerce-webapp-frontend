@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import BtnAddToCart from "../../components/_btnAddToCart";
 import BtnQuantity from "../../components/_btnQuantity";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import Image from "next/image";
 
 const { motion } = require("framer-motion");
 
@@ -58,7 +59,7 @@ export default function ProductDetails() {
         className="card-content"
         > */}
       <div id="sdetails-img">
-        <img src={image.data.attributes.formats.medium.url} alt={title} />
+        <Image src={image.data.attributes.formats.medium.url} alt={title} />
       </div>
       <SInfo id="sinfo">
         <h1>{title}</h1>

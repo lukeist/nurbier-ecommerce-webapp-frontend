@@ -8,6 +8,7 @@ import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import getDate from "../components/_getDate";
 import Link from "next/link";
+import Image from "next/image";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -32,7 +33,7 @@ export default function Profile({ user, orders }) {
               <h3>{user.name}</h3>
               <p>{user.email}</p>
             </div>
-            <img src={user.picture} alt="profile photo" />
+            <Image src={user.picture} alt="profile photo" />
           </div>
           <div>
             <SMainBtn onClick={() => route.push("/api/auth/logout")}>
