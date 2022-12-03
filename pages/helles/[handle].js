@@ -1,20 +1,15 @@
-import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useStateContext } from "../../lib/context";
-import Link from "next/link";
 import { useEffect } from "react";
-import BtnAddToCart from "../../components/_btnAddToCart";
-import BtnQuantity from "../../components/_btnQuantity";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import Image from "next/image";
-
-const { motion } = require("framer-motion");
+import BtnAddToCart from "../../components/_btnAddToCart";
+import styled from "styled-components";
 
 export default function ProductDetails() {
   // use state
-  const { qty, setQty, increaseQty, decreaseQty, onAdd } = useStateContext();
+  const { qty, setQty, increaseQty, decreaseQty } = useStateContext();
 
   // reset Qty anytime going to a product page
   useEffect(() => {
@@ -33,48 +28,41 @@ export default function ProductDetails() {
   });
 
   const { data, fetching, error } = results;
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no...{error.message}</p>;
+
+  if (fetching)
+    return (
+      <div id="loading-beer">
+        <video id="loading-video" autoPlay loop muted>
+          <source src={"/loading.mp4"} type="video/mp4" />
+        </video>
+        <p id="loading-text">LOADING...</p>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div id="loading-beer">
+        <video id="loading-video" autoPlay loop muted>
+          <source src={"/loading.mp4"} type="video/mp4" />
+        </video>
+        <p>{error.message}</p>;
+      </div>
+    );
 
   const { title, description, image } = data.lights.data[0].attributes;
   const light = data.lights.data[0];
+
   return (
-    // <SWrapper>
-    //   <motion.div
-    //     initial={{ opacity: 0 }}
-    //     animate={{ opacity: 1 }}
-    //     exit={{ opacity: 0, transition: { duration: 0.15 } }}
-    //     transition={{ duration: 0.2, delay: 0.15 }}
-    //     style={{ pointerEvents: "auto" }}
-    //     className="overlay"
-    //   >
-    //     <Link href={"/"}>
-    //       <div></div>
-    //     </Link>
-    //   </motion.div>
-    <SDetails
-    // className="card-content-container open"
-    >
-      {/* <motion.div
-        className="card-content"
-        > */}
+    <SDetails>
       <div id="sdetails-img">
-        <Image src={image.data.attributes.formats.medium.url} alt={title} />
+        <img src={image.data.attributes.formats.medium.url} alt={title} />
       </div>
       <SInfo id="sinfo">
         <h1>{title}</h1>
         <p>{description}</p>
 
-        {/* <SQuantity>
-          <span>Quantiy</span>
-          <BtnQuantity light={light} />
-        </SQuantity> */}
-
-        <SQuantity
-        // className="SQuantity"
-        >
+        <SQuantity>
           <span>Menge:</span>
-
           <button>
             <AiOutlineMinusCircle onClick={() => decreaseQty()} />
           </button>
@@ -83,11 +71,10 @@ export default function ProductDetails() {
             <AiOutlinePlusCircle onClick={() => increaseQty()} />
           </button>
         </SQuantity>
+
         <BtnAddToCart qty={qty} light={light} />
       </SInfo>
-      {/* </motion.div> */}
     </SDetails>
-    // </SWrapper>
   );
 }
 
@@ -105,24 +92,12 @@ const SDetails = styled.div`
   }
 `;
 
-const SWrapper = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 100;
-  display: flex;
-  justify-content: flex-end;
-`;
-
 const SInfo = styled.div`
   width: 40%;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  justiify-content: center;
+  justify-content: center;
   align-items: center;
 
   background: transparent;
@@ -188,7 +163,6 @@ const SQuantity = styled.div`
     &:hover {
       background: white;
       color: black;
-      // box-shadow: var(--boxshadow10);
       filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
     }
   }

@@ -16,9 +16,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 62.5%;
 
-  /* * Primary Color: #FFBF00 * */
   --beer: rgba(255, 191, 0, 1);
-
   --textfirst: #e1e1e1;
   --textsecond: #c1c1c1;
   --textthird: #a1a1a1;
@@ -94,15 +92,6 @@ hr {
 .absolute {
   position: absolute;
 }
-/* * @media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: black;
-    background: white;
-  }
-} * */
 
 .bold {
   font-weight: bold;
@@ -148,16 +137,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Track */
 #SCart::-webkit-scrollbar-track {
-  /* background: white; */
   background: rgba(255, 255, 255, 0.3);
 }
 
 /* Handle */
 #SCart::-webkit-scrollbar-thumb {
-  /* background: rgba(255, 255, 255, 0.3); */
   background: black;
-
-  /* border-radius: 4px; */
   height: 30px;
 }
 
@@ -165,6 +150,7 @@ body::-webkit-scrollbar-thumb:hover {
 #SCart::-webkit-scrollbar-thumb:hover {
   background: red;
 }
+
 /* ///////////////////////////////// */
 @media (prefers-color-scheme: dark) {
   html {

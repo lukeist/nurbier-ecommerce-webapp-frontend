@@ -8,11 +8,6 @@ const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroTop({ lights }) {
   let ref = useRef(null);
-  // let { scrollYProgress } = useScroll({
-  //   target: ref,
-  //   offset: ["start start", "end start"],
-  // });
-  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   let { scrollY } = useScroll();
   let y = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
@@ -41,14 +36,6 @@ export default function IntroTop({ lights }) {
         </div>
         <h1>cold, smooth & tasty.</h1>
       </STopText>
-      {/* 
-      <SCards id="SCards">
-        {lights.map((light) => (
-          <Light key={light.attributes.handle} light={light} />
-        ))}
-      </SCards> */}
-
-      {/* {is16 && <PopUp16 is16={is16} setIs16={setIs16} />} */}
 
       <SGradientAni></SGradientAni>
 
@@ -70,10 +57,6 @@ const SIntroTop = styled(motion.div)`
   justify-content: center;
 `;
 
-// const SCards = styled.div`
-//   display: none;
-//   z-index: 22;
-// `;
 const STopText = styled.div`
   z-index: 10;
 
@@ -173,6 +156,5 @@ const SVideo = styled(motion.video)`
   min-width: 100%;
   min-height: 100%;
   z-index: 1;
-
   //   z-indexKP0-O=-POLIK8JUKHJYHTG87F6D5SDA4S3a3wq : 2;
 `;

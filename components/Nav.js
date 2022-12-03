@@ -1,8 +1,3 @@
-// import Image from "next/image";
-// import { useUser } from "@auth0/nextjs-auth0";
-import styled from "styled-components";
-import Link from "next/link";
-import Cart from "./Cart";
 import { useStateContext } from "../lib/context";
 import { RiShoppingBagFill } from "react-icons/ri";
 import { IoIosBeer } from "react-icons/io";
@@ -10,10 +5,13 @@ import { BsFillQuestionDiamondFill } from "react-icons/bs";
 import { useState } from "react";
 import { UserIcon, UserTxT } from "./User";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+import Link from "next/link";
+import Cart from "./Cart";
+
 const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
-  // const { user, error, isLoading } = useUser();
   const route = useRouter();
   const { showCart, setShowCart, totalQty } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
@@ -70,7 +68,6 @@ export default function Nav() {
                 <motion.span
                   animate={{ scale: 1 }}
                   initial={{ scale: 0 }}
-                  // exit={{ scale: 0 }}
                   id="cart-totalQty"
                 >
                   {totalQty}
@@ -80,14 +77,12 @@ export default function Nav() {
             </SCartTotal>
           </div>
           <div className="menu-txt">
-            {/* <p>Mein Konto</p> */}
             <UserTxT />
             <SCartTotal>
               {totalQty > 0 && (
                 <motion.span
                   animate={{ scale: 1 }}
                   initial={{ scale: 0 }}
-                  // exit={{ scale: 0 }}
                   id="cart-totalQty"
                 >
                   {totalQty}
@@ -160,81 +155,38 @@ const SNavList = styled.ul`
     transition: all ease 0.15s;
     margin: 0 2rem;
     text-shadow: 0 0 3px #000000;
-    
+
     div {
       display: flex;
       align-items: center;
 
       svg {
         transition: all ease 0.3s;
-        z-index:2;
+        z-index: 2;
         &:hover {
           transform: scale(1.4) translateY(-10%);
-
         }
       }
     }
 
-    p  {
+    p {
       font-weight: 500;
       transition: all ease 0.3s;
 
       &:hover {
         transform: scale(1.2);
+      }
     }
 
-  }
+    .menu-icon {
+      display: none;
+    }
 
- 
-
-  .menu-icon {
-    display: none;
-  
-  }
-
-  #einkaufskorb {
-    margin-left: 1rem;
-  }
-
-  // &::before {
-  //   content: "";
-  //   position: fixed;
-
-  //   background-color: transparent;
-  //   // bottom: -50px;
-  //   height: 50px;
-  //   width: 25px;
-  //   border-top-left-radius: 25px;
-  //   box-shadow: 0 -25px 0 0 #f66969;
-  // }
-
-  &:hover {
-    // opacity: 1;
+    #einkaufskorb {
+      margin-left: 1rem;
+    }
   }
 `;
-
-// export const SLogo = styled.div`
-//   position: fixed;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   font-weight: 1000;
-//   font-size: 1.2rem;
-//   color: white;
-//   margin: 0 2rem;
-
-//   img {
-//     cursor: pointer;
-//   }
-
-//   a {
-//     margin-left: 0.5rem;
-//   }
-
-//   .logo {
-//     font-size: 3rem;
-//   }
-// `;
 
 const SCartTotal = styled.div`
   position: relative;

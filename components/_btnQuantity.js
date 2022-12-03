@@ -23,7 +23,6 @@ const BtnQuantity = ({ item }) => {
 
   return (
     <SQuantity>
-      {/* <span>Quantity</span> */}
       <button onClick={() => onRemove(item)}>
         <AiOutlineMinusCircle />
       </button>
@@ -70,7 +69,6 @@ const SQuantity = styled.div`
     z-index: 2;
     width: 3rem;
     text-align: center;
-    // filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
     text-shadow: 1px 0 10px #ffffff;
   }
 

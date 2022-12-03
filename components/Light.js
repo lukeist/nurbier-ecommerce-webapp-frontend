@@ -1,27 +1,17 @@
-import Image from "next/image";
-import styled from "styled-components";
 import { useStateContext } from "../lib/context";
+import { useEffect } from "react";
+import styled from "styled-components";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import BtnAddToCart from "./_btnAddToCart";
 import BtnQuantity from "./_btnQuantity";
 
 export default function Light({ light }) {
   const { title, price, image, handle } = light.attributes;
-  const { cartItems, qty, setQty, increaseQty, decreaseQty, onAdd, onRemove } =
-    useStateContext();
+  const { cartItems, setQty } = useStateContext();
 
   useEffect(() => {
     setQty(1);
   }, []);
-
-  // useEffect(() => {
-  //   const item = cartItems.filter(
-  //     (item) => item.handle === light.attributes.handle
-  //   );
-  //   console.log(item);
-  //   setCurrentItem(item);
-  // }, [cartItems.length]);
 
   const item = cartItems.filter(
     (item) => item.handle === light.attributes.handle
@@ -34,7 +24,6 @@ export default function Light({ light }) {
           <img src={image.data.attributes.formats.small.url} alt={title} />
           <div>
             <h1>{price.toFixed(2)}€</h1>
-            {/* <h3>{title}</h3> */}
           </div>
         </div>
       </Link>

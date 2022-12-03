@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Image from "next/image";
 import styled from "styled-components";
 import { SMainBtn } from "../styles/SMainBtn";
 
@@ -22,7 +21,6 @@ export async function getServerSideProps(params) {
 export default function Success({ order }) {
   const route = useRouter();
 
-  console.log(order);
   return (
     <SSuccessWrapper id="SSuccessWrapper">
       <SOrderInfo
@@ -126,16 +124,11 @@ const SOrderInfo = styled(motion.div)`
   }
 
   h4 {
-    // font-weight: 300;
     margin: 1rem 0;
   }
 
   button {
     width: 50%;
-  }
-
-  p {
-    // font-weight: 300;
   }
 `;
 

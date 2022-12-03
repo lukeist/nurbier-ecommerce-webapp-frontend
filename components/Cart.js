@@ -1,11 +1,10 @@
-import styled from "styled-components";
 import { useStateContext } from "../lib/context";
 import { FaShoppingCart } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { useEffect } from "react";
+import styled from "styled-components";
 import getStripe from "../lib/getStripe";
 import BtnQuantity from "./_btnQuantity";
-import { useEffect } from "react";
 
 // animation variants
 const card = {
@@ -66,7 +65,6 @@ export default function Cart() {
     await stripe.redirectToCheckout({ sessionId: data.id });
   };
 
-  // console.log(cartItems);
   return (
     <CartWrapper
       animate={{ opacity: 1 }}
@@ -81,9 +79,6 @@ export default function Cart() {
         exit="exi"
         transition={{ type: "tween" }}
         variants={mobileVariant}
-        // animate={{ x: "0%" }}
-        // initial={{ x: "50%" }}
-        // exit={{ x: "50%" }}
         onClick={(e) => e.stopPropagation()}
         id="SCart"
       >
@@ -119,16 +114,7 @@ export default function Cart() {
                       {(item.price * item.quantity).toFixed(2)} €
                     </span>
                   </p>
-                  {/* <SQuantity>
-                    <span>Quantity</span>
-                    <button onClick={() => onRemove(item)}>
-                      <AiFillMinusCircle />
-                    </button>
-                    <p>{item.quantity}</p>
-                    <button onClick={() => onAdd(item, 1)}>
-                      <AiFillPlusCircle />
-                    </button>
-                  </SQuantity> */}
+
                   <BtnQuantity item={item} />
                 </CardInfo>
               </CartItem>
@@ -139,16 +125,12 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <div>
-              <p className="bold">
-                {/* Mwst. {((totalPrice * 19) / 100).toFixed(2)}€ */}
-                Warenwert {totalPrice.toFixed(2)} €
-              </p>
+              <p className="bold">Warenwert {totalPrice.toFixed(2)} €</p>
               <p className="italic">DHL Standard Versand 0,00 €</p>
               <h4>
                 Gesamt <span className="italic">inkl. MwSt.</span>{" "}
                 {totalPrice.toFixed(2)} €
               </h4>
-              {/* <h3>{(totalPrice + (totalPrice * 19) / 100).toFixed(2)}€</h3> */}
             </div>
             <button className="btn-main" onClick={handleCheckout}>
               Kasse
@@ -171,8 +153,6 @@ const CartWrapper = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  // background: rgba(0, 0, 0, 0.8);
-  // filter: blur(5px);
   backdrop-filter: blur(5px);
   z-index: 10;
 `;
@@ -210,7 +190,6 @@ const CartItem = styled(motion.div)`
   padding: 1rem;
   margin: 1rem 2rem;
   max-height: 12rem;
-  // border: 1px solid white;
 
   img {
     max-height: 16rem;
@@ -222,10 +201,6 @@ const CardInfo = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  p {
-    // margin-top: 1rem;
-  }
 
   .subtotal {
     padding: 0.3rem 0 0.3rem 1rem;
@@ -240,7 +215,6 @@ const CardInfo = styled(motion.div)`
 const Checkout = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  // align-items: flex-end;
   margin: 5rem 2rem 0 2rem;
   max-height: 14rem;
 
@@ -250,7 +224,6 @@ const Checkout = styled(motion.div)`
     align-items: flex-end;
   }
   button {
-    // width: 100%;
     margin-top: 3rem;
   }
 
@@ -262,7 +235,6 @@ const Checkout = styled(motion.div)`
 const SEmptyCart = styled(motion.div)`
   position: absolute;
   top: 0;
-  // left: 50%;
   transform: translate(-50%, 0%);
   display: flex;
   flex-direction: column;
@@ -280,52 +252,3 @@ const SEmptyCart = styled(motion.div)`
     color: var(--secondary);
   }
 `;
-
-// const SQuantity = styled.div`
-//   display: flex;
-//   align-items: center;
-//   color: white;
-
-//   button {
-//     background: transparent;
-//     border: none;
-//     display: flex;
-
-//     font-size: 3rem;
-//     cursor: pointer;
-//     z-index: 2;
-//   }
-
-//   span {
-//     font-size: 2rem;
-//     text-align: left;
-//     margin-right: 2rem;
-//   }
-
-//   p {
-//     font-size: 2.5rem;
-//     color: white;
-//     opacity: 0.9;
-//     margin: 0 0.5rem;
-//     padding-bottom: 0.5rem;
-//     z-index: 2;
-//     width: 3rem;
-//     text-align: center;
-//     filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
-//   }
-
-//   svg {
-//     color: white;
-//     transition: all ease 0.3s;
-//     border-radius: 50%;
-//     font-size: 3rem;
-//     margin: 0.5rem 0;
-
-//     &:hover {
-//       background: white;
-//       color: black;
-//       // box-shadow: var(--boxshadow10);
-//       filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
-//     }
-//   }
-// `;

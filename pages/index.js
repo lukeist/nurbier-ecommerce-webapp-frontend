@@ -1,13 +1,12 @@
-import Head from "next/head";
-import IntroTop from "../components/IntroTop";
-import IntroMid from "../components/IntroMid";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import IntroBeerCards from "../components/IntroBeerCards";
 import IntroBottom from "../components/IntroBottom";
+import IntroTop from "../components/IntroTop";
+import IntroMid from "../components/IntroMid";
+import Head from "next/head";
 
 export default function Home() {
-  // fetch products from strapi
   const [results] = useQuery({ query: PRODUCT_QUERY });
   const { data, fetching, error } = results;
 

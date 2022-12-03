@@ -1,29 +1,19 @@
-import { FaUserCircle } from "react-icons/fa";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import { useUser } from "@auth0/nextjs-auth0";
 import { RiUser5Fill } from "react-icons/ri";
+import styled from "styled-components";
 
 export const UserTxT = () => {
   const route = useRouter();
   const { user } = useUser();
-
   if (!user)
     return <p onClick={() => route.push("/api/auth/login")}>Anmelden</p>;
-
-  return (
-    <Profile onClick={() => route.push("/profile")}>
-      Mein Konto
-      {/* <img src={user.picture} alt={user.name} />
-      <h3>{user.name}</h3> */}
-    </Profile>
-  );
+  return <Profile onClick={() => route.push("/profile")}>Mein Konto</Profile>;
 };
 
 export const UserIcon = () => {
   const route = useRouter();
   const { user } = useUser();
-
   return (
     <RiUser5Fill
       onClick={

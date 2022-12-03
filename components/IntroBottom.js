@@ -13,8 +13,6 @@ export default function IntroBottom({}) {
       <STestimony id="STestimony">
         <motion.div className="absolute" style={{ y }}>
           <h1>Was unsere Kunden über uns sagen:</h1>
-
-          {/* <h1>Here's how:</h1> */}
         </motion.div>
         <STUsers>
           <h1>Was unsere Kunden über uns sagen:</h1>
@@ -26,7 +24,6 @@ export default function IntroBottom({}) {
             bezahlt, ist ein Barbier. Und wer sein Bier auf Raten zahlt, ist ein
             Bierrat."
           </p>
-          {/* <img src="/1.jpg" alt="Party" /> */}
 
           <SImgUser src="/user6.jpg" alt="user1" />
           <p>Lena Weber</p>
@@ -53,7 +50,6 @@ const SIntroBottom = styled.div`
   align-items: center;
   z-index: 1;
   height: 100vh;
-  // margin-top: 20vh;
 
   span {
     color: var(--highlight);
@@ -84,26 +80,6 @@ const STestimony = styled.div`
   opacity: 0.95;
   background: linear-gradient(38deg, #0b0000, #000000, #000a0b);
   background-size: 100% 100%;
-
-  //   -webkit-animation: AnimationName 30s ease infinite;
-  //   -moz-animation: AnimationName 30s ease infinite;
-  //   animation: AnimationName 30s ease infinite;
-  // }
-
-  // @-webkit-keyframes AnimationName {
-  //   0%{background-position:90% 0%}
-  //   50%{background-position:11% 100%}
-  //   100%{background-position:90% 0%}
-  // }
-  // @-moz-keyframes AnimationName {
-  //   0%{background-position:90% 0%}
-  //   50%{background-position:11% 100%}
-  //   100%{background-position:90% 0%}
-  // }
-  // @keyframes AnimationName {
-  //   0%{background-position:90% 0%}
-  //   50%{background-position:11% 100%}
-  //   100%{background-position:90% 0%}
 
   > div {
     margin-bottom: 20vh;

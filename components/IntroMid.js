@@ -1,23 +1,13 @@
 import styled from "styled-components";
 import { GiLaurelCrown } from "react-icons/gi";
-import { SMainBtn } from "../styles/SMainBtn";
-import Light from "./Light";
-import PopUp16 from "./PopUp16";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Craft from "./IntroMid-CraftData";
 const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function IntroMid({ lights }) {
-  const { scrollYProgress, scrollY } = useScroll({
-    // target: ref,
-    // offset: ["end end", "end start"],
-  });
+  const { scrollYProgress } = useScroll({});
   let ref = useRef(null);
   let y = useTransform(scrollYProgress, [1, 0], ["-100%", "100%"]);
-  let yy = useTransform(scrollY, [0, 500], ["-50%", "50%"]);
-
-  // let width = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  // let widthL = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
     <SIntroMid ref={ref} id="SIntroMid">
@@ -41,7 +31,6 @@ export default function IntroMid({ lights }) {
             style={{ y }}
           />
         </div>
-        {/* <SImgBG0 src={Craft[0].imageBG} alt="Party" /> */}
         <STxTParallax0 className="" style={{ y }}>
           <h1>{Craft[0].title}</h1>
           <h3>{Craft[0].abv}</h3>
@@ -54,7 +43,6 @@ export default function IntroMid({ lights }) {
         </STxTParallax0>
       </SCraftBeer0>
       <SCraftBeer1 className="SCraftBeer">
-        {/* <SImgBG1 src={Craft[1].imageBG} alt="Party" /> */}
         <STxTParallax1 className="" style={{ y }}>
           <h1>{Craft[1].title}</h1>
           <h3>{Craft[1].abv}</h3>
@@ -86,7 +74,6 @@ const SIntroMid = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  // width: 80%;
 
   .SCraftBeer {
     width: 80%;
@@ -159,60 +146,3 @@ const STxTParallax0 = styled(motion.section)`
 const STxTParallax1 = styled(motion.section)`
   margin-bottom: -40rem;
 `;
-
-// const SIntroMidTxt = styled(motion.div)`
-//   position: absolute;
-//   margin-top: 15rem;
-//   margin-right: 5rem;
-//   width: 40%;
-// `;
-// const SImgFloating = styled(motion.div)`
-//   position: absolute;
-//   right: 0;
-//   overflow: hidden;
-//   margin-left: -140rem;
-
-//   animation-name: Floating;
-//   animation-duration: 3s;
-//   animation-iteration-count: infinite;
-//   animation-timing-function: ease-in-out;
-
-//   @keyframes Floating {
-//     0% {
-//       transform: translate(0px, 0px);
-//     }
-//     65% {
-//       transform: translate(0px, 15px);
-//     }
-//     100% {
-//       transform: translate(0px, 0px);
-//     }
-//   }
-// `;
-
-// const SImgFloatingL = styled(motion.div)`
-//   position: absolute;
-//   // left: 0;
-//   overflow: hidden;
-
-//   animation-name: Floating;
-//   animation-duration: 3s;
-//   animation-iteration-count: infinite;
-//   animation-timing-function: ease-in-out;
-
-//   @keyframes Floating {
-//     0% {
-//       transform: translate(0px, 0px);
-//     }
-//     65% {
-//       transform: translate(0px, 15px);
-//     }
-//     100% {
-//       transform: translate(0px, 0px);
-//     }
-//   }
-
-//   img {
-//     transform: scaleX(-1);
-//   }
-// `;

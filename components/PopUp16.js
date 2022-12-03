@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { BsSearch } from "react-icons/bs";
-import { SMainBtn } from "../styles/SMainBtn";
-import Light from "./Light";
 
 export default function PopUp16({ setIs16 }) {
   return (
@@ -19,11 +16,8 @@ export default function PopUp16({ setIs16 }) {
 
 const SPopUp16 = styled.div`
   font-family: "Oswald", sans-serif;
-
   position: fixed;
   overflow: hidden;
-  background: black;
-
   background: black;
   display: flex;
   flex-direction: column;
