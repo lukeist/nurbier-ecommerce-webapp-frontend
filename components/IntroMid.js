@@ -74,6 +74,8 @@ const SIntroMid = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 1);
 
   .SCraftBeer {
     width: 80%;
