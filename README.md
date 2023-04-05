@@ -1,7 +1,7 @@
 # Nur Bier - Only Beer - Fullstack Ecommerce WebApp
 This is an online shop of a German brewery startup in Berlin. This store allows its customers to learn about brewing and purchase its newest beer in the market.
 
-**Link to the online shop:** https://nurbier.art
+**Link to the online shop:** https://nurbier.vercel.app/
 
 ![alt tag](https://github.com/hiluan/hiluan/raw/main/images/hiluan-nurbier-art-fullstack-ecommerce-web-app-800.gif)
 
